@@ -302,15 +302,15 @@ def score_technical(df):
     sma200 = sma(close, 200)
     ema20  = ema(close, 20)
 
-    price    = close.iloc[-1]
-    s50      = sma50.iloc[-1]
-    s150     = sma150.iloc[-1]
-    s200     = sma200.iloc[-1]
-    s200_4w  = sma200.iloc[-21]  # 4 weeks ago
+    price    = float(close.iloc[-1])
+    s50      = float(sma50.iloc[-1])
+    s150     = float(sma150.iloc[-1])
+    s200     = float(sma200.iloc[-1])
+    s200_4w  = float(sma200.iloc[-21])  # 4 weeks ago
 
     # 52-week high/low
-    w52_high = high.rolling(252).max().iloc[-1]
-    w52_low  = low.rolling(252).min().iloc[-1]
+    w52_high = float(high.rolling(252).max().iloc[-1])
+    w52_low  = float(low.rolling(252).min().iloc[-1])
 
     # ── MINERVINI TREND TEMPLATE (40 pts) ────────────────────────────────────
     template = {
@@ -331,7 +331,7 @@ def score_technical(df):
         return 0, {'stage': 'Stage 1/3/4', 'template_passes': template_passes}
 
     # ── RSI (15 pts) ─────────────────────────────────────────────────────────
-    rsi_val = rsi(close, 14).iloc[-1]
+    rsi_val = float(rsi(close, 14).iloc[-1])
     if 50 <= rsi_val <= 65:    rsi_score = 15
     elif 45 <= rsi_val < 50:   rsi_score = 12
     elif 65 < rsi_val <= 72:   rsi_score = 10
@@ -341,14 +341,14 @@ def score_technical(df):
 
     # ── MACD (15 pts) ────────────────────────────────────────────────────────
     macd_line, signal_line, histogram = macd(close)
-    macd_val  = macd_line.iloc[-1]
-    sig_val   = signal_line.iloc[-1]
-    hist_curr = histogram.iloc[-1]
-    hist_prev = histogram.iloc[-2]
+    macd_val  = float(macd_line.iloc[-1])
+    sig_val   = float(signal_line.iloc[-1])
+    hist_curr = float(histogram.iloc[-1])
+    hist_prev = float(histogram.iloc[-2])
 
     # Recent crossover = last 5 days
     recent_cross = any(
-        histogram.iloc[-i] > 0 and histogram.iloc[-(i+1)] <= 0
+        float(histogram.iloc[-i]) > 0 and float(histogram.iloc[-(i+1)]) <= 0
         for i in range(1, 6) if len(histogram) > i+1
     )
     if recent_cross:                              macd_score = 15
@@ -358,7 +358,7 @@ def score_technical(df):
     else:                                         macd_score = 0
 
     # ── ADX (10 pts) ─────────────────────────────────────────────────────────
-    adx_val = adx(high, low, close, 14).iloc[-1]
+    adx_val = float(adx(high, low, close, 14).iloc[-1])
     if adx_val > 35:    adx_score = 10
     elif adx_val > 25:  adx_score = 8
     elif adx_val > 20:  adx_score = 5
@@ -366,16 +366,16 @@ def score_technical(df):
 
     # ── Supertrend (10 pts) ──────────────────────────────────────────────────
     st = supertrend(high, low, close)
-    st_score = 10 if st.iloc[-1] == 1 else 0
-    st_signal = 'Bullish' if st.iloc[-1] == 1 else 'Bearish'
+    st_score = 10 if int(st.iloc[-1]) == 1 else 0
+    st_signal = 'Bullish' if int(st.iloc[-1]) == 1 else 'Bearish'
 
     # ── Volume (15 pts) ──────────────────────────────────────────────────────
-    avg_vol_20 = vol.rolling(20).mean().iloc[-1]
-    today_vol  = vol.iloc[-1]
+    avg_vol_20 = float(vol.rolling(20).mean().iloc[-1])
+    today_vol  = float(vol.iloc[-1])
     vol_ratio  = today_vol / avg_vol_20 if avg_vol_20 > 0 else 1.0
     # VCP: volume drying up (good for base building)
-    last5_vol  = vol.iloc[-5:].mean()
-    vol_dryup  = last5_vol < avg_vol_20 * 0.8
+    last5_vol  = float(vol.iloc[-5:].mean())
+    vol_dryup  = bool(last5_vol < avg_vol_20 * 0.8)
 
     if vol_ratio > 2.0:       vol_score = 15
     elif vol_ratio > 1.5:     vol_score = 12
@@ -384,7 +384,7 @@ def score_technical(df):
     else:                     vol_score = 4
 
     # ── EMA Structure (10 pts) ───────────────────────────────────────────────
-    e20 = ema20.iloc[-1]
+    e20 = float(ema20.iloc[-1])
     if price > e20 > s50 > s200:   ema_score = 10
     elif price > s50 > s200:       ema_score = 7
     elif price > s200:             ema_score = 4
@@ -416,7 +416,7 @@ def score_technical(df):
         prev5_prices = close.iloc[-6:-1]
         prev5_ema    = ema20.iloc[-6:-1]
         touched_ema  = any(abs(p - e) / e < 0.02 for p, e in zip(prev5_prices, prev5_ema))
-        bouncing     = close.iloc[-1] > close.iloc[-3] and rsi_val > 45
+        bouncing     = float(close.iloc[-1]) > float(close.iloc[-3]) and rsi_val > 45
         if touched_ema and bouncing:
             pattern_score = 8
             pattern_name  = 'EMA Pullback'
@@ -432,7 +432,7 @@ def score_technical(df):
     tech_score = min(100, round(raw / max_raw * 100))
 
     # ── ATR for position sizing ───────────────────────────────────────────────
-    atr_val = atr(high, low, close, 14).iloc[-1]
+    atr_val = float(atr(high, low, close, 14).iloc[-1])
 
     return tech_score, {
         'stage':            'Stage 2' if template_passes >= 6 else f'Stage X ({template_passes}/8)',
@@ -577,11 +577,11 @@ def score_momentum(df, nifty_df):
         return 50, {}
 
     close       = df['Close']
-    price       = close.iloc[-1]
-    price_1m    = close.iloc[-21] if len(close) >= 21 else close.iloc[0]
-    price_3m    = close.iloc[-63] if len(close) >= 63 else close.iloc[0]
+    price       = float(close.iloc[-1])
+    price_1m    = float(close.iloc[-21]) if len(close) >= 21 else float(close.iloc[0])
+    price_3m    = float(close.iloc[-63]) if len(close) >= 63 else float(close.iloc[0])
     high        = df['High']
-    w52_high    = high.rolling(252).max().iloc[-1]
+    w52_high    = float(high.rolling(252).max().iloc[-1])
 
     mom_1m = (price - price_1m) / price_1m * 100
     mom_3m = (price - price_3m) / price_3m * 100
@@ -592,8 +592,8 @@ def score_momentum(df, nifty_df):
     # ── RS vs Nifty 3 months (30 pts) ────────────────────────────────────────
     if nifty_df is not None and len(nifty_df) >= 63:
         n_close  = nifty_df['Close']
-        n_price  = n_close.iloc[-1]
-        n_3m     = n_close.iloc[-63]
+        n_price  = float(n_close.iloc[-1])
+        n_3m     = float(n_close.iloc[-63])
         nifty_3m = (n_price - n_3m) / n_3m * 100
         rs_vs_nifty = mom_3m - nifty_3m
         details['rs_vs_nifty'] = round(rs_vs_nifty, 1)
@@ -786,6 +786,29 @@ def composite_score(tech, fund, mom, theme_bonus=0, style='both'):
 # MAIN SCANNER
 # ═══════════════════════════════════════════════════════════════════════════════
 
+def flatten_df(df):
+    """
+    Fix for yfinance >= 0.2.x which returns MultiIndex columns.
+    Flattens (Close, TICKER) → Close, etc.
+    Also ensures all columns are plain float Series.
+    """
+    if df is None or df.empty:
+        return df
+    # If MultiIndex columns, drop the ticker level
+    if isinstance(df.columns, pd.MultiIndex):
+        df.columns = df.columns.get_level_values(0)
+    # Squeeze any remaining 2D columns to 1D
+    for col in df.columns:
+        if hasattr(df[col], 'squeeze'):
+            df[col] = df[col].squeeze()
+    # Convert to float, coerce errors
+    for col in ['Open','High','Low','Close','Volume']:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+    df = df.dropna(subset=['Close'])
+    return df
+
+
 def run_scan(test_mode=False):
     log.info("=" * 60)
     log.info("SwingEdge EOD Scanner Starting")
@@ -805,8 +828,9 @@ def run_scan(test_mode=False):
     # ── Download Nifty 50 for RS calculation ─────────────────────────────────
     log.info("Downloading Nifty 50 benchmark...")
     try:
-        nifty_df = yf.download('^NSEI', period=CONFIG['data_period'], interval='1d',
-                               progress=False, auto_adjust=True)
+        nifty_raw = yf.download('^NSEI', period=CONFIG['data_period'], interval='1d',
+                                progress=False, auto_adjust=True)
+        nifty_df = flatten_df(nifty_raw)
         log.info(f"Nifty 50: {len(nifty_df)} days downloaded")
     except Exception as e:
         log.warning(f"Could not download Nifty: {e}")
@@ -821,8 +845,9 @@ def run_scan(test_mode=False):
             log.info(f"[{i+1:3d}/{len(universe)}] Scanning {ticker}...")
 
             # Download price data
-            df = yf.download(ticker, period=CONFIG['data_period'], interval='1d',
-                             progress=False, auto_adjust=True)
+            raw = yf.download(ticker, period=CONFIG['data_period'], interval='1d',
+                              progress=False, auto_adjust=True)
+            df = flatten_df(raw)
 
             if df is None or len(df) < 100:
                 log.debug(f"  Skip: insufficient data ({len(df) if df is not None else 0} days)")
@@ -869,10 +894,10 @@ def run_scan(test_mode=False):
 
             # Format for dashboard
             name   = info.get('longName') or info.get('shortName') or ticker.replace('.NS','')
-            chg    = round(df['Close'].iloc[-1] - df['Close'].iloc[-2], 2)
-            pct    = round(chg / df['Close'].iloc[-2] * 100, 2)
-            volume = int(df['Volume'].iloc[-1])
-            vol_20 = int(df['Volume'].rolling(20).mean().iloc[-1])
+            chg    = round(float(df['Close'].iloc[-1]) - float(df['Close'].iloc[-2]), 2)
+            pct    = round(chg / float(df['Close'].iloc[-2]) * 100, 2)
+            volume = int(float(df['Volume'].iloc[-1]))
+            vol_20 = int(float(df['Volume'].rolling(20).mean().iloc[-1]))
 
             result = {
                 # Identity
