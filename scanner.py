@@ -41,16 +41,21 @@ except ImportError:
     sys.exit(1)
 
 # ─── Logging ─────────────────────────────────────────────────────────────────
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s [%(levelname)s] %(message)s',
-    datefmt='%H:%M:%S',
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler('scanner.log', mode='a')
-    ]
-)
+# ─── Logging ─────────────────────────────────────────────────────────────────
 log = logging.getLogger('SwingEdge')
+log.setLevel(logging.INFO)
+if not log.handlers:
+    # Console handler
+    ch = logging.StreamHandler()
+    ch.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(message)s', '%H:%M:%S'))
+    log.addHandler(ch)
+    # Single file handler — opened once, never reopened
+    try:
+        fh = logging.FileHandler('scanner.log', mode='a')
+        fh.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(message)s', '%H:%M:%S'))
+        log.addHandler(fh)
+    except Exception:
+        pass  # If log file fails, console is enough
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CONFIGURATION
@@ -65,7 +70,9 @@ CONFIG = {
     'atr_multiplier':   2.0,         # ATR multiplier for stop loss
     'output_file':      'data.json', # Output file (goes in swingEdge folder)
     'data_period':      '1y',        # Historical data period
-    'scan_delay':       0.5,         # Seconds between API calls (be polite)
+    'scan_delay':       2.0,         # Seconds between API calls (increased to avoid throttling)
+    'batch_size':       25,          # Download in batches, pause between batches
+    'batch_pause':      8.0,         # Seconds to pause between batches
 }
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -810,6 +817,66 @@ def flatten_df(df):
     return df
 
 
+def download_batch(tickers, period='1y'):
+    """
+    Download a batch of tickers at once using yfinance group_by.
+    Much more efficient and less likely to be throttled than one-by-one.
+    Returns dict of {ticker: dataframe}
+    """
+    results = {}
+    if not tickers:
+        return results
+
+    try:
+        # Download all tickers in batch
+        raw = yf.download(
+            tickers,
+            period=period,
+            interval='1d',
+            group_by='ticker',
+            auto_adjust=True,
+            progress=False,
+            threads=False,  # Single thread — more polite to Yahoo
+        )
+
+        if raw is None or raw.empty:
+            return results
+
+        # If only one ticker, yfinance returns flat columns
+        if len(tickers) == 1:
+            df = flatten_df(raw)
+            if df is not None and len(df) >= 100:
+                results[tickers[0]] = df
+            return results
+
+        # Multiple tickers — MultiIndex columns: (OHLCV, ticker)
+        for ticker in tickers:
+            try:
+                if ticker in raw.columns.get_level_values(1):
+                    df_raw = raw.xs(ticker, axis=1, level=1)
+                    df = flatten_df(df_raw.copy())
+                    if df is not None and len(df) >= 100:
+                        results[ticker] = df
+            except Exception as e:
+                log.debug(f"  Could not extract {ticker} from batch: {e}")
+
+    except Exception as e:
+        log.warning(f"  Batch download failed: {e}. Will try individually.")
+        # Fallback: try each one individually
+        for ticker in tickers:
+            try:
+                raw = yf.download(ticker, period=period, interval='1d',
+                                  auto_adjust=True, progress=False)
+                df = flatten_df(raw)
+                if df is not None and len(df) >= 100:
+                    results[ticker] = df
+                time.sleep(1.0)
+            except Exception as e2:
+                log.debug(f"  Individual download failed for {ticker}: {e2}")
+
+    return results
+
+
 def run_scan(test_mode=False):
     log.info("=" * 60)
     log.info("SwingEdge EOD Scanner Starting")
@@ -837,31 +904,58 @@ def run_scan(test_mode=False):
         log.warning(f"Could not download Nifty: {e}")
         nifty_df = None
 
+    # ── Pre-download all price data in batches ────────────────────────────────
+    log.info(f"Pre-downloading price data in batches of {CONFIG['batch_size']}...")
+    price_data = {}
+    batch_size = CONFIG['batch_size']
+
+    for batch_start in range(0, len(universe), batch_size):
+        batch = universe[batch_start:batch_start + batch_size]
+        batch_num = batch_start // batch_size + 1
+        total_batches = (len(universe) + batch_size - 1) // batch_size
+        log.info(f"  Batch {batch_num}/{total_batches}: downloading {len(batch)} stocks...")
+
+        batch_results = download_batch(batch, CONFIG['data_period'])
+        price_data.update(batch_results)
+        log.info(f"  Batch {batch_num} done: {len(batch_results)}/{len(batch)} succeeded")
+
+        # Pause between batches to avoid throttling
+        if batch_start + batch_size < len(universe):
+            log.info(f"  Pausing {CONFIG['batch_pause']}s before next batch...")
+            time.sleep(CONFIG['batch_pause'])
+
+    log.info(f"Price data downloaded: {len(price_data)}/{len(universe)} stocks")
+
     # ── Scan each stock ───────────────────────────────────────────────────────
     results = []
     errors  = []
 
     for i, ticker in enumerate(universe):
         try:
-            log.info(f"[{i+1:3d}/{len(universe)}] Scanning {ticker}...")
+            log.info(f"[{i+1:3d}/{len(universe)}] Scoring {ticker}...")
 
-            # Download price data
-            raw = yf.download(ticker, period=CONFIG['data_period'], interval='1d',
-                              progress=False, auto_adjust=True)
-            df = flatten_df(raw)
+            # Use pre-downloaded data
+            df = price_data.get(ticker)
 
             if df is None or len(df) < 100:
                 log.debug(f"  Skip: insufficient data ({len(df) if df is not None else 0} days)")
                 continue
 
-            # Download fundamentals
+            # Download fundamentals (still individual — less critical, cached by yfinance)
             try:
                 tk   = yf.Ticker(ticker)
-                info = tk.info or {}
+                info = tk.fast_info or {}
+                # fast_info is a lighter call — less throttling risk
+                # Supplement with .info for key fields if available
+                try:
+                    full_info = tk.info or {}
+                    info = {**info, **full_info}
+                except Exception:
+                    pass
             except Exception:
                 info = {}
 
-            # Scores
+            log.debug(f"  Scoring {ticker}...")
             tech_score, tech_details = score_technical(df)
             if tech_score == 0:
                 log.debug(f"  Skip: failed Stage 2 gate ({tech_details.get('stage','?')})")
@@ -900,8 +994,11 @@ def run_scan(test_mode=False):
             name   = info.get('longName') or info.get('shortName') or ticker.replace('.NS','')
             chg    = round(float(df['Close'].iloc[-1]) - float(df['Close'].iloc[-2]), 2)
             pct    = round(chg / float(df['Close'].iloc[-2]) * 100, 2)
-            volume = int(float(df['Volume'].iloc[-1]))
-            vol_20 = int(float(df['Volume'].rolling(20).mean().iloc[-1]))
+            # Safe volume conversion — handle NaN
+            vol_raw = df['Volume'].iloc[-1]
+            volume  = int(float(vol_raw)) if pd.notna(vol_raw) else 0
+            vol_20_raw = df['Volume'].rolling(20).mean().iloc[-1]
+            vol_20  = int(float(vol_20_raw)) if pd.notna(vol_20_raw) else 0
 
             result = {
                 # Identity
@@ -982,8 +1079,6 @@ def run_scan(test_mode=False):
 
             results.append(result)
             log.info(f"  ✅ Score:{scores['composite']} Tech:{tech_score} Fund:{fund_score} Mom:{mom_score} | {scores['signal']} | {tech_details.get('pattern','?')} | R:R {pos['rr']}")
-
-            time.sleep(CONFIG['scan_delay'])
 
         except Exception as e:
             log.error(f"  ❌ Error on {ticker}: {e}")
