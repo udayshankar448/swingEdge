@@ -60,7 +60,7 @@ CONFIG = {
     'capital':          3_000_000,   # ₹30 Lakhs — change to your capital
     'risk_pct':         0.02,        # 2% risk per trade
     'max_pos_pct':      0.20,        # Max 20% of capital per position
-    'min_score':        65,          # Minimum composite score to appear in output
+    'min_score':        55,          # Minimum composite score to appear in output
     'min_rr':           2.0,         # Minimum Risk:Reward ratio
     'atr_multiplier':   2.0,         # ATR multiplier for stop loss
     'output_file':      'data.json', # Output file (goes in swingEdge folder)
@@ -75,7 +75,7 @@ CONFIG = {
 
 NIFTY50 = [
     'RELIANCE.NS', 'TCS.NS', 'HDFCBANK.NS', 'BHARTIARTL.NS', 'ICICIBANK.NS',
-    'INFOSYS.NS', 'SBIN.NS', 'HINDUNILVR.NS', 'ITC.NS', 'LT.NS',
+    'INFY.NS', 'SBIN.NS', 'HINDUNILVR.NS', 'ITC.NS', 'LT.NS',
     'KOTAKBANK.NS', 'HCLTECH.NS', 'BAJFINANCE.NS', 'MARUTI.NS', 'AXISBANK.NS',
     'ASIANPAINT.NS', 'TITAN.NS', 'SUNPHARMA.NS', 'ULTRACEMCO.NS', 'NESTLEIND.NS',
     'WIPRO.NS', 'TATAMOTORS.NS', 'NTPC.NS', 'POWERGRID.NS', 'TECHM.NS',
@@ -326,9 +326,10 @@ def score_technical(df):
     template_passes  = sum(template.values())
     template_score   = template_passes * 5  # max 40 pts
 
-    # Stage 2 gate — must pass at least 6/8
-    if template_passes < 6:
-        return 0, {'stage': 'Stage 1/3/4', 'template_passes': template_passes}
+    # Stage 2 gate — must pass at least 5/8 (was 6, relaxed for broader scan)
+    if template_passes < 5:
+        log.debug(f"    Template {template_passes}/8 — {[k for k,v in template.items() if not v]}")
+        return 0, {'stage': f'Stage X ({template_passes}/8)', 'template_passes': template_passes}
 
     # ── RSI (15 pts) ─────────────────────────────────────────────────────────
     rsi_val = float(rsi(close, 14).iloc[-1])
@@ -876,6 +877,9 @@ def run_scan(test_mode=False):
 
             # Composite score
             scores = composite_score(tech_score, fund_score, mom_score, theme_bonus)
+
+            # DEBUG: always log scores so we can see what's happening
+            log.info(f"  Scores → Tech:{tech_score} Fund:{fund_score} Mom:{mom_score} Theme:{theme_bonus} → Composite:{scores['composite']} | Template:{tech_details.get('template_passes',0)}/8 | {tech_details.get('pattern','?')}")
 
             if scores['composite'] < CONFIG['min_score']:
                 continue
