@@ -1,49 +1,1056 @@
 {
   "meta": {
-    "last_updated": "2026-05-14",
-    "total_signals": 2,
-    "version": "1.0"
+    "last_updated": "2026-05-17",
+    "total_signals": 129,
+    "version": "2.0",
+    "analysts": ["Serenity (@aleabitoreddit)", "Jukan (@jukan05)", "Zephyr (@zephyr_z9)", "VVV Stock Analyst (@VVVStockAnalyst)", "The Opportunist Investor (@sudheep8531)", "Darvas Box Trader (@darvasboxtrader)"],
+    "themes": ["CPO Photonics Supercycle ($91B TAM 2028)", "Memory Supercycle", "Intel Foundry Renaissance", "Korea HF Supply Shock", "Indian AI Proxies + Defence", "ABF Super Expansion Cycle"]
   },
   "stocks": {
-    "NAVA": {
-      "symbol": "NAVA",
-      "name": "NAVA Limited",
-      "market": "NSE",
-      "sector": "Energy",
-      "first_seen": "2026-05-13",
-      "first_price": 412.50,
+
+    "SIVE": {
+      "symbol": "SIVE",
+      "name": "Sivers Semiconductors AB",
+      "market": "EU",
+      "sector": "Photonics / CPO Lasers",
+      "first_seen": "2026-05-12",
+      "first_price": 43.14,
+      "current_price": 56.65,
       "signals": [
         {
-          "date": "2026-05-13",
-          "analyst": "@NeelChhabra",
+          "date": "2026-05-12",
+          "analyst": "Serenity",
           "signal": "Bullish",
-          "setup": "VCP",
-          "thesis": "Classic VCP forming on weekly. 6-month base. Volume drying up perfectly. Watching for breakout above 425.",
-          "levels": { "entry": 425, "target": 520, "stop": 395 },
+          "setup": "CW Laser Chokepoint for CPO",
+          "thesis": "SIVE is the CW laser chokepoint for CPO — the next LITE. LITE went $3B to $80B in 2 years, AAOI went $770M to $15B in 1 year. SIVE is next at $1.6B. Run by UC Berkeley CEOs and LITE executives. Customers include JBL, Ayar, Lightmatter, POET, MRVL, Celestial, AMD. Amazon private placement with AIChip — SIVE is primary laser supplier to Ayar. Core IP chokepoint for next gen photonics.",
+          "levels": { "entry": null, "target": null, "stop": null },
           "conviction": "High",
-          "price_at_signal": 412.50
+          "price_at_signal": 43.14
+        },
+        {
+          "date": "2026-05-13",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "MSCI Inclusion + 31% Day",
+          "thesis": "SIVE up 31.3% today. MSCI Global Small Cap Index inclusion May 29 triggers passive inflows as MC grows. Re-centering board around US executives. Not a trade — comfortable hold for next few years.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 48.56
+        },
+        {
+          "date": "2026-05-15",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "2025 Annual Report Extremely Bullish",
+          "thesis": "2025 annual report TLDR Extremely Bullish. Main growth vector is CPO, TAM expanded to pluggable transceivers. Shortage of CW lasers coming per hyperscaler discussions. POET ramping H2 2026 with SIVE. Any demand from midstream players feeds back to SIVE as the laser chokepoint.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 56.65
         }
       ]
     },
-    "ONGC": {
-      "symbol": "ONGC",
-      "name": "Oil & Natural Gas Corporation",
-      "market": "NSE",
-      "sector": "Energy",
+
+    "INTC": {
+      "symbol": "INTC",
+      "name": "Intel Corporation",
+      "market": "US",
+      "sector": "Semiconductors / Foundry",
+      "first_seen": "2026-05-11",
+      "first_price": 108.77,
+      "signals": [
+        {
+          "date": "2026-05-11",
+          "analyst": "Zephyr",
+          "signal": "Bullish",
+          "setup": "Rubin Ultra Packaging Win",
+          "thesis": "If Intel wins the 4-die Rubin Ultra packaging orders, CoPoS is coming soon. Intel entering NVIDIA advanced packaging supply chain may advance from 2028 to 2027. CoWoS exclusivity loosening.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": 108.77
+        },
+        {
+          "date": "2026-05-11",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "SK Hynix EMIB R&D Collaboration",
+          "thesis": "SK Hynix conducting joint R&D with Intel on 2.5D packaging and considering adopting EMIB. TSMC CoWoS suffering acute supply shortages — big tech turning to Intel EMIB as alternative. Intel EMIB expected to be added to 2.5D packaging supply chain for AI accelerators medium to long term.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 108.77
+        },
+        {
+          "date": "2026-05-11",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Tesla AI6 Foundry Order",
+          "thesis": "Tesla AI6 chip portion originally assigned to TSMC reportedly being transferred entirely to Intel Foundry under Trump administration pressure. Once-in-a-generation window for Intel to rebuild foundry business.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 108.77
+        },
+        {
+          "date": "2026-05-12",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Apple M7 Agreement + AWS EMIB",
+          "thesis": "Apple and Intel signed agreement December 2025. M7 chip uses Intel 18A-P, entering production end of 2027. Smartphone chip uses Intel 14A, production by end of 2028. AWS may be using EMIB for lower-end Trainium through MediaTek.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 108.77
+        }
+      ]
+    },
+
+    "MU": {
+      "symbol": "MU",
+      "name": "Micron Technology Inc",
+      "market": "US",
+      "sector": "Memory / DRAM / HBM",
+      "first_seen": "2026-05-11",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-11",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Memory Price Supercycle",
+          "thesis": "Memory prices going absolutely insane. Korea DRAM export prices up 18-35%, Flash memory up 47%, SSD up 140%. Memory supercycle underway. Micron winding down consumer brand Crucial, focusing on AI/HBM.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "SNDK": {
+      "symbol": "SNDK",
+      "name": "SanDisk Corporation",
+      "market": "US",
+      "sector": "Memory / NAND Flash",
+      "first_seen": "2026-05-11",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-11",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "NAND Supply Cliff",
+          "thesis": "Samsung halting 2D NAND production at Hwaseong converting to advanced 1c DRAM. Kioxia phasing out 2D NAND with final orders through September. Supply cliff deepening. SNDK benefits from tightening NAND supply.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "DRAM": {
+      "symbol": "DRAM",
+      "name": "Roundhill Memory ETF",
+      "market": "US",
+      "sector": "Memory ETF",
+      "first_seen": "2026-05-11",
+      "first_price": 51.10,
+      "signals": [
+        {
+          "date": "2026-05-11",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Memory Supercycle Proxy",
+          "thesis": "Memory prices going absolutely insane. Korea DRAM (incl. modules) +18%, DRAM (excl. modules) +35%, Flash memory +47%, SSD +140%. DDR4 prices in China's Huaqiangbei jumped 20% amid Samsung strike fears.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 51.10
+        }
+      ]
+    },
+
+    "SAMSUNG": {
+      "symbol": "005930.KS",
+      "name": "Samsung Electronics",
+      "market": "KR",
+      "sector": "Semiconductors / Memory",
+      "first_seen": "2026-05-15",
+      "first_price": 270500,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Memory Cycle Extension + Strike Risk Supply Shock",
+          "thesis": "Samsung strike risk threatens a second supply shock to the memory pricing cycle. DRAM inventory only 4-6 weeks of demand. Market consensus was Q3 price peak then Q4 stabilization, but strike risk could push peak beyond Q4. TrendForce projects memory supply shortage persisting through 2027. Also developing next-gen mobile HBM via Multi Stacked FOWLP. Nomura rates Buy with KRW 590,000 target — 118% upside.",
+          "levels": { "entry": null, "target": 590000, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 270500
+        }
+      ]
+    },
+
+    "SKHYNIX": {
+      "symbol": "000660.KS",
+      "name": "SK Hynix",
+      "market": "KR",
+      "sector": "Semiconductors / Memory / HBM",
+      "first_seen": "2026-05-15",
+      "first_price": 1819000,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "HBM Allocation Tightening Commodity DRAM Supply",
+          "thesis": "SK Hynix benefits from same memory surge cycle as Samsung. Significant DRAM output reallocated to HBM for AI servers, structurally tightening commodity DRAM supply. US hyperscalers offering large prepayments for AI datacenter capacity adds demand pressure. Nomura rates Buy with KRW 4,000,000 target — 120% upside.",
+          "levels": { "entry": null, "target": 4000000, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 1819000
+        }
+      ]
+    },
+
+    "SOULBRAIN": {
+      "symbol": "036830.KS",
+      "name": "Soulbrain Holdings",
+      "market": "KR",
+      "sector": "Semiconductors / Materials / HF",
+      "first_seen": "2026-05-15",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Iran-Driven HF Supply Shock — Price Hike June-July 2026",
+          "thesis": "Anhydrous hydrogen fluoride (AHF) prices up ~40% YTD due to Iran war disrupting Strait of Hormuz, knocking out 30%+ of global sulfur supply. Sulfuric acid prices up ~130% YTD. Soulbrain blends AHF into semiconductor-grade HF supplied to Samsung and SK Hynix. Korea has no domestic AHF production — ~90% sourced from China. HF price hikes expected late June-July 2026. Pass-through to chipmakers unavoidable.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "ENF_TECH": {
+      "symbol": "312860.KS",
+      "name": "ENF Technology",
+      "market": "KR",
+      "sector": "Semiconductors / Materials / HF",
+      "first_seen": "2026-05-15",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "HF Supply Shock Beneficiary",
+          "thesis": "ENF Technology is one of the domestic Korean HF producers sourcing Chinese AHF and blending to semiconductor-grade HF supplied to chipmakers. Benefits from same price hike pass-through dynamic flagged for June-July 2026 as Soulbrain.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "BGF_ECOMATERIALS": {
+      "symbol": "BGFM.KS",
+      "name": "BGF EcoMaterials / Fluorine Korea",
+      "market": "KR",
+      "sector": "Semiconductors / AHF Localization",
+      "first_seen": "2026-05-15",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Only Domestic Korean AHF Plant — 4Q 2026 Mass Production",
+          "thesis": "BGF EcoMaterials via subsidiary Fluorine Korea constructing 50,000 ton/year AHF plant in Ulsan targeting mass production 4Q 2026 — covering ~50% of Korean domestic demand. Japanese HF suppliers Daikin and Stella Chemifa in discussions on offtake. Strategically positioned as domestic alternative to Chinese AHF dependency.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "AJINOMOTO": {
+      "symbol": "2802.T",
+      "name": "Ajinomoto Co Inc",
+      "market": "JP",
+      "sector": "ABF Substrates / Advanced Packaging",
+      "first_seen": "2026-05-13",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-13",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "ABF +30% Price Hike + Super Expansion Cycle",
+          "thesis": "Ajinomoto raising ABF substrate film prices 30% from Q3 2026. Holds 95%+ share of global ABF market — extreme pricing power. ABF re-entered supply shortage phase from 1H 2026. AI chip packaging layers expanding from 3+3 to 11+11 and 13+13 after 2030 — structural demand. Building third ABF plant in Gifu Prefecture for demand beyond 2030. IC substrate sector entering Super Expansion Cycle over next 2-3 years. ABF supply-demand imbalance in 2027-2028 more likely to intensify.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "VICR": {
+      "symbol": "VICR",
+      "name": "Vicor Corporation",
+      "market": "US",
+      "sector": "Power Components / AI Infrastructure",
       "first_seen": "2026-05-14",
-      "first_price": 248.30,
+      "first_price": null,
       "signals": [
         {
           "date": "2026-05-14",
-          "analyst": "@zerodhamarkets",
+          "analyst": "Jukan",
           "signal": "Bullish",
-          "setup": "EMA Pullback",
-          "thesis": "ONGC pulling back to 20 EMA after strong breakout. Crude tailwind. Risk-reward favorable.",
-          "levels": { "entry": 248, "target": 290, "stop": 232 },
+          "setup": "Vicor Content Per Cerebras Wafer ≈ TSMC Wafer Value ($20K)",
+          "thesis": "Value of Vicor components per Cerebras wafer is almost as high as TSMC wafer value at ~$20K. Vicor custom VRM needs to deliver 25kW to a wafer using VPD. Extremely high content value relative to silicon. As Cerebras scales, Vicor content scales proportionally.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "AMAT": {
+      "symbol": "AMAT",
+      "name": "Applied Materials Inc",
+      "market": "US",
+      "sector": "Semiconductors / Equipment",
+      "first_seen": "2026-05-15",
+      "first_price": 436.62,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Portfolio Bundling Structural Moat",
+          "thesis": "AMAT competitive advantage lies not in any single tool but in its uniquely broad equipment portfolio enabling bundled solutions across multiple process steps. A fab does not run on one piece of equipment — AMAT cross-tool integration gives structural edge over single-tool specialists.",
+          "levels": { "entry": null, "target": null, "stop": null },
           "conviction": "Medium",
-          "price_at_signal": 248.30
+          "price_at_signal": 436.62
+        }
+      ]
+    },
+
+    "QCOM": {
+      "symbol": "QCOM",
+      "name": "Qualcomm Inc",
+      "market": "US",
+      "sector": "Semiconductors / AI Chips",
+      "first_seen": "2026-05-15",
+      "first_price": 201.49,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "LPU-Like AI ASIC to Chinese CSP — $4B Incremental Revenue",
+          "thesis": "Qualcomm expected to begin shipping LPU-like AI ASIC to a Chinese cloud service provider by end of 2026. Estimated shipment volume ~1 million units at ASP ~$4,000, implying ~$4B incremental revenue. Significant new AI infrastructure revenue stream beyond core mobile business.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": 201.49
+        }
+      ]
+    },
+
+    "TSM": {
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Co",
+      "market": "TW",
+      "sector": "Semiconductors / Foundry",
+      "first_seen": "2026-05-16",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-16",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Google COT Model — Hyperscaler Direct Customer",
+          "thesis": "Google directly told TSMC it wants to become a direct major customer following Apple COT model, bypassing Broadcom and MediaTek as ASIC design intermediaries. Structurally increases TSMC direct customer revenue and pricing power. Hyperscaler chip design internalization trend accelerating.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "AVGO": {
+      "symbol": "AVGO",
+      "name": "Broadcom Inc",
+      "market": "US",
+      "sector": "Semiconductors / ASIC Design",
+      "first_seen": "2026-05-16",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-16",
+          "analyst": "Jukan",
+          "signal": "Bearish",
+          "setup": "Google COT Model Threatens ASIC Services Long-Term",
+          "thesis": "Google stated goal to become direct TSMC customer via COT model would ultimately bypass Broadcom ASIC design services. Near-term impact limited but structural risk is real.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "TSEM": {
+      "symbol": "TSEM",
+      "name": "Tower Semiconductor Ltd",
+      "market": "US",
+      "sector": "Photonics Foundry / SiPh",
+      "first_seen": "2026-03-12",
+      "first_price": 118.93,
+      "current_price": 270.77,
+      "signals": [
+        {
+          "date": "2026-03-12",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "TSM of Photonics — Asymmetric Play",
+          "thesis": "TSEM is the TSM of photonics. Top 2 CPO picks: SOI and Tower Semi. Leading supplier of 1.6T SiPh PICs and primary foundry for scale-up CPO. 70% of SiPh capacity already reserved through 2028. $290M prepayment from silicon photonics customers. $1.3B contracted SiPh revenue for 2027.",
+          "levels": { "entry": 118.93, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 118.93
+        },
+        {
+          "date": "2026-05-13",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "TSEM up 23.1% — Thesis Confirmed",
+          "thesis": "TSEM up 23.1% on the day. Downstream foundry capacity squeeze translates to immense demand for raw substrates upstream with SOI. My optical picks are very interconnected.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 220.83
+        }
+      ]
+    },
+
+    "AAOI": {
+      "symbol": "AAOI",
+      "name": "Applied Optoelectronics Inc",
+      "market": "US",
+      "sector": "Photonics / Made in America Optical",
+      "first_seen": "2025-01-01",
+      "first_price": 20.00,
+      "current_price": 202.20,
+      "signals": [
+        {
+          "date": "2026-05-13",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "896% Return — Still Long Into 2027",
+          "thesis": "AAOI now up 6-7x at $200+. Top high conviction optical long into 2027. Building largest Made in America supply chain for CW laser fab and 800g/1.6T assembly. $400m+/month revenue target H2 2026.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 202.20
+        }
+      ]
+    },
+
+    "SOI": {
+      "symbol": "SOI",
+      "name": "Soitec SA",
+      "market": "EU",
+      "sector": "Semiconductor Substrates",
+      "first_seen": "2026-05-12",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-12",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Substrate Squeeze — Top 2 CPO Pick",
+          "thesis": "SOI hitting YTD highs with triple digit returns. Top 2 CPO picks are SOI and Tower Semi. TSEM $290M prepayment confirms immense upstream substrate demand.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "FOCI_3363": {
+      "symbol": "3363.TW",
+      "name": "FOCI Fiber Optic Communications (3363)",
+      "market": "TW",
+      "sector": "CPO / FAU — Critical Production Bottleneck",
+      "first_seen": "2026-05-12",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-12",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "THE CPO Production Bottleneck",
+          "thesis": "FOCI at ~$3.35B MC is extremely compelling for CPO exposure. TSMC COUPE director said FAU supplies by FOCI are the CPO production bottleneck. Leading supplier to NVDA and TSM with up to 50% market share (Morgan Stanley). HIMX signaled record demand. CPO TAM $0 to $91B in 2 years.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-15",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Most Undervalued CPO Player in Entire Market",
+          "thesis": "FOCI is one of the most undervalued CPO players at ~$3B. FOCI IS LITERALLY THE BOTTLENECK FOR CPO VOLUME RAMP AND MAIN SUPPLIER FOR TSM AND NVDA. High conviction Foci outperforms once institutions find this name.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "SHUNSIN_6451": {
+      "symbol": "6451.TW",
+      "name": "ShunSin Technology Holdings (6451)",
+      "market": "TW",
+      "sector": "CPO / SiPH Packaging & Test",
+      "first_seen": "2026-05-11",
+      "first_price": 423.00,
+      "current_price": 577.00,
+      "signals": [
+        {
+          "date": "2026-05-11",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Foxconn's CPO Arm — Free Hard Carry",
+          "thesis": "Foxconn SiPH and CPO packaging/test arm. Foxconn began shipping CPO switch racks to NVDA. Shunsin expanding Bac Giang Vietnam facility for CPO. Basically a free hard-carry by Foxconn.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 423.00
+        },
+        {
+          "date": "2026-05-12",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Foxconn CPO Shipments Confirmed — 50K Units",
+          "thesis": "Foxconn begun early shipments of all-optical CPO switch racks to NVIDIA. Forecasts revised upward from 10,000+ units in 2026 to 50,000+ units across 2026-2027. Supply extremely tight — not a single rack to spare.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 450.00
+        },
+        {
+          "date": "2026-05-15",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Thesis Playing Out + AVGO Orders + 1,240% EPS",
+          "thesis": "Shunsin CPO/SiPh idea playing out after 1 month. Up 36.41% past 5 days at 577 TWD. Also landed AVGO CPO/SiPH orders. EPS growth rate projected over 1,240% this year.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 577.00
+        }
+      ]
+    },
+
+    "NEXTRONICS_8417": {
+      "symbol": "8417.TW",
+      "name": "Nextronics Engineering (8417)",
+      "market": "TW",
+      "sector": "CPO Connectors / Robotics Supply",
+      "first_seen": "2026-05-11",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-11",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "10x Rerating to $2B MC by 2028",
+          "thesis": "NVDA CPO connector supplier. Modeled 2x FWD P/E for 2028 = 10x rerating to ~$2B+ MC. $200M MC company. CPO connector $15-25/unit, ELS thermal cages ~$50, 18 units per switch = ~$2K content per switch conservative. Also undiscovered supplier to Amazon robotics supply chains.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "NBIS": {
+      "symbol": "NBIS",
+      "name": "Nebius Group",
+      "market": "US",
+      "sector": "AI Infrastructure / Neocloud",
+      "first_seen": "2026-05-14",
+      "first_price": 186.10,
+      "current_price": 203.95,
+      "signals": [
+        {
+          "date": "2026-05-14",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Stellar Earnings — NVDA Backed Neocloud",
+          "thesis": "NBIS earnings stellar — $200+ premarket. $7-9B ARR in 2026. 40% adj. EBITDA margin. 4 GW contracted capacity. $6.3B capital secured by NVDA. Revenue up 841% YoY and 82% QoQ to $390M. Jensen Huang: Nebius will take care of you.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 186.10
+        }
+      ]
+    },
+
+    "HPS_A": {
+      "symbol": "HPS.A",
+      "name": "Hammond Power Solutions Inc",
+      "market": "CA",
+      "sector": "Power / AI Infrastructure",
+      "first_seen": "2026-05-13",
+      "first_price": 163.71,
+      "current_price": 347.00,
+      "signals": [
+        {
+          "date": "2026-05-13",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Vertical Move — 112% in 6 Months",
+          "thesis": "HPS.A is just a vertical line up 2-3% every day since thesis post. Up 111.96% past 6 months. Just 20 CAD away before triple digit returns.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 347.00
+        }
+      ]
+    },
+
+    "HARMONIC_6324": {
+      "symbol": "6324.T",
+      "name": "Harmonic Drive Systems Inc",
+      "market": "JP",
+      "sector": "Robotics / Humanoid Components",
+      "first_seen": "2026-05-14",
+      "first_price": 6600,
+      "current_price": 7010,
+      "signals": [
+        {
+          "date": "2026-05-14",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Western Robotics Leader — $4B MC — GS Listed",
+          "thesis": "Harmonic Drive (6324) one of the better humanoid exposure names at $4B valuation in GS research. Western leader in harmonic reduction gear — very large part of robotics/humanoid BOM. Personally picked up for exposure.",
+          "levels": { "entry": 6600, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": 6600
+        }
+      ]
+    },
+
+    "POET": {
+      "symbol": "POET",
+      "name": "POET Technologies Inc",
+      "market": "US",
+      "sector": "Photonics / Optical Platforms",
+      "first_seen": "2026-05-15",
+      "first_price": 14.37,
+      "current_price": 20.57,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "$50M Lumilens Deal + SIVE Connection",
+          "thesis": "POET up 22% premarket on $50M purchase from Lumilens, scaling to $500M. POET ramping H2 2026 with SIVE. Any demand from midstream players feeds back to SIVE as the laser chokepoint.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": 14.37
+        }
+      ]
+    },
+
+    "AXTI": {
+      "symbol": "AXTI",
+      "name": "AXT Inc",
+      "market": "US",
+      "sector": "InP Substrates / Geopolitical",
+      "first_seen": "2025-12-26",
+      "first_price": 15.01,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "InP Now in Trump-Xi Trade Talks — Thesis Confirmed",
+          "thesis": "AXTI/InP substrates now a major part of China-US Trump-Xi trade talks. China keeps tight InP export controls despite talks. AI industry bottlenecked by InP substrate supply. Originally flagged at ~$13 in December 2025.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 15.01
+        }
+      ]
+    },
+
+    "IQE": {
+      "symbol": "IQE",
+      "name": "IQE plc",
+      "market": "EU",
+      "sector": "Epiwafers / InP Western Chokepoint",
+      "first_seen": "2026-05-15",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Western Epiwafer Chokepoint — MTSI Kept Alive",
+          "thesis": "IQE most important player in Western world for epiwafers. MTSI paid off IQE debt to keep them alive. Also supplying LITE. World bottlenecked at epiwafer and InP substrate levels.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "LPK": {
+      "symbol": "LPK",
+      "name": "Lapka — Glass Substrates",
+      "market": "EU",
+      "sector": "Glass Substrates / Advanced Packaging",
+      "first_seen": "2026-05-15",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "ASML of Glass Substrates — 80% Global Market Share",
+          "thesis": "LPK is purest exposure to glass substrate advanced packaging shift. Intel, Samsung and almost every major semi adopting glass substrates. LPK supplies ~80% of global players. $650M MC. Waiting game for volume ramp.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "LITE": {
+      "symbol": "LITE",
+      "name": "Lumentum Holdings",
+      "market": "US",
+      "sector": "Photonics / EML Lasers",
+      "first_seen": "2026-05-12",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-12",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Established Photonics Leader — Backlogged to 2028",
+          "thesis": "LITE for EML — the established photonics chokepoint. Went $3B to $15B to $80B in 2 years from 2024. Still gets upside from CPO as new growth vector. Backlogged into 2028. Premiums keep going higher.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "COHR": {
+      "symbol": "COHR",
+      "name": "Coherent Corp",
+      "market": "US",
+      "sector": "Photonics",
+      "first_seen": "2026-05-12",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-12",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "CPO New Growth Vector",
+          "thesis": "COHR still gets upside from CPO as their new growth vector. Legacy pluggable revenue will face cannibalization over time but CPO is additive.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "RPI": {
+      "symbol": "RPI",
+      "name": "Raspberry Pi Holdings",
+      "market": "EU",
+      "sector": "Semiconductors",
+      "first_seen": "2026-05-12",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-12",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Shattered Revenue Projections by 52-55%",
+          "thesis": "RPI shattered projections by 52-55% forward revenue growth from ~15% estimate. Hitting YTD highs with triple digit returns. Expect continued record growth as AI, SiPH, and CPO drive structural re-rating.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "KAORI_8996": {
+      "symbol": "8996.TW",
+      "name": "Kaori Heat Treatment (8996)",
+      "market": "TW",
+      "sector": "Thermal Management / CPO",
+      "first_seen": "2026-05-12",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-12",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Taiwan Thermal — 86% YoY Revenue Growth",
+          "thesis": "Frequently flagged Taiwan thermal player. 86% Y/Y revenue growth (NT$948.8M). ~$3B valuation with likely hyperscaler ties. One of the two higher upside Taiwan thermal CPO plays.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "AURAS_3324": {
+      "symbol": "3324.TW",
+      "name": "Auras Technology (3324)",
+      "market": "TW",
+      "sector": "Thermal Management / CPO",
+      "first_seen": "2026-05-12",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-12",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Taiwan Thermal — 40% YoY Revenue Growth",
+          "thesis": "Frequently flagged Taiwan thermal player. ~40% Y/Y revenue growth (NT$2.84B). ~$3B valuation with likely hyperscaler ties.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "AUROTEK_TW": {
+      "symbol": "AUROTEK.TW",
+      "name": "Aurotek Corporation",
+      "market": "TW",
+      "sector": "Robotics / AI Manufacturing",
+      "first_seen": "2026-05-11",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-11",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "High-Growth Taiwan Robotics $300M MC",
+          "thesis": "$300M MC Taiwan robotics company. Revenue growth 58.7%, gross profit 101.2%, net profit 212% (NT$94M). Makes robotic arms and software for AI infrastructure, AI servers, high-end semiconductors.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "BHEL": {
+      "symbol": "BHEL",
+      "name": "Bharat Heavy Electricals Ltd",
+      "market": "NSE",
+      "sector": "Industrials / Power / AI Proxy",
+      "first_seen": "2026-05-17",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-17",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Strong Chart — AI Proxy / Power Infrastructure",
+          "thesis": "BHEL flagged as one of a few strong charts with focus on AI proxies as the leading sector. BHEL has exposure to power infrastructure buildout which is an AI datacenter proxy in India. FY27 expected to offer plenty of swing opportunities.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "HFCL": {
+      "symbol": "HFCL",
+      "name": "HFCL Ltd",
+      "market": "NSE",
+      "sector": "Optical Fiber / Telecom Infrastructure",
+      "first_seen": "2026-05-17",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-17",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Strong Chart — Optical Fiber + AI/Telecom Proxy",
+          "thesis": "HFCL flagged as strong chart in the AI proxy theme. India's leading optical fiber and telecom infrastructure company — local beneficiary of global optical fiber supply crunch and domestic AI/telecom buildout.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "THERMAX": {
+      "symbol": "THERMAX",
+      "name": "Thermax Ltd",
+      "market": "NSE",
+      "sector": "Industrials / Energy / AI Proxy",
+      "first_seen": "2026-05-17",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-17",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Strong Chart — Energy + AI Infrastructure Proxy",
+          "thesis": "Thermax flagged as strong chart in AI proxy/leading sector theme. Energy and environmental solutions provider — proxy for AI datacenter power infrastructure demand in India.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "IDEAFORGE": {
+      "symbol": "IDEAFORGE",
+      "name": "ideaForge Technology Ltd",
+      "market": "NSE",
+      "sector": "Defence / Drones",
+      "first_seen": "2026-05-17",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-17",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Strong Chart — Defence Sector",
+          "thesis": "ideaForge flagged as defence name with strong chart. India's leading drone manufacturer with government defence contracts. Secondary preference is Defence after AI proxies.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "SLS": {
+      "symbol": "SLS",
+      "name": "Sellas Life Sciences Group Inc",
+      "market": "US",
+      "sector": "Biotech / Oncology",
+      "first_seen": "2026-05-17",
+      "first_price": 7.01,
+      "signals": [
+        {
+          "date": "2026-05-17",
+          "analyst": "The Opportunist Investor",
+          "signal": "Bullish",
+          "setup": "Phase 3 Acute Leukemia — 2 Events Remaining — 5x-10x If Positive",
+          "thesis": "About to disclose Phase 3 trial results for acute leukemia. Only 2 more events (deaths) needed before results disclosed. Events taking longer than expected is a positive sign — patients living longer. If Phase 3 results positive and prove life extension: 5x-10x upside in a few weeks. Analyst entered at avg $5.71.",
+          "levels": { "entry": 5.71, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 7.01
+        }
+      ]
+    },
+
+    "LTELEVATOR": {
+      "symbol": "LTELEVATOR",
+      "name": "LT Elevator",
+      "market": "NSE",
+      "sector": "Industrials / Elevators",
+      "first_seen": "2026-05-17",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-17",
+          "analyst": "The Opportunist Investor",
+          "signal": "Bullish",
+          "setup": "Guidance Raised 50% to 80% Growth — FV ₹300-360",
+          "thesis": "Company raised revenue guidance from 50% to 80% growth. FY27 revenue est ₹170Cr at 50% growth. At 25% margins: PAT ₹28-29Cr, EPS ~14.5. At PE 20-25x: fair value ₹300-360.",
+          "levels": { "entry": null, "target": 330, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "MITSUCHEM": {
+      "symbol": "MITSUCHEM",
+      "name": "Mitsu Chem Plast Ltd",
+      "market": "NSE",
+      "sector": "Specialty Chemicals / Plastics",
+      "first_seen": "2026-05-17",
+      "first_price": 137.50,
+      "signals": [
+        {
+          "date": "2026-05-17",
+          "analyst": "The Opportunist Investor",
+          "signal": "Bullish",
+          "setup": "Multibagger — 30% Revenue Growth FY27 — 100% Upside",
+          "thesis": "Latest concall guided 30% revenue growth FY27 with 10% profit margins. Management pivoting to higher-margin orders. If they deliver: EPS ~17, fair value ₹300-360 — ~100% upside from entry at ₹135-140.",
+          "levels": { "entry": 137.50, "target": 330, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+
+    "BOT": {
+      "symbol": "BOT",
+      "name": "Robostrategy Inc",
+      "market": "US",
+      "sector": "AI / Robotics",
+      "first_seen": "2026-05-15",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-15",
+          "analyst": "Serenity",
+          "signal": "Bearish",
+          "setup": "AVOID — NAV $7.34 vs Price $37.92",
+          "thesis": "BOT is the biggest red flag. NAV $7.34/share but trading at $37.92. $2B dilution as valuation arbitrage. Retail just exit liquidity. Fund managers DM'ing influencers about it.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "High",
+          "price_at_signal": 37.92
+        }
+      ]
+    },
+
+    "CBRS": {
+      "symbol": "CBRS",
+      "name": "Cerebras Systems Inc",
+      "market": "US",
+      "sector": "AI Chips",
+      "first_seen": "2026-05-14",
+      "first_price": 185.00,
+      "current_price": 311.07,
+      "signals": [
+        {
+          "date": "2026-05-14",
+          "analyst": "Serenity",
+          "signal": "Neutral",
+          "setup": "Avoid at IPO Valuation — $90-100B MC",
+          "thesis": "Not a fan of CBRS at ~$90B-100B MC. Like the company but short term valuation disconnects with float dynamics after IPO. Would not be surprised if it ends up at absurd valuations briefly before correction.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Medium",
+          "price_at_signal": 311.07
+        }
+      ]
+    },
+
+    "FLNC": {
+      "symbol": "FLNC",
+      "name": "Fluence Energy Inc",
+      "market": "US",
+      "sector": "Energy Storage",
+      "first_seen": "2026-05-12",
+      "first_price": null,
+      "signals": [
+        {
+          "date": "2026-05-12",
+          "analyst": "Serenity",
+          "signal": "Neutral",
+          "setup": "Caution — 97M Share Overhang",
+          "thesis": "FLNC 20M share offering — share unlock not dilution but active shelf-registered resale capacity of 117M shares with ~97M remaining unlock introduces selling pressure. Cut concentration but holding some for hyperscaler deals.",
+          "levels": { "entry": null, "target": null, "stop": null },
+          "conviction": "Low",
+          "price_at_signal": null
         }
       ]
     }
+
   }
 }
