@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "last_updated": "2026-05-14",
+    "total_signals": 2,
+    "version": "1.0"
+  },
+  "stocks": {
+    "NAVA": {
+      "symbol": "NAVA",
+      "name": "NAVA Limited",
+      "market": "NSE",
+      "sector": "Energy",
+      "first_seen": "2026-05-13",
+      "first_price": 412.50,
+      "signals": [
+        {
+          "date": "2026-05-13",
+          "analyst": "@NeelChhabra",
+          "signal": "Bullish",
+          "setup": "VCP",
+          "thesis": "Classic VCP forming on weekly. 6-month base. Volume drying up perfectly. Watching for breakout above 425.",
+          "levels": { "entry": 425, "target": 520, "stop": 395 },
+          "conviction": "High",
+          "price_at_signal": 412.50
+        }
+      ]
+    },
+    "ONGC": {
+      "symbol": "ONGC",
+      "name": "Oil & Natural Gas Corporation",
+      "market": "NSE",
+      "sector": "Energy",
+      "first_seen": "2026-05-14",
+      "first_price": 248.30,
+      "signals": [
+        {
+          "date": "2026-05-14",
+          "analyst": "@zerodhamarkets",
+          "signal": "Bullish",
+          "setup": "EMA Pullback",
+          "thesis": "ONGC pulling back to 20 EMA after strong breakout. Crude tailwind. Risk-reward favorable.",
+          "levels": { "entry": 248, "target": 290, "stop": 232 },
+          "conviction": "Medium",
+          "price_at_signal": 248.30
+        }
+      ]
+    }
+  }
+}
