@@ -71,7 +71,7 @@ main{padding:20px 28px;display:flex;gap:20px;align-items:flex-start}
 .macro-section{padding:16px 28px;border-bottom:1px solid var(--border);background:var(--bg4)}
 .macro-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .macro-title{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.15em;color:var(--orange)}
-.macro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:10px}
+.macro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(580px,1fr));gap:14px}
 .macro-card{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--orange);border-radius:4px;padding:12px 14px}
 .macro-card-title{font-family:var(--font-mono);font-size:11px;font-weight:600;color:var(--text);margin-bottom:6px}
 .macro-card-body{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:8px}
@@ -400,33 +400,37 @@ function analysts(s) {
 }
 function pct(a, b) { return a && b ? (b - a) / a * 100 : null; }
 function fmtPct(p) { return (p >= 0 ? '+' : '') + p.toFixed(1) + '%'; }
-function fmtP(p, us) {
+function fmtP(p, s) {
   if (!p) return '—';
-  const sym = us ? '$' : '₹';
+  const sym = typeof s === 'object' ? currSym(s) : (s ? '$' : '₹');
   return sym + Number(p).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 function daysAgo(d) { return Math.floor((new Date() - new Date(d)) / 86400000); }
-function isUS(s) { return ['US', 'CA'].includes(s.market); }
+function currSym(s) {
+  const m = s.market;
+  if (m === 'NSE' || m === 'BSE') return '₹';
+  if (m === 'EU') return '€';
+  if (m === 'KR') return '₩';
+  if (m === 'JP') return '¥';
+  if (m === 'CA') return 'C$';
+  if (m === 'COMM') return '₹';
+  return '$';
+}
 
 // Market label/class map
 const mktClass = { NSE: 'mnse', BSE: 'mnse', US: 'mus', COMM: 'mcomm', TW: 'mtw', KR: 'mkr', JP: 'mjp', EU: 'meu', CA: 'mca' };
 const mktLabel = { NSE: '🇮🇳 NSE', BSE: '🇮🇳 BSE', US: '🇺🇸 US', COMM: '🥇 COMM', TW: '🇹🇼 TW', KR: '🇰🇷 KR', JP: '🇯🇵 JP', EU: '🇪🇺 EU', CA: '🇨🇦 CA' };
 
 // ── LIVE PRICE (Yahoo Finance via proxy) ──────────────────────
-// Uses a free CORS proxy to fetch Yahoo Finance data for US stocks
-async function fetchLivePrice(symbol, market) {
-  const key = symbol + '_' + market;
+async function fetchLivePrice(stock) {
+  const yticker = stock.yahoo_ticker;
+  if (!yticker) return null;
+  const key = yticker;
   if (liveP[key] !== undefined) return liveP[key];
-  liveP[key] = null; // prevent duplicate fetches
+  liveP[key] = null;
   try {
-    // Map symbol to Yahoo ticker
-    let yticker = symbol;
-    if (market === 'KR') yticker = symbol.replace('.KS', '') + '.KS';
-    else if (market === 'JP') yticker = symbol.replace('.T', '') + '.T';
-    else if (market === 'TW') yticker = symbol.replace('.TW', '') + '.TW';
-    // Use Yahoo Finance v8 quote endpoint via allorigins proxy
     const url = `https://api.allorigins.win/get?url=${encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${yticker}?interval=1d&range=1d`)}`;
-    const r = await fetch(url, { signal: AbortSignal.timeout(5000) });
+    const r = await fetch(url, { signal: AbortSignal.timeout(6000) });
     const j = await r.json();
     const data = JSON.parse(j.contents);
     const price = data?.chart?.result?.[0]?.meta?.regularMarketPrice;
@@ -531,9 +535,9 @@ function render() {
     vis.map((s, i) => card(s, i)).join('') :
     '<div class="empty"><div class="empty-t">No stocks match filters</div></div>';
 
-  // Fetch live prices for US stocks asynchronously
-  vis.filter(s => isUS(s) && !s.current_price).forEach(async s => {
-    const price = await fetchLivePrice(s.symbol, s.market);
+  // Fetch live prices for all stocks with yahoo_ticker asynchronously
+  vis.filter(s => s.yahoo_ticker && !s.current_price).forEach(async s => {
+    const price = await fetchLivePrice(s);
     if (price) {
       const el = document.getElementById('live_' + s.symbol);
       if (el) {
@@ -575,11 +579,11 @@ function card(s, i) {
     <div class="price-row">
       <div class="pb">
         <div class="plabel">First Seen ${s.first_seen || ''}</div>
-        <div class="pval" style="color:var(--muted)">${fmtP(s.first_price, us)}</div>
+        <div class="pval" style="color:var(--muted)">${fmtP(s.first_price, s)}</div>
       </div>
       <div class="pb" id="live_${s.symbol}">
         <div class="plabel">Current Price</div>
-        <div class="pval">${s.current_price ? fmtP(s.current_price, us) : '<span class="loading-price">fetching…</span>'}</div>
+        <div class="pval">${s.current_price ? fmtP(s.current_price, s) : '<span class="loading-price">fetching…</span>'}</div>
       </div>
       ${isM ? `<span style="margin-left:auto;font-family:var(--font-mono);font-size:9px;color:var(--purple)">◆ ${als.length} analysts · ${s.signals.length} signals</span>`
              : `<span style="margin-left:auto;font-family:var(--font-mono);font-size:9px;color:var(--muted)">${s.signals.length} signal${s.signals.length > 1 ? 's' : ''}</span>`}
@@ -635,11 +639,11 @@ function openModal(symbol) {
       <div class="modal-price-grid">
         <div class="mprice-cell">
           <div class="mprice-label">First Seen (${s.first_seen || '—'})</div>
-          <div class="mprice-val cb">${fmtP(s.first_price, us)}</div>
+          <div class="mprice-val cb">${fmtP(s.first_price, s)}</div>
         </div>
         <div class="mprice-cell">
           <div class="mprice-label">Current Price</div>
-          <div class="mprice-val cg" id="modal-live-${symbol}">${s.current_price ? fmtP(s.current_price, us) : '<span class="loading-price">Fetching live price…</span>'}</div>
+          <div class="mprice-val cg" id="modal-live-${symbol}">${s.current_price ? fmtP(s.current_price, s) : '<span class="loading-price">Fetching live price…</span>'}</div>
         </div>
         <div class="mprice-cell">
           <div class="mprice-label">Move Since Identified</div>
@@ -665,7 +669,7 @@ function openModal(symbol) {
                 <span class="timeline-analyst">${sg.analyst}</span>
                 <span class="badge ${sg.signal === 'Bullish' ? 'bull' : sg.signal === 'Bearish' ? 'bear' : 'neut'}">${sg.signal}</span>
                 <span class="badge" style="color:var(--muted);border:1px solid var(--border)">${sg.conviction || '—'}</span>
-                ${sg.price_at_signal ? `<span class="timeline-date">@ ${fmtP(sg.price_at_signal, us)}</span>` : ''}
+                ${sg.price_at_signal ? `<span class="timeline-date">@ ${fmtP(sg.price_at_signal, s)}</span>` : ''}
               </div>
               ${sg.setup ? `<div class="timeline-setup" style="margin-bottom:6px">${sg.setup}</div>` : ''}
               <div class="timeline-thesis">${sg.thesis}</div>
@@ -694,11 +698,11 @@ function openModal(symbol) {
   document.body.style.overflow = 'hidden';
 
   // Fetch live price for modal
-  if (isUS(s)) {
-    fetchLivePrice(s.symbol, s.market).then(price => {
+  if (s.yahoo_ticker) {
+    fetchLivePrice(s).then(price => {
       if (price) {
         const el = document.getElementById('modal-live-' + symbol);
-        if (el) el.innerHTML = `<span class="live-price-tag">LIVE</span> $${price.toFixed(2)}`;
+        if (el) el.innerHTML = `<span class="live-price-tag">LIVE</span> ${currSym(s)}${price.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
       }
     });
   }
@@ -716,26 +720,69 @@ function renderMacro() {
   if (!DATA) return;
   const macro = DATA.macro || [];
   document.getElementById('macro-cnt').textContent = macro.length + ' themes';
-  if (!macro.length) return;
+  if (!macro.length) {
+    document.getElementById('macro-grid').innerHTML = '<div class="empty"><div class="empty-t">No macro data</div>Add macro entries to signals.json</div>';
+    return;
+  }
 
-  document.getElementById('macro-grid').innerHTML = macro.map(m => `
-    <div class="macro-card">
-      <div class="macro-card-title">${m.title}</div>
-      <div class="macro-card-body">${m.summary}</div>
-      <div class="macro-tags">
-        ${(m.tags || []).map(t => `<span class="macro-tag tag-${t.type}">${t.label}</span>`).join('')}
+  const urgencyColor = { 'High': 'var(--red)', 'Medium': 'var(--yellow)', 'Low': 'var(--green)' };
+  const mktFlag = { US: '🇺🇸', NSE: '🇮🇳', BSE: '🇮🇳', EU: '🇪🇺', TW: '🇹🇼', KR: '🇰🇷', JP: '🇯🇵', CA: '🇨🇦', COMM: '🥇' };
+
+  document.getElementById('macro-grid').innerHTML = macro.map(m => {
+    const posBen = (m.beneficiaries || []).filter(b => b.impact === 'Positive');
+    const negBen = (m.beneficiaries || []).filter(b => b.impact === 'Negative');
+
+    return `<div class="macro-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <span style="font-family:var(--font-mono);font-size:9px;color:var(--muted);background:var(--bg3);padding:2px 6px;border-radius:2px">${m.id}</span>
+        <span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;border-radius:2px;border:1px solid;color:${urgencyColor[m.urgency]||'var(--muted)'};border-color:${urgencyColor[m.urgency]||'var(--muted)'}">${m.urgency} Urgency</span>
+        <span style="font-family:var(--font-mono);font-size:9px;color:var(--muted);margin-left:auto">${m.horizon}</span>
       </div>
-      ${m.us_beneficiaries?.length ? `<div class="macro-beneficiaries">
-        <div class="macro-ben-label">🇺🇸 US Stocks that benefit</div>
-        <div class="macro-ben-stocks">${m.us_beneficiaries.map(s => `<span class="macro-stock-chip" onclick="openModal('${s}')">${s}</span>`).join('')}</div>
+      <div class="macro-card-title">${m.title}</div>
+      <div style="font-family:var(--font-mono);font-size:10px;color:var(--cyan);margin-bottom:8px">${m.subtitle}</div>
+      <div class="macro-card-body">${m.summary}</div>
+      <div class="macro-tags" style="margin-bottom:10px">
+        ${(m.tags || []).map(t => `<span class="macro-tag tag-${t.type}">${t.label}</span>`).join('')}
+        <span style="margin-left:auto;font-family:var(--font-mono);font-size:9px;color:var(--muted)">${m.analyst} · ${m.date}</span>
+      </div>
+
+      <!-- Impact breakdown -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:10px">
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:8px">
+          <div style="font-family:var(--font-mono);font-size:8px;color:var(--muted);text-transform:uppercase;margin-bottom:4px">🌐 Global</div>
+          <div style="font-size:10px;color:var(--text);line-height:1.4">${m.impact?.global || '—'}</div>
+        </div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:8px">
+          <div style="font-family:var(--font-mono);font-size:8px;color:var(--muted);text-transform:uppercase;margin-bottom:4px">🇺🇸 US Markets</div>
+          <div style="font-size:10px;color:var(--text);line-height:1.4">${m.impact?.us || '—'}</div>
+        </div>
+        <div style="background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:8px">
+          <div style="font-family:var(--font-mono);font-size:8px;color:var(--muted);text-transform:uppercase;margin-bottom:4px">🇮🇳 India</div>
+          <div style="font-size:10px;color:var(--text);line-height:1.4">${m.impact?.india || '—'}</div>
+        </div>
+      </div>
+
+      <!-- Beneficiaries -->
+      ${posBen.length ? `<div class="macro-beneficiaries">
+        <div class="macro-ben-label" style="color:var(--green)">▲ Positive Impact — ${posBen.length} stock${posBen.length>1?'s':''}</div>
+        <div style="display:flex;flex-direction:column;gap:4px;margin-top:4px">
+          ${posBen.map(b => `<div style="display:flex;align-items:center;gap:6px;background:var(--green-dim);border:1px solid rgba(0,208,132,0.2);border-radius:3px;padding:4px 8px">
+            <span style="font-family:var(--font-mono);font-size:10px;color:var(--green);cursor:pointer;min-width:80px" onclick="openModal('${b.symbol}')">${mktFlag[b.market]||''} ${b.symbol.replace('_3363','').replace('_6451','').replace('_8417','').replace('_8996','').replace('_3324','')}</span>
+            <span style="font-size:10px;color:var(--muted)">${b.reason}</span>
+          </div>`).join('')}
+        </div>
       </div>` : ''}
-      ${m.india_beneficiaries?.length ? `<div class="macro-beneficiaries">
-        <div class="macro-ben-label">🇮🇳 India Stocks that benefit</div>
-        <div class="macro-ben-stocks">${m.india_beneficiaries.map(s => `<span class="macro-stock-chip" onclick="openModal('${s}')">${s}</span>`).join('')}</div>
+      ${negBen.length ? `<div class="macro-beneficiaries" style="margin-top:8px">
+        <div class="macro-ben-label" style="color:var(--red)">▼ Negative Impact — ${negBen.length} stock${negBen.length>1?'s':''}</div>
+        <div style="display:flex;flex-direction:column;gap:4px;margin-top:4px">
+          ${negBen.map(b => `<div style="display:flex;align-items:center;gap:6px;background:var(--red-dim);border:1px solid rgba(255,69,96,0.2);border-radius:3px;padding:4px 8px">
+            <span style="font-family:var(--font-mono);font-size:10px;color:var(--red);cursor:pointer;min-width:80px" onclick="openModal('${b.symbol}')">${mktFlag[b.market]||''} ${b.symbol}</span>
+            <span style="font-size:10px;color:var(--muted)">${b.reason}</span>
+          </div>`).join('')}
+        </div>
       </div>` : ''}
-      <div style="font-family:var(--font-mono);font-size:9px;color:var(--muted);margin-top:8px">Source: ${m.analyst} · ${m.date}</div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 // ── INIT ──────────────────────────────────────────────────────
