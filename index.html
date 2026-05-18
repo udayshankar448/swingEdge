@@ -406,6 +406,7 @@ function fmtP(p, s) {
   return sym + Number(p).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 function daysAgo(d) { return Math.floor((new Date() - new Date(d)) / 86400000); }
+function isUS(s) { return ['US', 'CA'].includes(s.market); }
 function currSym(s) {
   const m = s.market;
   if (m === 'NSE' || m === 'BSE') return '₹';
