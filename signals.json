@@ -1,7 +1,7 @@
 {
   "meta": {
     "last_updated": "2026-05-18",
-    "total_signals": 60,
+    "total_signals": 76,
     "version": "2.0",
     "analysts": [
       "Serenity (@aleabitoreddit)",
@@ -238,9 +238,24 @@
           },
           "conviction": "High",
           "price_at_signal": 270500
+        },
+        {
+          "date": "2026-05-18",
+          "analyst": "Jukan",
+          "signal": "Neutral",
+          "setup": "Samsung Senior Advisor warns memory price decline H2 2027; Chinese CAPA to 6M wafers/month",
+          "thesis": "Kye-hyun Kyung, Senior Advisor and former head of Samsung Device Solutions, warned at 285th NAEK Forum that memory prices will decline starting H2 2027. Global memory CAPA expected to surge to 6M wafers/month driven by Chinese players. Memory demand itself could contract from 2028 if Big Tech capex ROI deteriorates. NOTE: 2026 supercycle thesis remains intact \u2014 this is a H2 2027+ risk signal.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "005930.KS"
+      "yahoo_ticker": "005930.KS",
+      "current_price": 270500
     },
     "SKHYNIX": {
       "symbol": "000660.KS",
@@ -263,9 +278,24 @@
           },
           "conviction": "High",
           "price_at_signal": 1819000
+        },
+        {
+          "date": "2026-05-18",
+          "analyst": "Jukan",
+          "signal": "Neutral",
+          "setup": "Same peak-cycle warning H2 2027; DDR5 demand positive from Agentic AI CPU servers offsets near-term",
+          "thesis": "Same Kye-hyun Kyung NAEK Forum warning. Korean memory must prepare for post-boom period starting H2 2027. Positive offset: CPU-dedicated Agentic AI servers use dual-socket configs with 2-4x DRAM requirements \u2014 DDR5 demand per server significantly higher than previously modeled. This is a 2026 demand positive but does not change the medium-term H2 2027 cycle peak warning.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "000660.KS"
+      "yahoo_ticker": "000660.KS",
+      "current_price": 1819000
     },
     "SOULBRAIN": {
       "symbol": "036830.KS",
@@ -463,6 +493,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-18",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "COUPE-on-Substrate entering mass production 2H 2026; CPO architecture scale-up drives FAU bottleneck narrative",
+          "thesis": "Serenity expects FAU + component bottlenecks to become major narrative next year as CPO architecture led by NVDA and TSM scales. TSMC COUPE-on-Substrate (Compact Universal Photonic Engine integrated into ABF substrate) is on track for mass production 2H 2026. Positions TSMC as the integration hub for next-gen AI server interconnect architecture.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "TSM"
@@ -473,7 +517,7 @@
       "market": "US",
       "sector": "Semiconductors / ASIC Design",
       "first_seen": "2026-05-16",
-      "first_price": null,
+      "first_price": 425.19,
       "signals": [
         {
           "date": "2026-05-16",
@@ -488,6 +532,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-18",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Google TPU: AVGO 3.68M units 2026 to 6.76M units 2027 (+84%); market pricing as networking co, not custom silicon pillar",
+          "thesis": "UBS models 2026 total Google TPU shipments at 4.13M units: 3.68M from AVGO, 450K from MediaTek. For 2027: 9.87M total TPUs, 6.76M from AVGO (+84% YoY). At 18x forward earnings AVGO is underpriced \u2014 custom silicon line will force a multiple rerate. 9.87M total TPUs in 2027 implies ~35-40B in custom silicon spend.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 425.19
         }
       ],
       "yahoo_ticker": "AVGO"
@@ -618,9 +676,24 @@
           },
           "conviction": "High",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-18",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Next AXTI-style call; FAU bottleneck center; price 807 TWD",
+          "thesis": "Serenity expects many articles about FAU + component bottlenecks next year as CPO architecture led by NVDA + TSM scales. FOCI (~$2.8B MC) is specifically called out as a name that will be in the center of it. Serenity likens this to AXTI \u2014 implying FOCI could deliver AXTI-like returns if CPO scales as expected.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 807.0
         }
       ],
-      "yahoo_ticker": "3363.TW"
+      "yahoo_ticker": "3363.TW",
+      "current_price": 807.0
     },
     "SHUNSIN_6451": {
       "symbol": "6451.TW",
@@ -697,9 +770,24 @@
           },
           "conviction": "High",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-18",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Next AXTI-style call; FAU bottleneck; ~$246M MC; higher leverage than FOCI; price 190.50 TWD",
+          "thesis": "Serenity calls out Nextronics (~$246M MC, 8147.TW) alongside FOCI as a name that will be in the center of FAU + CPO bottleneck narratives as CPO architecture scales. Smaller market cap than FOCI implies potentially higher upside leverage. Serenity likens this to AXTI-style setup.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 190.5
         }
       ],
-      "yahoo_ticker": "8417.TW"
+      "yahoo_ticker": "8417.TW",
+      "current_price": 190.5
     },
     "NBIS": {
       "symbol": "NBIS",
@@ -803,7 +891,8 @@
           "price_at_signal": 14.37
         }
       ],
-      "yahoo_ticker": "POET"
+      "yahoo_ticker": "POET",
+      "status": "Bearish"
     },
     "AXTI": {
       "symbol": "AXTI",
@@ -826,6 +915,20 @@
           },
           "conviction": "High",
           "price_at_signal": 15.01
+        },
+        {
+          "date": "2026-05-18",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "White House shortage list + Trump-Xi trade talks mention; +558% from Dec 2025 call; now the benchmark for FOCI and Nextronics",
+          "thesis": "Serenity originally called AXTI in Dec 2025 as a national AI supply chain vulnerability at ~$1.13/share (~$700M MC). AXTI appeared on the White House shortage list and became a major talking point in US-China trade talks (Trump fact sheet mentions indium among critical minerals). Stock gained +558% to ~$15. Serenity now uses AXTI as the benchmark \u2014 FOCI and Nextronics are the next AXTI-style calls.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "AXTI"
@@ -1302,9 +1405,24 @@
           },
           "conviction": "High",
           "price_at_signal": 295800
+        },
+        {
+          "date": "2026-05-18",
+          "analyst": "Darvas Box Trader",
+          "signal": "Bullish",
+          "setup": "Silver at $77.4 \u2014 good Darvas sign; key stop: close below $74.5 invalidates",
+          "thesis": "Silver at $77.4. Darvas Box Trader sees good Darvas Box sign, building on prior post at $76. Key stop/invalidation level is $74.5. Maintaining bullish stance consistent with 5-year bull thesis and India customs duty hike catalyst.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": 74.5
+          },
+          "conviction": "Medium",
+          "price_at_signal": 77.4
         }
       ],
-      "yahoo_ticker": null
+      "yahoo_ticker": null,
+      "current_price": 77.4
     },
     "NRB": {
       "symbol": "NRB",
@@ -1430,6 +1548,206 @@
         }
       ],
       "yahoo_ticker": "NIFTY_MIDSMALL.NS"
+    },
+    "NVDA": {
+      "symbol": "NVDA",
+      "name": "NVIDIA Corporation",
+      "market": "US",
+      "sector": "Semiconductors / AI GPUs",
+      "first_seen": "2026-05-18",
+      "first_price": 225.32,
+      "yahoo_ticker": "NVDA",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "GF Overseas Buy reiterated; target raised $292 to $308; Rubin delay offset by Blackwell ramp + LPX + Vera CPU",
+          "thesis": "GF Overseas reiterates Buy on NVDA, target raised to $308 (28x FY27/28E P/E). F2Q guidance $91B, actual $93B vs consensus $86.2B. Rubin mass production delayed ~1 month to September but 2300W spec unchanged. LPX rack ramp faster than expected \u2014 16,000 LPX racks from 4Q26 through 2027 contributing ~$70B revenue. NVIDIA may shift N3 wafer capacity from Rubin to Vera CPU to capture Agentic AI trend. Taiwanese media believes NVIDIA will next lock up ABF substrate capacity via LTAs and equity investments \u2014 replicating HBM/CoWoS playbook.",
+          "levels": {
+            "entry": null,
+            "target": 308.0,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 225.32
+        }
+      ]
+    },
+    "AEHR": {
+      "symbol": "AEHR",
+      "name": "Aehr Test Systems",
+      "market": "US",
+      "sector": "Semiconductors / Test Equipment",
+      "first_seen": "2026-05-18",
+      "first_price": null,
+      "yahoo_ticker": "AEHR",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "SiC wafer-level burn-in overlooked; SiC cycle in recovery phase",
+          "thesis": "Jukan and citrini both bullish on SiC. AEHR core market is SiC wafer-level burn-in. Market distracted by AI ASIC logic burn-in narrative, forgetting AEHR SiC EV-driven opportunity. SiC cycle appears to be in a recovery phase.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "SMTOY": {
+      "symbol": "SMTOY",
+      "name": "Sumitomo Electric Industries Ltd.",
+      "market": "JP",
+      "sector": "Semiconductors / Compound Substrates / InP",
+      "first_seen": "2026-05-18",
+      "first_price": null,
+      "yahoo_ticker": "5802.T",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Co-controls 60-70%+ of global InP substrate supply with AXTI; AI supply chain quasi-monopoly",
+          "thesis": "AXTI and SMTOY together control 60-70%+ of world InP substrates. Future NVDA, Google TPU pods, META, MSFT, AMZN hyperscaler clusters all require InP-based lasers. Sumitomo is the larger player by market cap (~$31.7B). Same bottleneck thesis as AXTI \u2014 InP scarcity is a national security issue as CPO scales.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "MEDIATEK_2454": {
+      "symbol": "2454.TW",
+      "name": "MediaTek Inc.",
+      "market": "TW",
+      "sector": "Semiconductors / Custom Silicon / AI ASIC",
+      "first_seen": "2026-05-18",
+      "first_price": null,
+      "yahoo_ticker": "2454.TW",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "UBS: MediaTek TPU 450K in 2026 to 3.11M in 2027 (+7x); Google aggressively multi-sourcing beyond AVGO",
+          "thesis": "UBS models MediaTek TPU shipments at 450K units in 2026 ramping to 3.11M in 2027 \u2014 a 7x increase. Google multi-sourcing aggressively. Total 2027 TPU custom silicon spend ~$35-40B. MediaTek 7x unit jump validates near-term ASIC design win and counters longer-term COT risk from Google.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "VOEPL": {
+      "symbol": "VOEPL",
+      "name": "Voltbek Home Appliances (Voltas-BSH JV)",
+      "market": "NSE",
+      "sector": "Consumer Durables / AC Compressors",
+      "first_seen": "2026-05-18",
+      "first_price": null,
+      "yahoo_ticker": "VOEPL.NS",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "Tijori",
+          "signal": "Bullish",
+          "setup": "India caps AC compressor imports for FY26; VOEPL has 2.8M capacity at 50% utilization; can scale to 7M",
+          "thesis": "India government capped AC compressor imports for FY26. VOEPL (Voltas-BSH JV) is key domestic beneficiary with ~2.8M unit capacity at 50% utilization, plans to scale to ~7M units if demand materializes. Policy-driven catalyst with immediate near-term impact.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "IBIDEN": {
+      "symbol": "4062.T",
+      "name": "Ibiden Co. Ltd.",
+      "market": "JP",
+      "sector": "Semiconductors / ABF Substrates",
+      "first_seen": "2026-05-18",
+      "first_price": null,
+      "yahoo_ticker": "4062.T",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "NVIDIA next likely to lock up ABF substrate capacity via LTAs/equity \u2014 Ibiden is dominant ABF manufacturer",
+          "thesis": "Taiwanese media flags NVIDIA may preemptively lock up high-end ABF substrate capacity through LTAs, prepayments, and equity investments \u2014 replicating HBM and CoWoS supply control playbook. Ibiden is the dominant ABF substrate manufacturer globally. ABF for AI GPUs consumes 5-10x more material than conventional CPU substrates.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "SHINKO": {
+      "symbol": "6967.T",
+      "name": "Shinko Electric Industries",
+      "market": "JP",
+      "sector": "Semiconductors / ABF Substrates",
+      "first_seen": "2026-05-18",
+      "first_price": null,
+      "yahoo_ticker": "6967.T",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Major ABF substrate supplier for AI chip packaging; NVIDIA supply lock-up beneficiary",
+          "thesis": "Shinko Electric is a major ABF substrate supplier for AI chip packaging. Benefits from same NVIDIA ABF substrate lock-up thesis as Ibiden. ABF supply-demand for high-end substrate expected to remain tight as NVIDIA Vera Rubin platform scales.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "MURATA": {
+      "symbol": "6981.T",
+      "name": "Murata Manufacturing Co. Ltd.",
+      "market": "JP",
+      "sector": "Passive Components / MLCC",
+      "first_seen": "2026-05-18",
+      "first_price": null,
+      "yahoo_ticker": "6981.T",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "MLCC price decline hit 3-year low \u2014 TrendForce signals price rebound imminent",
+          "thesis": "TrendForce research shows strong AI chip demand is tightening supply-demand for high-end MLCCs. Distributors have begun precautionary inventory build-up. Average decline in MLCC prices hit lowest level in 3 years \u2014 TrendForce interprets this as pricing cycle entering critical phase ahead of rebound. Murata is world's largest MLCC manufacturer \u2014 direct primary beneficiary.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
     }
   },
   "macro": [
@@ -2140,6 +2458,352 @@
           "market": "US",
           "impact": "Negative",
           "reason": "Google COT model threatens ASIC design services revenue long-term"
+        }
+      ]
+    },
+    {
+      "id": "M011",
+      "title": "ABF Substrates \u2014 NVIDIA Next Supply Bottleneck Lock-Up",
+      "subtitle": "NVIDIA may preemptively secure ABF substrate capacity via LTAs and equity investments, replicating HBM/CoWoS playbook",
+      "date": "2026-05-18",
+      "analyst": "Jukan",
+      "category": "Mega Theme",
+      "urgency": "High",
+      "horizon": "2026-2027",
+      "summary": "Taiwanese media and Jukan flag that NVIDIA's next strategic move is to preemptively lock up high-end ABF substrate capacity through LTAs, prepayments, and equity investments \u2014 replicating the HBM and CoWoS supply control playbook. TSMC COUPE-on-Substrate CPO solution entering mass production 2H 2026. ABF substrates for AI GPUs consume 5-10x more material than conventional CPU substrates due to larger die area and higher layer counts. Supply-demand for high-end ABF expected to remain tight for an extended period.",
+      "impact": {
+        "global": "Tight ABF supply becomes next AI accelerator bottleneck. Primary beneficiaries: Ibiden (4062.T), Shinko Electric (6967.T), Unimicron (3037.TW). NVIDIA demand-driven lock-up creates structural advantage.",
+        "us": "NVIDIA locks up supply ahead of Vera Rubin ramp. Positive for INTC IFS (EMIB-T substrate wins). Potential negative for non-NVIDIA customers who cannot secure ABF allocation.",
+        "india": "Minimal direct exposure. Indirect benefit via AI infrastructure capex cycle."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Semiconductors / Substrates"
+        },
+        {
+          "type": "sector",
+          "label": "AI Supply Chain"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "IBIDEN",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "Ibiden is dominant ABF substrate manufacturer globally; NVIDIA LTA/equity investment directly benefits Ibiden"
+        },
+        {
+          "symbol": "SHINKO",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "Shinko Electric is major ABF substrate supplier for AI chip packaging"
+        },
+        {
+          "symbol": "NVDA",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "NVIDIA secures supply chain advantage replicating CoWoS/HBM playbook"
+        },
+        {
+          "symbol": "TSM",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "TSMC COUPE-on-Substrate enters mass production 2H 2026 \u2014 ABF critical to CPO integration"
+        },
+        {
+          "symbol": "AJINOMOTO",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "Ajinomoto holds 95%+ of global ABF market \u2014 NVIDIA lock-up means massive contracted revenue"
+        }
+      ]
+    },
+    {
+      "id": "M012",
+      "title": "MLCC Price Cycle Rebound",
+      "subtitle": "TrendForce: MLCC price decline hit 3-year low; high-end supply tightening; rebound imminent",
+      "date": "2026-05-18",
+      "analyst": "Jukan",
+      "category": "Supercycle",
+      "urgency": "Medium",
+      "horizon": "2026",
+      "summary": "TrendForce research shows strong AI chip demand is tightening supply-demand for high-end MLCCs while consumer-grade MLCC supply is also under pressure. Distributors have begun precautionary inventory build-up. Average decline in MLCC prices hit lowest level in 3 years \u2014 TrendForce interprets this as the MLCC pricing cycle entering a critical phase ahead of a potential rebound. This follows Zephyr's earlier call that 2026 is the year of analog and legacy semis.",
+      "impact": {
+        "global": "MLCC price rebound benefits Murata (6981.T), TDK (6762.T), Samsung Electro-Mechanics (009150.KS), Yageo (2327.TW), Walsin (2492.TW). Margin expansion catalyst for MLCC manufacturers.",
+        "us": "US electronics OEMs (Apple, PC makers) face higher component costs. MLCC distributors benefit from inventory build-up.",
+        "india": "Indirect exposure via consumer electronics supply chain. Dixon Technologies and Indian EMS players face mild cost pressure."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Passive Components / MLCC"
+        },
+        {
+          "type": "sector",
+          "label": "Analog & Legacy Semi"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "MURATA",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "World's largest MLCC manufacturer \u2014 direct primary beneficiary of price rebound"
+        }
+      ]
+    },
+    {
+      "id": "M013",
+      "title": "Korea Memory Supercycle Peak Warning \u2014 H2 2027 Risk",
+      "subtitle": "Samsung Senior Advisor warns memory prices fall H2 2027; Chinese CAPA to 6M wafers/month; demand may contract 2028+",
+      "date": "2026-05-18",
+      "analyst": "Jukan",
+      "category": "Geopolitical Risk",
+      "urgency": "Medium",
+      "horizon": "2027-2028",
+      "summary": "Kye-hyun Kyung, Senior Advisor and former head of Samsung Device Solutions, warned at 285th NAEK Forum that memory prices will decline starting H2 2027 when global CAPA surges to 6M wafers/month driven by Chinese players. Memory demand itself could contract from 2028 if Big Tech capex ROI deteriorates. Korea holds ~70% of DRAM market but only 1.5% of fabless. NOTE: 2026 supercycle thesis remains intact \u2014 this is a medium-term risk flag.",
+      "impact": {
+        "global": "Chinese memory capacity expansion (CXMT, YMTC) is the structural threat to Korean memory pricing power from H2 2027. Global DRAM ASPs expected to peak in 2027 before declining.",
+        "us": "Positive for US AI compute buyers \u2014 cheaper memory in 2028+ reduces AI infrastructure cost. Negative for DRAM-exposed stocks if peak occurs earlier.",
+        "india": "Indirect \u2014 cheaper memory in 2028 benefits Indian IT infrastructure and consumer electronics."
+      },
+      "tags": [
+        {
+          "type": "bearish",
+          "label": "Bearish H2 2027+"
+        },
+        {
+          "type": "sector",
+          "label": "Semiconductors / Memory"
+        },
+        {
+          "type": "sector",
+          "label": "Korea"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "SAMSUNG",
+          "market": "KR",
+          "impact": "Negative",
+          "reason": "Faces memory price declines from H2 2027 as Chinese CAPA surges"
+        },
+        {
+          "symbol": "SKHYNIX",
+          "market": "KR",
+          "impact": "Negative",
+          "reason": "Same cycle peak risk from H2 2027"
+        }
+      ]
+    },
+    {
+      "id": "M014",
+      "title": "FAU + CPO Component Bottleneck \u2014 Next AXTI-Style Opportunity",
+      "subtitle": "Serenity expects FAU + CPO component bottlenecks to dominate 2027 narrative as NVDA + TSM CPO architecture scales",
+      "date": "2026-05-18",
+      "analyst": "Serenity",
+      "category": "Mega Theme",
+      "urgency": "High",
+      "horizon": "2027",
+      "summary": "Serenity expects many articles about FAU (Fiber Array Unit) + component bottlenecks next year as the new CPO architecture led by NVDA + TSM starts to scale. FOCI (3363.TW, ~$2.8B MC) and Nextronics (8147.TW, ~$246M MC) are specifically named as stocks that will be in the center of this narrative. Despite being labeled commodity components, Serenity draws an analogy to transformers and NAND. References AXTI as the benchmark \u2014 called as a national AI supply chain vulnerability in Dec 2025, now on the White House shortage list and up +558%.",
+      "impact": {
+        "global": "FAU supply constraints will slow CPO deployment, creating pricing power for FAU and fiber array component makers. Largest impact on hyperscaler AI infrastructure buildout timelines.",
+        "us": "NVDA Vera Rubin and future GPU platforms depend on CPO scaling \u2014 FAU bottleneck directly impacts NVDA rack-level system deployment speed.",
+        "india": "Minimal direct exposure. Indirect via AI datacenter capex cycle."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Optical Components / FAU / CPO"
+        },
+        {
+          "type": "sector",
+          "label": "AI Supply Chain Bottleneck"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "FOCI_3363",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "Direct FAU manufacturer; Serenity specifically names it as center of CPO bottleneck narrative; next AXTI-style call"
+        },
+        {
+          "symbol": "NEXTRONICS_8417",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "Smaller FAU/CPO connector play (~$246M MC) with higher leverage if thesis plays out"
+        },
+        {
+          "symbol": "TSM",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "TSMC COUPE-on-Substrate is the CPO integration standard \u2014 scaling drives substrate and component demand"
+        },
+        {
+          "symbol": "NVDA",
+          "market": "US",
+          "impact": "Negative",
+          "reason": "FAU bottleneck could slow NVDA CPO rack deployment timelines"
+        }
+      ]
+    },
+    {
+      "id": "M015",
+      "title": "InP Substrate Quasi-Monopoly Validated \u2014 AXTI + SMTOY",
+      "subtitle": "Serenity Dec 2025 call validated: AXTI on White House shortage list; AXTI+SMTOY control 60-70%+ of global InP substrates",
+      "date": "2026-05-18",
+      "analyst": "Serenity",
+      "category": "Geopolitical Risk",
+      "urgency": "High",
+      "horizon": "2026-2028",
+      "summary": "Serenity called AXTI and SMTOY in December 2025 as a national AI supply chain vulnerability. Together they control 60-70%+ of the world's InP substrates. Future NVDA, Google TPU pods, META, MSFT, AMZN hyperscaler clusters all require InP-based lasers. AXTI appeared on the White House shortage list and became a major talking point in US-China trade talks. AXTI stock gained +558% from the original call. Serenity now uses AXTI as the benchmark for her next calls.",
+      "impact": {
+        "global": "InP substrate scarcity is a geopolitical and supply chain risk for all AI hyperscaler laser/optical interconnect sourcing. US-China tension over critical minerals including indium directly impacts InP supply.",
+        "us": "AXTI benefits from White House attention and potential strategic investment or stockpiling.",
+        "india": "Minimal direct exposure."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Compound Semiconductors / InP"
+        },
+        {
+          "type": "sector",
+          "label": "Critical Minerals"
+        },
+        {
+          "type": "sector",
+          "label": "Geopolitical"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "AXTI",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "Quasi-monopoly in InP substrates; White House shortage list; +558% since Dec 2025 original call"
+        },
+        {
+          "symbol": "SMTOY",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "Sumitomo Electric co-controls 60-70%+ of global InP substrates with AXTI"
+        }
+      ]
+    },
+    {
+      "id": "M016",
+      "title": "India AC Compressor Import Crackdown",
+      "subtitle": "India caps AC compressor imports for FY26; VOEPL has 2.8M capacity at 50% utilization; can scale to 7M units",
+      "date": "2026-05-18",
+      "analyst": "Tijori",
+      "category": "India Policy",
+      "urgency": "High",
+      "horizon": "2026",
+      "summary": "India government capped AC compressor imports for FY26, triggering fears of AC and refrigerator supply shortages. This is a direct policy-driven demand redirect to domestic manufacturers. VOEPL (Voltbek Home Appliances, Voltas-BSH JV) is identified as the key domestic beneficiary with ~2.8M unit compressor capacity at only 50% utilization and plans to scale to ~7M units if demand materializes.",
+      "impact": {
+        "global": "Chinese compressor exporters face volume decline in India. Global AC manufacturers sourcing from China affected.",
+        "us": "Minimal direct impact.",
+        "india": "Highly positive for domestic Indian compressor and AC manufacturers. VOEPL is the primary beneficiary. Short-term risk: supply shortage may push AC prices up for consumers."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Consumer Durables"
+        },
+        {
+          "type": "india",
+          "label": "India Policy"
+        },
+        {
+          "type": "sector",
+          "label": "Import Substitution"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "VOEPL",
+          "market": "NSE",
+          "impact": "Positive",
+          "reason": "Direct domestic compressor manufacturer with 2.8M unit capacity at 50% utilization; can scale to 7M units"
+        }
+      ]
+    },
+    {
+      "id": "M017",
+      "title": "Google TPU Ramp 2026-2027 \u2014 $35-40B Custom Silicon Market",
+      "subtitle": "UBS: Total TPU shipments 4.13M in 2026 to 9.87M in 2027; AVGO + MediaTek split; custom silicon spend NVDA H100-tier",
+      "date": "2026-05-18",
+      "analyst": "Jukan",
+      "category": "Mega Theme",
+      "urgency": "High",
+      "horizon": "2026-2027",
+      "summary": "UBS models total 2026 Google TPU shipments at 4.13M units (3.68M AVGO, 450K MediaTek), growing to 9.87M in 2027 (6.76M AVGO, 3.11M MediaTek). Total 2027 TPU custom silicon spend of ~$35-40B \u2014 that is NVDA H100-tier revenue just for Google's internal compute. AVGO at 18x forward earnings is underpriced for what TPU alone contributes. MediaTek's 7x unit jump from 450K to 3.11M implies aggressive multi-sourcing by Google.",
+      "impact": {
+        "global": "Broadcom and MediaTek are the two primary beneficiaries. TSMC benefits from massive N3/N2 demand pull. ABF substrate makers benefit from higher packaging demand.",
+        "us": "AVGO is the dominant custom silicon player for Google TPU \u2014 massive revenue and margin expansion ahead. At 18x forward P/E, significantly undervalued for this revenue stream.",
+        "india": "Minimal direct exposure."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Semiconductors / Custom Silicon"
+        },
+        {
+          "type": "sector",
+          "label": "Hyperscaler AI Infrastructure"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "AVGO",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "3.68M TPU units 2026 to 6.76M in 2027 (+84%); highest-margin business; multiple rerate incoming"
+        },
+        {
+          "symbol": "MEDIATEK_2454",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "450K TPU units 2026 to 3.11M in 2027 (+7x); Google aggressively multi-sourcing beyond AVGO"
+        },
+        {
+          "symbol": "TSM",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "TSMC manufactures all Google TPU chips; N3/N2 demand pull from massive volume ramp"
+        },
+        {
+          "symbol": "NVDA",
+          "market": "US",
+          "impact": "Negative",
+          "reason": "Google internalizing compute at scale reduces reliance on NVDA GPUs for internal AI workloads"
         }
       ]
     }
