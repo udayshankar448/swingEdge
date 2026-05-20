@@ -73,7 +73,8 @@
           "price_at_signal": 56.65
         }
       ],
-      "yahoo_ticker": "SIVE.ST"
+      "yahoo_ticker": "SIVE.ST",
+      "currency": "SEK"
     },
     "INTC": {
       "symbol": "INTC",
@@ -140,15 +141,16 @@
           "price_at_signal": 108.77
         }
       ],
-      "yahoo_ticker": "INTC"
+      "yahoo_ticker": "INTC",
+      "currency": "USD"
     },
     "MU": {
       "symbol": "MU",
       "name": "Micron Technology Inc",
       "market": "US",
       "sector": "Memory / DRAM / HBM",
-      "first_seen": "2026-05-11",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 732.0,
       "signals": [
         {
           "date": "2026-05-11",
@@ -165,15 +167,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "MU"
+      "yahoo_ticker": "MU",
+      "currency": "USD"
     },
     "SNDK": {
       "symbol": "SNDK",
       "name": "SanDisk Corporation",
       "market": "US",
       "sector": "Memory / NAND Flash",
-      "first_seen": "2026-05-11",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 1385.0,
       "signals": [
         {
           "date": "2026-05-11",
@@ -190,7 +193,8 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "SNDK"
+      "yahoo_ticker": "SNDK",
+      "currency": "USD"
     },
     "DRAM": {
       "symbol": "DRAM",
@@ -215,10 +219,11 @@
           "price_at_signal": 51.1
         }
       ],
-      "yahoo_ticker": "DRAM"
+      "yahoo_ticker": "DRAM",
+      "currency": "USD"
     },
     "SAMSUNG": {
-      "symbol": "005930.KS",
+      "symbol": "SAMSUNG",
       "name": "Samsung Electronics",
       "market": "KR",
       "sector": "Semiconductors / Memory",
@@ -255,10 +260,11 @@
         }
       ],
       "yahoo_ticker": "005930.KS",
-      "current_price": 270500
+      "current_price": 270500,
+      "currency": "KRW"
     },
     "SKHYNIX": {
-      "symbol": "000660.KS",
+      "symbol": "SKHYNIX",
       "name": "SK Hynix",
       "market": "KR",
       "sector": "Semiconductors / Memory / HBM",
@@ -295,15 +301,16 @@
         }
       ],
       "yahoo_ticker": "000660.KS",
-      "current_price": 1819000
+      "current_price": 1819000,
+      "currency": "KRW"
     },
     "SOULBRAIN": {
-      "symbol": "036830.KS",
+      "symbol": "SOULBRAIN",
       "name": "Soulbrain Holdings",
       "market": "KR",
       "sector": "Semiconductors / Materials / HF",
-      "first_seen": "2026-05-15",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 50300,
       "signals": [
         {
           "date": "2026-05-15",
@@ -320,15 +327,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "036830.KQ"
+      "yahoo_ticker": "036830.KQ",
+      "currency": "KRW"
     },
     "ENF_TECH": {
-      "symbol": "312860.KS",
+      "symbol": "ENF_TECH",
       "name": "ENF Technology",
       "market": "KR",
       "sector": "Semiconductors / Materials / HF",
-      "first_seen": "2026-05-15",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 18000,
       "signals": [
         {
           "date": "2026-05-15",
@@ -345,10 +353,11 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "312860.KQ"
+      "yahoo_ticker": "312860.KQ",
+      "currency": "KRW"
     },
     "BGF_ECOMATERIALS": {
-      "symbol": "BGFM.KS",
+      "symbol": "BGF_ECOMATERIALS",
       "name": "BGF EcoMaterials / Fluorine Korea",
       "market": "KR",
       "sector": "Semiconductors / AHF Localization",
@@ -370,15 +379,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": null
+      "yahoo_ticker": null,
+      "currency": "KRW"
     },
     "AJINOMOTO": {
-      "symbol": "2802.T",
+      "symbol": "AJINOMOTO",
       "name": "Ajinomoto Co Inc",
       "market": "JP",
       "sector": "ABF Substrates / Advanced Packaging",
-      "first_seen": "2026-05-13",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 5085.0,
       "signals": [
         {
           "date": "2026-05-13",
@@ -395,15 +405,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "2802.T"
+      "yahoo_ticker": "2802.T",
+      "currency": "JPY"
     },
     "VICR": {
       "symbol": "VICR",
       "name": "Vicor Corporation",
       "market": "US",
       "sector": "Power Components / AI Infrastructure",
-      "first_seen": "2026-05-14",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 273.0,
       "signals": [
         {
           "date": "2026-05-14",
@@ -420,7 +431,8 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "VICR"
+      "yahoo_ticker": "VICR",
+      "currency": "USD"
     },
     "AMAT": {
       "symbol": "AMAT",
@@ -445,7 +457,8 @@
           "price_at_signal": 436.62
         }
       ],
-      "yahoo_ticker": "AMAT"
+      "yahoo_ticker": "AMAT",
+      "currency": "USD"
     },
     "QCOM": {
       "symbol": "QCOM",
@@ -470,15 +483,16 @@
           "price_at_signal": 201.49
         }
       ],
-      "yahoo_ticker": "QCOM"
+      "yahoo_ticker": "QCOM",
+      "currency": "USD"
     },
     "TSM": {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Co",
       "market": "TW",
       "sector": "Semiconductors / Foundry",
-      "first_seen": "2026-05-16",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 220.0,
       "signals": [
         {
           "date": "2026-05-16",
@@ -509,7 +523,8 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "TSM"
+      "yahoo_ticker": "TSM",
+      "currency": "USD"
     },
     "AVGO": {
       "symbol": "AVGO",
@@ -548,7 +563,8 @@
           "price_at_signal": 425.19
         }
       ],
-      "yahoo_ticker": "AVGO"
+      "yahoo_ticker": "AVGO",
+      "currency": "USD"
     },
     "TSEM": {
       "symbol": "TSEM",
@@ -588,7 +604,8 @@
           "price_at_signal": 220.83
         }
       ],
-      "yahoo_ticker": "TSEM"
+      "yahoo_ticker": "TSEM",
+      "currency": "USD"
     },
     "AAOI": {
       "symbol": "AAOI",
@@ -614,15 +631,16 @@
           "price_at_signal": 202.2
         }
       ],
-      "yahoo_ticker": "AAOI"
+      "yahoo_ticker": "AAOI",
+      "currency": "USD"
     },
     "SOI": {
       "symbol": "SOI",
       "name": "Soitec SA",
       "market": "EU",
       "sector": "Semiconductor Substrates",
-      "first_seen": "2026-05-12",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 27.43,
       "signals": [
         {
           "date": "2026-05-12",
@@ -639,15 +657,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "SOI.PA"
+      "yahoo_ticker": "SOI.PA",
+      "currency": "EUR"
     },
     "FOCI_3363": {
-      "symbol": "3363.TW",
+      "symbol": "FOCI_3363",
       "name": "FOCI Fiber Optic Communications (3363)",
       "market": "TW",
       "sector": "CPO / FAU \u2014 Critical Production Bottleneck",
       "first_seen": "2026-05-12",
-      "first_price": null,
+      "first_price": 807.0,
       "signals": [
         {
           "date": "2026-05-12",
@@ -693,10 +712,11 @@
         }
       ],
       "yahoo_ticker": "3363.TW",
-      "current_price": 807.0
+      "current_price": 807.0,
+      "currency": "TWD"
     },
     "SHUNSIN_6451": {
-      "symbol": "6451.TW",
+      "symbol": "SHUNSIN_6451",
       "name": "ShunSin Technology Holdings (6451)",
       "market": "TW",
       "sector": "CPO / SiPH Packaging & Test",
@@ -747,15 +767,16 @@
           "price_at_signal": 577.0
         }
       ],
-      "yahoo_ticker": "6451.TW"
+      "yahoo_ticker": "6451.TW",
+      "currency": "TWD"
     },
     "NEXTRONICS_8417": {
-      "symbol": "8417.TW",
+      "symbol": "NEXTRONICS_8417",
       "name": "Nextronics Engineering (8417)",
       "market": "TW",
       "sector": "CPO Connectors / Robotics Supply",
       "first_seen": "2026-05-11",
-      "first_price": null,
+      "first_price": 190.5,
       "signals": [
         {
           "date": "2026-05-11",
@@ -787,7 +808,8 @@
         }
       ],
       "yahoo_ticker": "8417.TW",
-      "current_price": 190.5
+      "current_price": 190.5,
+      "currency": "TWD"
     },
     "NBIS": {
       "symbol": "NBIS",
@@ -813,10 +835,11 @@
           "price_at_signal": 186.1
         }
       ],
-      "yahoo_ticker": "NBIS"
+      "yahoo_ticker": "NBIS",
+      "currency": "USD"
     },
     "HPS_A": {
-      "symbol": "HPS.A",
+      "symbol": "HPS_A",
       "name": "Hammond Power Solutions Inc",
       "market": "CA",
       "sector": "Power / AI Infrastructure",
@@ -839,10 +862,11 @@
           "price_at_signal": 347.0
         }
       ],
-      "yahoo_ticker": "HPS-A.TO"
+      "yahoo_ticker": "HPS-A.TO",
+      "currency": "CAD"
     },
     "HARMONIC_6324": {
-      "symbol": "6324.T",
+      "symbol": "HARMONIC_6324",
       "name": "Harmonic Drive Systems Inc",
       "market": "JP",
       "sector": "Robotics / Humanoid Components",
@@ -865,7 +889,8 @@
           "price_at_signal": 6600
         }
       ],
-      "yahoo_ticker": "6324.T"
+      "yahoo_ticker": "6324.T",
+      "currency": "JPY"
     },
     "POET": {
       "symbol": "POET",
@@ -892,7 +917,8 @@
         }
       ],
       "yahoo_ticker": "POET",
-      "status": "Bearish"
+      "status": "Bearish",
+      "currency": "USD"
     },
     "AXTI": {
       "symbol": "AXTI",
@@ -931,15 +957,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "AXTI"
+      "yahoo_ticker": "AXTI",
+      "currency": "USD"
     },
     "IQE": {
       "symbol": "IQE",
       "name": "IQE plc",
       "market": "EU",
       "sector": "Epiwafers / InP Western Chokepoint",
-      "first_seen": "2026-05-15",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 0.52,
       "signals": [
         {
           "date": "2026-05-15",
@@ -956,15 +983,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "IQE.L"
+      "yahoo_ticker": "IQE.L",
+      "currency": "GBP"
     },
     "LPK": {
       "symbol": "LPK",
       "name": "Lapka \u2014 Glass Substrates",
       "market": "EU",
       "sector": "Glass Substrates / Advanced Packaging",
-      "first_seen": "2026-05-15",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 12.8,
       "signals": [
         {
           "date": "2026-05-15",
@@ -981,15 +1009,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "LPK.DE"
+      "yahoo_ticker": "LPK.DE",
+      "currency": "EUR"
     },
     "LITE": {
       "symbol": "LITE",
       "name": "Lumentum Holdings",
       "market": "US",
       "sector": "Photonics / EML Lasers",
-      "first_seen": "2026-05-12",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 893.0,
       "signals": [
         {
           "date": "2026-05-12",
@@ -1006,15 +1035,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "LITE"
+      "yahoo_ticker": "LITE",
+      "currency": "USD"
     },
     "COHR": {
       "symbol": "COHR",
       "name": "Coherent Corp",
       "market": "US",
       "sector": "Photonics",
-      "first_seen": "2026-05-12",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 390.0,
       "signals": [
         {
           "date": "2026-05-12",
@@ -1031,15 +1061,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "COHR"
+      "yahoo_ticker": "COHR",
+      "currency": "USD"
     },
     "RPI": {
       "symbol": "RPI",
       "name": "Raspberry Pi Holdings",
       "market": "EU",
       "sector": "Semiconductors",
-      "first_seen": "2026-05-12",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 5.8,
       "signals": [
         {
           "date": "2026-05-12",
@@ -1056,15 +1087,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "RPI.L"
+      "yahoo_ticker": "RPI.L",
+      "currency": "GBP"
     },
     "KAORI_8996": {
-      "symbol": "8996.TW",
+      "symbol": "KAORI_8996",
       "name": "Kaori Heat Treatment (8996)",
       "market": "TW",
       "sector": "Thermal Management / CPO",
-      "first_seen": "2026-05-12",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 320.0,
       "signals": [
         {
           "date": "2026-05-12",
@@ -1081,15 +1113,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "8996.TW"
+      "yahoo_ticker": "8996.TW",
+      "currency": "TWD"
     },
     "AURAS_3324": {
-      "symbol": "3324.TW",
+      "symbol": "AURAS_3324",
       "name": "Auras Technology (3324)",
       "market": "TW",
       "sector": "Thermal Management / CPO",
-      "first_seen": "2026-05-12",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 280.0,
       "signals": [
         {
           "date": "2026-05-12",
@@ -1106,15 +1139,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "3324.TW"
+      "yahoo_ticker": "3324.TW",
+      "currency": "TWD"
     },
     "AUROTEK_TW": {
-      "symbol": "AUROTEK.TW",
+      "symbol": "AUROTEK_TW",
       "name": "Aurotek Corporation",
       "market": "TW",
       "sector": "Robotics / AI Manufacturing",
-      "first_seen": "2026-05-11",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 195.0,
       "signals": [
         {
           "date": "2026-05-11",
@@ -1131,15 +1165,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "6409.TW"
+      "yahoo_ticker": "6409.TW",
+      "currency": "TWD"
     },
     "BHEL": {
       "symbol": "BHEL",
       "name": "Bharat Heavy Electricals Ltd",
       "market": "NSE",
       "sector": "Industrials / Power / AI Proxy",
-      "first_seen": "2026-05-17",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 401.0,
       "signals": [
         {
           "date": "2026-05-17",
@@ -1156,15 +1191,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "BHEL.NS"
+      "yahoo_ticker": "BHEL.NS",
+      "currency": "INR"
     },
     "HFCL": {
       "symbol": "HFCL",
       "name": "HFCL Ltd",
       "market": "NSE",
       "sector": "Optical Fiber / Telecom Infrastructure",
-      "first_seen": "2026-05-17",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 144.8,
       "signals": [
         {
           "date": "2026-05-17",
@@ -1181,15 +1217,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "HFCL.NS"
+      "yahoo_ticker": "HFCL.NS",
+      "currency": "INR"
     },
     "THERMAX": {
       "symbol": "THERMAX",
       "name": "Thermax Ltd",
       "market": "NSE",
       "sector": "Industrials / Energy / AI Proxy",
-      "first_seen": "2026-05-17",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 3200.0,
       "signals": [
         {
           "date": "2026-05-17",
@@ -1206,15 +1243,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "THERMAX.NS"
+      "yahoo_ticker": "THERMAX.NS",
+      "currency": "INR"
     },
     "IDEAFORGE": {
       "symbol": "IDEAFORGE",
       "name": "ideaForge Technology Ltd",
       "market": "NSE",
       "sector": "Defence / Drones",
-      "first_seen": "2026-05-17",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 520.0,
       "signals": [
         {
           "date": "2026-05-17",
@@ -1231,7 +1269,8 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "IDEAFORGE.NS"
+      "yahoo_ticker": "IDEAFORGE.NS",
+      "currency": "INR"
     },
     "SLS": {
       "symbol": "SLS",
@@ -1256,15 +1295,16 @@
           "price_at_signal": 7.01
         }
       ],
-      "yahoo_ticker": "SLS"
+      "yahoo_ticker": "SLS",
+      "currency": "USD"
     },
     "LTELEVATOR": {
       "symbol": "LTELEVATOR",
       "name": "LT Elevator",
       "market": "NSE",
       "sector": "Industrials / Elevators",
-      "first_seen": "2026-05-17",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 185.0,
       "signals": [
         {
           "date": "2026-05-17",
@@ -1281,7 +1321,8 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "LTELEVATOR.NS"
+      "yahoo_ticker": "LTELEVATOR.NS",
+      "currency": "INR"
     },
     "MITSUCHEM": {
       "symbol": "MITSUCHEM",
@@ -1306,7 +1347,8 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "MITSUCHEM.NS"
+      "yahoo_ticker": "MITSUCHEM.NS",
+      "currency": "INR"
     },
     "BOT": {
       "symbol": "BOT",
@@ -1314,7 +1356,7 @@
       "market": "US",
       "sector": "AI / Robotics",
       "first_seen": "2026-05-15",
-      "first_price": null,
+      "first_price": 37.92,
       "signals": [
         {
           "date": "2026-05-15",
@@ -1331,7 +1373,8 @@
           "price_at_signal": 37.92
         }
       ],
-      "yahoo_ticker": "BOT"
+      "yahoo_ticker": "BOT",
+      "currency": "USD"
     },
     "CBRS": {
       "symbol": "CBRS",
@@ -1357,15 +1400,16 @@
           "price_at_signal": 311.07
         }
       ],
-      "yahoo_ticker": "CBRS"
+      "yahoo_ticker": "CBRS",
+      "currency": "USD"
     },
     "FLNC": {
       "symbol": "FLNC",
       "name": "Fluence Energy Inc",
       "market": "US",
       "sector": "Energy Storage",
-      "first_seen": "2026-05-12",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 18.85,
       "signals": [
         {
           "date": "2026-05-12",
@@ -1382,7 +1426,8 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "FLNC"
+      "yahoo_ticker": "FLNC",
+      "currency": "USD"
     },
     "SILVER": {
       "symbol": "SILVER",
@@ -1422,7 +1467,8 @@
         }
       ],
       "yahoo_ticker": null,
-      "current_price": 77.4
+      "current_price": 77.4,
+      "currency": "USD"
     },
     "NRB": {
       "symbol": "NRB",
@@ -1447,15 +1493,16 @@
           "price_at_signal": 351
         }
       ],
-      "yahoo_ticker": "NRB.NS"
+      "yahoo_ticker": "NRB.NS",
+      "currency": "INR"
     },
     "CHEM_EXPORTS": {
-      "symbol": "CHEM-EXPORTS",
+      "symbol": "CHEM_EXPORTS",
       "name": "Indian Chemical Export Companies (Thematic)",
       "market": "NSE",
       "sector": "Specialty Chemicals / Exports",
-      "first_seen": "2026-05-17",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 100.0,
       "signals": [
         {
           "date": "2026-05-17",
@@ -1472,15 +1519,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "CHEM_EXPORTS.NS"
+      "yahoo_ticker": "CHEM_EXPORTS.NS",
+      "currency": "INR"
     },
     "AEROFLEX": {
       "symbol": "AEROFLEX",
       "name": "Aeroflex Industries Ltd",
       "market": "NSE",
       "sector": "Industrials / Specialty Tubing",
-      "first_seen": "2026-05-17",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 180.0,
       "signals": [
         {
           "date": "2026-05-17",
@@ -1497,15 +1545,16 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "AEROFLEX.NS"
+      "yahoo_ticker": "AEROFLEX.NS",
+      "currency": "INR"
     },
     "AEQUS": {
       "symbol": "AEQUS",
       "name": "Aequs Pvt Ltd",
       "market": "NSE",
       "sector": "Defence / Aerospace Manufacturing",
-      "first_seen": "2026-05-17",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 520.0,
       "signals": [
         {
           "date": "2026-05-17",
@@ -1522,10 +1571,11 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "AEQUS.NS"
+      "yahoo_ticker": "AEQUS.NS",
+      "currency": "INR"
     },
     "NIFTY_MIDSMALL": {
-      "symbol": "NIFTY-MIDSMALL",
+      "symbol": "NIFTY_MIDSMALL",
       "name": "India Mid & Smallcap Market \u2014 Early Bull Cycle",
       "market": "NSE",
       "sector": "Market Outlook / India Equities",
@@ -1547,7 +1597,8 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "NIFTY_MIDSMALL.NS"
+      "yahoo_ticker": "NIFTY_MIDSMALL.NS",
+      "currency": "INR"
     },
     "NVDA": {
       "symbol": "NVDA",
@@ -1572,15 +1623,16 @@
           "conviction": "High",
           "price_at_signal": 225.32
         }
-      ]
+      ],
+      "currency": "USD"
     },
     "AEHR": {
       "symbol": "AEHR",
       "name": "Aehr Test Systems",
       "market": "US",
       "sector": "Semiconductors / Test Equipment",
-      "first_seen": "2026-05-18",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 82.61,
       "yahoo_ticker": "AEHR",
       "signals": [
         {
@@ -1597,15 +1649,16 @@
           "conviction": "Medium",
           "price_at_signal": null
         }
-      ]
+      ],
+      "currency": "USD"
     },
     "SMTOY": {
       "symbol": "SMTOY",
       "name": "Sumitomo Electric Industries Ltd.",
       "market": "JP",
       "sector": "Semiconductors / Compound Substrates / InP",
-      "first_seen": "2026-05-18",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 3600.0,
       "yahoo_ticker": "5802.T",
       "signals": [
         {
@@ -1622,15 +1675,16 @@
           "conviction": "High",
           "price_at_signal": null
         }
-      ]
+      ],
+      "currency": "JPY"
     },
     "MEDIATEK_2454": {
-      "symbol": "2454.TW",
+      "symbol": "MEDIATEK_2454",
       "name": "MediaTek Inc.",
       "market": "TW",
       "sector": "Semiconductors / Custom Silicon / AI ASIC",
-      "first_seen": "2026-05-18",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 1350.0,
       "yahoo_ticker": "2454.TW",
       "signals": [
         {
@@ -1647,15 +1701,16 @@
           "conviction": "High",
           "price_at_signal": null
         }
-      ]
+      ],
+      "currency": "TWD"
     },
     "VOEPL": {
       "symbol": "VOEPL",
       "name": "Voltbek Home Appliances (Voltas-BSH JV)",
       "market": "NSE",
       "sector": "Consumer Durables / AC Compressors",
-      "first_seen": "2026-05-18",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 85.0,
       "yahoo_ticker": "VOEPL.NS",
       "signals": [
         {
@@ -1672,15 +1727,16 @@
           "conviction": "Medium",
           "price_at_signal": null
         }
-      ]
+      ],
+      "currency": "INR"
     },
     "IBIDEN": {
-      "symbol": "4062.T",
+      "symbol": "IBIDEN",
       "name": "Ibiden Co. Ltd.",
       "market": "JP",
       "sector": "Semiconductors / ABF Substrates",
-      "first_seen": "2026-05-18",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 12820.0,
       "yahoo_ticker": "4062.T",
       "signals": [
         {
@@ -1697,15 +1753,16 @@
           "conviction": "High",
           "price_at_signal": null
         }
-      ]
+      ],
+      "currency": "JPY"
     },
     "SHINKO": {
-      "symbol": "6967.T",
+      "symbol": "SHINKO",
       "name": "Shinko Electric Industries",
       "market": "JP",
       "sector": "Semiconductors / ABF Substrates",
-      "first_seen": "2026-05-18",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 3200.0,
       "yahoo_ticker": "6967.T",
       "signals": [
         {
@@ -1722,15 +1779,16 @@
           "conviction": "High",
           "price_at_signal": null
         }
-      ]
+      ],
+      "currency": "JPY"
     },
     "MURATA": {
-      "symbol": "6981.T",
+      "symbol": "MURATA",
       "name": "Murata Manufacturing Co. Ltd.",
       "market": "JP",
       "sector": "Passive Components / MLCC",
-      "first_seen": "2026-05-18",
-      "first_price": null,
+      "first_seen": "2026-05-21",
+      "first_price": 3252.0,
       "yahoo_ticker": "6981.T",
       "signals": [
         {
@@ -1747,7 +1805,8 @@
           "conviction": "Medium",
           "price_at_signal": null
         }
-      ]
+      ],
+      "currency": "JPY"
     }
   },
   "macro": [

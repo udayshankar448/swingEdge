@@ -519,7 +519,21 @@ function latest(s){ return s.signals.slice().sort(function(a,b){ return new Date
 function analysts(s){ var seen={},out=[]; s.signals.forEach(function(sg){ if(!seen[sg.analyst]){ seen[sg.analyst]=1; out.push(sg.analyst); }}); return out; }
 function pct(a,b){ return (a&&b)?(b-a)/a*100:null; }
 function fmtPct(p){ return (p>=0?'+':'')+p.toFixed(1)+'%'; }
-function currSym(s){ var m=s.market; if(m==='NSE'||m==='BSE') return '₹'; if(m==='EU') return '€'; if(m==='KR') return '₩'; if(m==='JP') return '¥'; if(m==='CA') return 'C$'; if(m==='COMM') return '₹'; return '$'; }
+function currSym(s){
+  // Use explicit currency field if present
+  if(s.currency){
+    var cm={'USD':'$','INR':'₹','EUR':'€','GBP':'£','JPY':'¥','KRW':'₩','TWD':'NT$','CAD':'C$','SEK':'kr','SGD':'S$'};
+    return cm[s.currency]||'$';
+  }
+  var m=s.market;
+  if(m==='NSE'||m==='BSE') return '₹';
+  if(m==='EU') return '€';
+  if(m==='KR') return '₩';
+  if(m==='JP') return '¥';
+  if(m==='CA') return 'C$';
+  if(m==='COMM') return '₹';
+  return '$';
+}
 function fmtP(p,s){ if(!p) return '—'; return currSym(s)+Number(p).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2}); }
 function daysAgo(d){ return Math.floor((new Date()-new Date(d))/86400000); }
 
@@ -661,7 +675,7 @@ function render() {
   }).join(''):'<div style="font-family:var(--mono);font-size:10px;color:var(--muted);padding:6px">None yet</div>';
 
   // render cards
-  document.getElementById('grid').innerHTML=vis.length?vis.map(function(s,i){ return buildCard(s,i); }).join(''):'<div class="empty">No stocks match filters</div>';
+  document.getElementById('grid').innerHTML=vis.length?vis.map(function(s,i){ var k=Object.keys(DATA.stocks).find(function(kk){ return DATA.stocks[kk]===s; }); return buildCard(s,i,k); }).join(''):'<div class="empty">No stocks match filters</div>';
 
   // fetch live prices
   vis.forEach(function(s){
@@ -678,7 +692,7 @@ function render() {
 }
 
 // ── BUILD CARD ────────────────────────────────────────────────
-function buildCard(s,i) {
+function buildCard(s,i,key) { key = key || s.symbol;
   var lat=latest(s), als=analysts(s);
   var isM=als.length>=2, isBear=s.status==='Bearish'||s.status==='bearish';
   var sc=scoreStock(s);
@@ -687,7 +701,7 @@ function buildCard(s,i) {
   var cur=currSym(s);
   var sigs=s.signals.slice().sort(function(a,b){ return new Date(b.date)-new Date(a.date); });
   var hasLvl=lat.levels&&(lat.levels.entry||lat.levels.target||lat.levels.stop);
-  var sym=s.symbol;
+  var sym=key;
 
   var scorePill='';
   if(sc.score>0){
@@ -726,7 +740,7 @@ function buildCard(s,i) {
     '<button style="margin-left:6px;font-family:var(--mono);font-size:9px;padding:3px 8px;border-radius:4px;background:transparent;border:1px solid var(--border2);color:var(--muted);cursor:pointer" onclick="event.stopPropagation();openModal(\''+sym+'\')">▼</button>'+
     '</div>'+
     '<div class="card-price">'+
-    '<div class="pb"><div class="plabel">First Seen '+(s.first_seen||'')+'</div><div class="pval" style="color:var(--muted)">'+fmtP(s.first_price,s)+'</div></div>'+
+    '<div class="pb"><div class="plabel">Added '+(s.first_seen||'—')+'</div><div class="pval" style="color:var(--muted)">'+(s.first_price?fmtP(s.first_price,s):'<span style="font-size:9px;color:var(--dim)">no price</span>')+'</div></div>'+
     '<div class="pb" id="lp_'+sym+'">'+(s.current_price?'<div class="plabel">Current</div><div class="pval" style="color:var(--green)">'+fmtP(s.current_price,s)+'</div>':'<div class="plabel">Current</div><div class="pval" style="color:var(--muted)">—</div>')+'</div>'+
     (isM?'<span style="font-family:var(--mono);font-size:9px;color:var(--purple);margin-left:auto">◆ '+als.length+' analysts</span>':'<span style="margin-left:auto"></span>')+
     '<span class="price-change '+(mv==null?'flat':mv>=0?'pos':'neg')+'" id="chg_'+sym+'">'+(mv!=null?fmtPct(mv)+' since ID':'TRACKING')+'</span>'+
@@ -991,20 +1005,28 @@ function sendAI() {
     msgs = [{role:'user', content:systemPrompt}].concat(prev).concat([{role:'user', content:q}]);
   }
 
-  fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-allow-browser': 'true'
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      messages: msgs
-    })
-  })
+  // Try direct first (works locally), fallback to CORS proxy for GitHub Pages
+  var apiEndpoint = 'https://api.anthropic.com/v1/messages';
+  var proxyEndpoint = 'https://corsproxy.io/?' + encodeURIComponent('https://api.anthropic.com/v1/messages');
+
+  function doFetch(endpoint) {
+    return fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-allow-browser': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: msgs
+      })
+    });
+  }
+
+  doFetch(apiEndpoint).catch(function() { return doFetch(proxyEndpoint); })
   .then(function(r) { return r.json(); })
   .then(function(d) {
     removeTyping();
