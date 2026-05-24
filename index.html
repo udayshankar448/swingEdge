@@ -586,9 +586,10 @@ function scoreStock(s) {
 
 // ── RENDER TOP PICKS ──────────────────────────────────────────
 function renderTopPicks(stocks) {
-  var scored = stocks
-    .filter(function(s){ return latest(s).signal==='Bullish' && s.status!=='Bearish' && s.status!=='bearish'; })
-    .map(function(s){ var r=scoreStock(s); return {s:s, score:r.score, reasons:r.reasons}; })
+  var allEntries = Object.entries(DATA.stocks||{}).map(function(e){ return {k:e[0],s:e[1]}; });
+  var scored = allEntries
+    .filter(function(item){ var s=item.s; return latest(s).signal==='Bullish' && s.status!=='Bearish' && s.status!=='bearish'; })
+    .map(function(item){ var r=scoreStock(item.s); return {k:item.k, s:item.s, score:r.score, reasons:r.reasons}; })
     .filter(function(x){ return x.score>0; })
     .sort(function(a,b){ return b.score-a.score; })
     .slice(0,5);
@@ -603,9 +604,9 @@ function renderTopPicks(stocks) {
     var mv=(s.current_price&&s.first_price)?pct(s.first_price,s.current_price):null;
     var scoreColor = x.score>=70?'var(--green)':x.score>=45?'var(--yellow)':'var(--muted)';
     var tagHtml = x.reasons.map(function(r){ return '<span class="tp-tag '+r+'">'+r+'</span>'; }).join('');
-    return '<div class="tp-card '+rankClass[i]+'" onclick="openModal(\''+sym+'\')">'+
+    return '<div class="tp-card '+rankClass[i]+'" onclick="openModal(\''+x.k+'\')">'+
       '<div class="tp-rank"><span style="color:var(--muted)">'+rankLabel[i]+'</span><span style="font-family:var(--mono);font-size:11px;font-weight:700;color:'+scoreColor+'">'+x.score+'</span></div>'+
-      '<div class="tp-sym">'+sym+'</div>'+
+      '<div class="tp-sym">'+x.k+'</div>'+
       '<div class="tp-name">'+s.name+'</div>'+
       '<div class="tp-score-bar"><div class="tp-score-fill" style="width:'+x.score+'%"></div></div>'+
       '<div class="tp-reasons">'+tagHtml+(mv!==null?'<span style="font-family:var(--mono);font-size:9px;color:'+(mv>=0?'var(--green)':'var(--red)')+'">'+fmtPct(mv)+'</span>':'')+'</div>'+
@@ -627,7 +628,8 @@ function render() {
   renderTopPicks(stocks);
 
   // filter + sort
-  var vis = stocks.filter(function(s){
+  var stockEntries = Object.entries(DATA.stocks||{}).map(function(e){ return {k:e[0],s:e[1]}; });
+  var vis = stockEntries.filter(function(item){ var s=item.s;
     if(filt.m!=='ALL' && s.market!==filt.m) return false;
     if(filt.s!=='ALL' && latest(s).signal!==filt.s) return false;
     if(sch){
@@ -639,11 +641,12 @@ function render() {
     return true;
   });
 
-  if(sortBy==='score') vis.sort(function(a,b){ return scoreStock(b).score-scoreStock(a).score; });
-  else if(sortBy==='recent') vis.sort(function(a,b){ return new Date(latest(b).date)-new Date(latest(a).date); });
-  else vis.sort(function(a,b){ return Math.abs(pct(b.first_price,b.current_price)||0)-Math.abs(pct(a.first_price,a.current_price)||0); });
+  if(sortBy==='score') vis.sort(function(a,b){ return scoreStock(b.s).score-scoreStock(a.s).score; });
+  else if(sortBy==='recent') vis.sort(function(a,b){ return new Date(latest(b.s).date)-new Date(latest(a.s).date); });
+  else vis.sort(function(a,b){ return Math.abs(pct(b.s.first_price,b.s.current_price)||0)-Math.abs(pct(a.s.first_price,a.s.current_price)||0); });
 
   document.getElementById('feed-cnt').textContent = vis.length+' stocks';
+  var vis_stocks = vis.map(function(item){ return item.s; }); // compat array
 
   // market breakdown
   var mkts={};
@@ -668,17 +671,17 @@ function render() {
     var als=analysts(s), mv=(s.current_price&&s.first_price)?pct(s.first_price,s.current_price):null;
     return '<div class="con-item">'+
       '<div style="display:flex;align-items:center;gap:6px">'+
-      '<span class="con-sym">'+s.symbol+'</span>'+
+      '<span class="con-sym" style="cursor:pointer" onclick="openModal(\''+(Object.keys(DATA.stocks).find(function(k){ return DATA.stocks[k]===s; })||s.symbol)+'\')">' + s.symbol + '</span>'+
       (mv!=null?'<span style="font-family:var(--mono);font-size:10px;'+(mv>=0?'color:var(--green)':'color:var(--red)')+'">'+fmtPct(mv)+'</span>':'')+
       '<span style="font-family:var(--mono);font-size:9px;color:var(--purple);margin-left:auto">'+als.length+' analysts</span></div>'+
       '<span class="con-analysts">'+als.join(' · ')+'</span></div>';
   }).join(''):'<div style="font-family:var(--mono);font-size:10px;color:var(--muted);padding:6px">None yet</div>';
 
   // render cards
-  document.getElementById('grid').innerHTML=vis.length?vis.map(function(s,i){ var k=Object.keys(DATA.stocks).find(function(kk){ return DATA.stocks[kk]===s; }); return buildCard(s,i,k); }).join(''):'<div class="empty">No stocks match filters</div>';
+  document.getElementById('grid').innerHTML=vis.length?vis.map(function(item,i){ return buildCard(item.s,i,item.k); }).join(''):'<div class="empty">No stocks match filters</div>';
 
   // fetch live prices
-  vis.forEach(function(s){
+  vis_stocks.forEach(function(s){
     if(s.yahoo_ticker && !s.current_price){
       fetchLivePrice(s).then(function(price){
         if(!price) return;
@@ -957,14 +960,19 @@ function aiKeydown(e) {
 
 function saveKey(val) {
   val = val.trim();
-  if (val) {
+  if (val && val.length > 20) {
     localStorage.setItem('se_api_key', val);
-    document.getElementById('ai-key-status').textContent = 'saved';
+    document.getElementById('ai-key-status').textContent = 'saved ✓';
     document.getElementById('ai-key-status').style.color = 'var(--green)';
+    document.getElementById('ai-key-input').style.borderColor = 'var(--green)';
+  } else if(val.length > 0) {
+    document.getElementById('ai-key-status').textContent = 'too short?';
+    document.getElementById('ai-key-status').style.color = 'var(--yellow)';
   } else {
     localStorage.removeItem('se_api_key');
     document.getElementById('ai-key-status').textContent = 'not set';
     document.getElementById('ai-key-status').style.color = 'var(--muted)';
+    document.getElementById('ai-key-input').style.borderColor = '';
   }
 }
 
@@ -972,8 +980,9 @@ function loadKey() {
   var k = localStorage.getItem('se_api_key') || '';
   if (k) {
     document.getElementById('ai-key-input').value = k;
-    document.getElementById('ai-key-status').textContent = 'saved';
+    document.getElementById('ai-key-status').textContent = 'saved ✓';
     document.getElementById('ai-key-status').style.color = 'var(--green)';
+    document.getElementById('ai-key-input').style.borderColor = 'var(--green)';
   }
   return k;
 }
@@ -1005,28 +1014,29 @@ function sendAI() {
     msgs = [{role:'user', content:systemPrompt}].concat(prev).concat([{role:'user', content:q}]);
   }
 
-  // Try direct first (works locally), fallback to CORS proxy for GitHub Pages
   var apiEndpoint = 'https://api.anthropic.com/v1/messages';
-  var proxyEndpoint = 'https://corsproxy.io/?' + encodeURIComponent('https://api.anthropic.com/v1/messages');
+  var payload = JSON.stringify({
+    model: 'claude-sonnet-4-5',
+    max_tokens: 1000,
+    messages: msgs
+  });
+  var hdrs = {
+    'Content-Type': 'application/json',
+    'x-api-key': apiKey,
+    'anthropic-version': '2023-06-01',
+    'anthropic-dangerous-allow-browser': 'true'
+  };
 
-  function doFetch(endpoint) {
-    return fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': apiKey,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-allow-browser': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        messages: msgs
-      })
-    });
-  }
-
-  doFetch(apiEndpoint).catch(function() { return doFetch(proxyEndpoint); })
+  // Try direct call first (works locally and in some hosted environments)
+  fetch(apiEndpoint, {method:'POST', headers:hdrs, body:payload})
+    .catch(function() {
+      // CORS blocked - try via corsproxy.io
+      return fetch('https://corsproxy.io/?' + encodeURIComponent(apiEndpoint), {method:'POST', headers:hdrs, body:payload});
+    })
+    .catch(function() {
+      // Last resort - thingproxy
+      return fetch('https://thingproxy.freeboard.io/fetch/' + apiEndpoint, {method:'POST', headers:hdrs, body:payload});
+    })
   .then(function(r) { return r.json(); })
   .then(function(d) {
     removeTyping();
@@ -1035,11 +1045,18 @@ function sendAI() {
       aiHistory.push({role:'assistant', content:text});
       addMsg('assistant', text);
     } else if (d.error) {
-      var msg = d.error.message || 'Unknown error';
+      var msg = d.error.message || 'Unknown API error';
+      var statusEl = document.getElementById('ai-key-status');
       if (d.error.type === 'authentication_error') {
-        msg = 'Invalid API key. Please check and re-paste your key above.';
-        document.getElementById('ai-key-status').textContent = 'invalid';
-        document.getElementById('ai-key-status').style.color = 'var(--red)';
+        msg = 'API key invalid or expired. Go to console.anthropic.com, generate a new key, and paste it above.';
+        statusEl.textContent = 'invalid ✗';
+        statusEl.style.color = 'var(--red)';
+        document.getElementById('ai-key-input').style.borderColor = 'var(--red)';
+        localStorage.removeItem('se_api_key');
+      } else if (d.error.type === 'rate_limit_error') {
+        msg = 'Rate limit hit. Wait a moment and try again.';
+      } else if (d.error.type === 'invalid_request_error') {
+        msg = 'Request error: ' + msg;
       }
       addMsg('assistant', 'Error: ' + msg);
     }
