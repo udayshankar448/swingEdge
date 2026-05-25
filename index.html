@@ -135,6 +135,7 @@ nav {
 .m-kr  { color:#ff6b9d; border-color:#ff6b9d; background:rgba(255,107,157,.08); }
 .m-jp  { color:var(--orange); border-color:var(--orange); background:var(--orange2); }
 .m-ca  { color:#55efc4; border-color:#55efc4; background:rgba(85,239,196,.08); }
+.m-theme{ color:#fd79a8; border-color:#fd79a8; background:rgba(253,121,168,.08); }
 .m-comm{ color:var(--yellow); border-color:var(--yellow); background:var(--yellow2); }
 .score-badge { font-family:var(--mono); font-size:11px; font-weight:700; padding:3px 8px; border-radius:5px; margin-left:auto; }
 
@@ -343,6 +344,13 @@ footer { border-top:1px solid var(--border); padding:10px 24px; display:flex; al
   <button class="fbtn" onclick="setF('m','CA')">🇨🇦 CA</button>
   <button class="fbtn" onclick="setF('m','COMM')">🥇 Comm</button>
   <div class="fsep"></div>
+  <span class="flabel">Period</span>
+  <button class="fbtn on" onclick="setF('p','ALL')">All Time</button>
+  <button class="fbtn" onclick="setF('p','THIS_WEEK')">This Week</button>
+  <button class="fbtn" onclick="setF('p','THIS_MONTH')">This Month</button>
+  <button class="fbtn" onclick="setF('p','LAST_7')">Last 7 Days</button>
+  <button class="fbtn" onclick="setF('p','LAST_30')">Last 30 Days</button>
+  <div class="fsep"></div>
   <span class="flabel">Signal</span>
   <button class="fbtn on" onclick="setF('s','ALL')">All</button>
   <button class="fbtn" onclick="setF('s','Bullish')" style="color:var(--green)">Bullish</button>
@@ -356,6 +364,7 @@ footer { border-top:1px solid var(--border); padding:10px 24px; display:flex; al
 </div>
 
 <!-- TOP PICKS BAND -->
+<div id="analyst-banner" style="display:none;background:var(--blue2);border-bottom:1px solid var(--blue);padding:6px 24px;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;color:var(--cyan)"><span>Showing signals from:</span><span id="analyst-banner-name" style="font-weight:700"></span><span style="margin-left:auto;cursor:pointer;color:var(--muted)" onclick="filterByAnalyst(analystFilter)">✕ Clear filter</span></div>
 <div class="top-picks-band" id="tp-band">
   <div class="tp-head">
     <span class="tp-title">⚡ Today's Top Picks</span>
@@ -455,15 +464,16 @@ footer { border-top:1px solid var(--border); padding:10px 24px; display:flex; al
 
 <script>
 var DATA = null;
-var filt = {m:'ALL', s:'ALL'};
+var filt = {m:'ALL', s:'ALL', p:'ALL'}; // p = period filter
 var sortBy = 'score';
 var sch = '';
 var liveP = {};
 var aiHistory = [];
+var analystFilter = null; // null = show all
 
-var MKT_CLS = {NSE:'m-nse',BSE:'m-nse',US:'m-us',COMM:'m-comm',TW:'m-tw',KR:'m-kr',JP:'m-jp',EU:'m-eu',CA:'m-ca'};
-var MKT_LBL = {NSE:'🇮🇳 NSE',BSE:'🇮🇳 BSE',US:'🇺🇸 US',COMM:'🥇 Comm',TW:'🇹🇼 TW',KR:'🇰🇷 KR',JP:'🇯🇵 JP',EU:'🇪🇺 EU',CA:'🇨🇦 CA'};
-var MKT_FLAG = {NSE:'🇮🇳',BSE:'🇮🇳',US:'🇺🇸',COMM:'🥇',TW:'🇹🇼',KR:'🇰🇷',JP:'🇯🇵',EU:'🇪🇺',CA:'🇨🇦'};
+var MKT_CLS = {NSE:'m-nse',BSE:'m-nse',US:'m-us',COMM:'m-comm',TW:'m-tw',KR:'m-kr',JP:'m-jp',EU:'m-eu',CA:'m-ca',THEME:'m-theme'};
+var MKT_LBL = {NSE:'🇮🇳 NSE',BSE:'🇮🇳 BSE',US:'🇺🇸 US',COMM:'🥇 Comm',TW:'🇹🇼 TW',KR:'🇰🇷 KR',JP:'🇯🇵 JP',EU:'🇪🇺 EU',CA:'🇨🇦 CA',THEME:'💡 Theme'};
+var MKT_FLAG = {NSE:'🇮🇳',BSE:'🇮🇳',US:'🇺🇸',COMM:'🥇',TW:'🇹🇼',KR:'🇰🇷',JP:'🇯🇵',EU:'🇪🇺',CA:'🇨🇦',THEME:'💡'};
 
 // ── CLOCK ─────────────────────────────────────────────────────
 function tick() {
@@ -536,6 +546,35 @@ function currSym(s){
 }
 function fmtP(p,s){ if(!p) return '—'; return currSym(s)+Number(p).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2}); }
 function daysAgo(d){ return Math.floor((new Date()-new Date(d))/86400000); }
+
+function periodStart(period) {
+  var now = new Date();
+  if (period === 'THIS_WEEK') {
+    // Start of current week (Monday)
+    var day = now.getDay(); // 0=Sun,1=Mon...
+    var diff = (day === 0 ? 6 : day - 1); // days since Monday
+    var mon = new Date(now); mon.setDate(now.getDate()-diff); mon.setHours(0,0,0,0);
+    return mon;
+  }
+  if (period === 'THIS_MONTH') {
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  }
+  if (period === 'LAST_7') {
+    var d = new Date(now); d.setDate(d.getDate()-7); return d;
+  }
+  if (period === 'LAST_30') {
+    var d = new Date(now); d.setDate(d.getDate()-30); return d;
+  }
+  return null; // ALL
+}
+
+function stockHasSignalInPeriod(s, period) {
+  if (period === 'ALL') return true;
+  var ps = periodStart(period);
+  if (!ps) return true;
+  return s.signals.some(function(sg) { return new Date(sg.date) >= ps; });
+}
+
 
 // ── STEP 2: AUTO SCORING ENGINE ────────────────────────────────
 function scoreStock(s) {
@@ -631,6 +670,8 @@ function render() {
   var stockEntries = Object.entries(DATA.stocks||{}).map(function(e){ return {k:e[0],s:e[1]}; });
   var vis = stockEntries.filter(function(item){ var s=item.s;
     if(filt.m!=='ALL' && s.market!==filt.m) return false;
+    if(analystFilter && !s.signals.some(function(sg){ return sg.analyst===analystFilter; })) return false;
+    if(filt.p !== 'ALL' && !stockHasSignalInPeriod(s, filt.p)) return false;
     if(filt.s!=='ALL' && latest(s).signal!==filt.s) return false;
     if(sch){
       var ok = s.symbol.toLowerCase().indexOf(sch)>=0 ||
@@ -645,7 +686,8 @@ function render() {
   else if(sortBy==='recent') vis.sort(function(a,b){ return new Date(latest(b.s).date)-new Date(latest(a.s).date); });
   else vis.sort(function(a,b){ return Math.abs(pct(b.s.first_price,b.s.current_price)||0)-Math.abs(pct(a.s.first_price,a.s.current_price)||0); });
 
-  document.getElementById('feed-cnt').textContent = vis.length+' stocks';
+  var periodLbl = {ALL:'all time',THIS_WEEK:'this week',THIS_MONTH:'this month',LAST_7:'last 7d',LAST_30:'last 30d'};
+  document.getElementById('feed-cnt').textContent = vis.length+' stocks · '+(periodLbl[filt.p]||'all time');
   var vis_stocks = vis.map(function(item){ return item.s; }); // compat array
 
   // market breakdown
@@ -662,7 +704,8 @@ function render() {
   var maxA=sa[0]?sa[0][1]:1;
   document.getElementById('a-cnt').textContent=Object.keys(am).length;
   document.getElementById('a-board').innerHTML=sa.map(function(e){
-    return '<div class="arow"><span class="ahandle">'+e[0]+'</span><div style="flex:1;margin:0 5px"><div class="abar" style="width:'+(20+e[1]/maxA*80)+'%"></div></div><span style="font-family:var(--mono);font-size:10px;color:var(--text)">'+e[1]+'</span></div>';
+    var isActive = analystFilter===e[0];
+    return '<div class="arow" onclick="filterByAnalyst(\''+e[0]+'\')" style="cursor:pointer;'+(isActive?'background:var(--blue2);border:1px solid var(--blue);border-radius:5px;':'')+'">'+'<span class="ahandle" style="'+(isActive?'color:var(--cyan)':'')+'">'+e[0]+'</span>'+'<div style="flex:1;margin:0 5px"><div class="abar" style="width:'+(20+e[1]/maxA*80)+'%;background:'+(isActive?'var(--cyan)':'var(--blue)')+'"></div></div>'+'<span style="font-family:var(--mono);font-size:10px;color:'+(isActive?'var(--cyan)':'var(--text)')+'">'+e[1]+'</span>'+'</div>';
   }).join('');
 
   // consensus
@@ -741,6 +784,8 @@ function buildCard(s,i,key) { key = key || s.symbol;
     '<span class="mkt-pill '+(MKT_CLS[s.market]||'')+'">'+( MKT_LBL[s.market]||s.market)+'</span>'+
     scorePill+
     '<button style="margin-left:6px;font-family:var(--mono);font-size:9px;padding:3px 8px;border-radius:4px;background:transparent;border:1px solid var(--border2);color:var(--muted);cursor:pointer" onclick="event.stopPropagation();openModal(\''+sym+'\')">▼</button>'+
+    (s.yahoo_ticker ? '<a href="https://finance.yahoo.com/quote/'+encodeURIComponent(s.yahoo_ticker)+'" target="_blank" onclick="event.stopPropagation()" style="margin-left:4px;font-family:var(--mono);font-size:9px;padding:3px 8px;border-radius:4px;background:transparent;border:1px solid rgba(75,143,255,.4);color:var(--blue);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center">YF &#8599;</a>' : '')+
+    '<a href="https://client.interactivebrokers.com/portal/#/trade" target="_blank" onclick="event.stopPropagation()" style="margin-left:4px;font-family:var(--mono);font-size:9px;padding:3px 8px;border-radius:4px;background:rgba(255,126,66,.08);border:1px solid rgba(255,126,66,.4);color:var(--orange);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center" title="Open IBKR Client Portal">IBKR &#8599;</a>'+
     '</div>'+
     '<div class="card-price">'+
     '<div class="pb"><div class="plabel">Added '+(s.first_seen||'—')+'</div><div class="pval" style="color:var(--muted)">'+(s.first_price?fmtP(s.first_price,s):'<span style="font-size:9px;color:var(--dim)">no price</span>')+'</div></div>'+
@@ -817,6 +862,8 @@ function openModal(sym) {
     var dc=sg.signal==='Bullish'?'bdot':sg.signal==='Bearish'?'rdot':'ndot';
     var bc=sg.signal==='Bullish'?'bull':sg.signal==='Bearish'?'bear':'neut';
     var da=daysAgo(sg.date);
+    var isRecent = da <= 7;
+    var isThisMonth = (function(){ var d=new Date(sg.date); var n=new Date(); return d.getMonth()===n.getMonth()&&d.getFullYear()===n.getFullYear(); })();
     var lvl2='';
     if(sg.levels&&(sg.levels.entry||sg.levels.target||sg.levels.stop)){
       lvl2='<div style="display:flex;gap:10px;margin-top:7px;padding-top:7px;border-top:1px solid var(--border)">'+
@@ -834,6 +881,8 @@ function openModal(sym) {
       '<span class="badge '+bc+'">'+sg.signal+'</span>'+
       '<span class="badge" style="color:var(--muted);border:1px solid var(--border2)">'+(sg.conviction||'—')+'</span>'+
       (sg.price_at_signal?'<span class="tl-date">@ '+fmtP(sg.price_at_signal,s)+'</span>':'')+
+      (isRecent ? '<span style="font-family:var(--mono);font-size:8px;background:var(--cyan2);color:var(--cyan);border:1px solid var(--cyan);padding:1px 5px;border-radius:3px">NEW</span>' : '')+
+      ((!isRecent && isThisMonth) ? '<span style="font-family:var(--mono);font-size:8px;background:var(--blue2);color:var(--blue);border:1px solid var(--blue);padding:1px 5px;border-radius:3px">THIS MONTH</span>' : '')+
       '</div>'+(sg.setup?'<div style="font-family:var(--mono);font-size:8px;color:var(--muted);border:1px solid var(--border2);padding:2px 5px;border-radius:3px;display:inline-block;margin-bottom:5px">'+sg.setup+'</div>':'')+
       '<div class="tl-thesis">'+sg.thesis+'</div>'+lvl2+'</div></div>';
   }).join('');
@@ -884,6 +933,27 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeMod
 // ── STEP 3: AI CHAT AGENT ──────────────────────────────────────
 function openAI(){ document.getElementById('ai-overlay').classList.remove('hidden'); loadKey(); }
 function closeAI(){ document.getElementById('ai-overlay').classList.add('hidden'); }
+
+function filterByAnalyst(name) {
+  if (analystFilter === name) {
+    analystFilter = null; // toggle off
+  } else {
+    analystFilter = name;
+    // Switch to signals tab if on macro
+    var sigTab = document.querySelector('.ntab');
+    if (sigTab) sigTab.click();
+  }
+  render();
+  // Show banner if filter active
+  var banner = document.getElementById('analyst-banner');
+  if (analystFilter) {
+    banner.style.display = 'flex';
+    document.getElementById('analyst-banner-name').textContent = analystFilter;
+  } else {
+    banner.style.display = 'none';
+  }
+}
+
 
 function buildContext() {
   if(!DATA) return '';
@@ -1096,6 +1166,37 @@ function renderMacro() {
       '<div class="impact-cell"><div class="impact-label">🇮🇳 India</div><div class="impact-text">'+((m.impact&&m.impact.india)||'—')+'</div></div>'+
       '</div>'+posHtml+negHtml+'</div>';
   }).join('');
+}
+
+
+function ibkrLink(s) {
+  // Map market to IBKR exchange code
+  var exchMap = {
+    US: 'SMART', NSE: 'NSE', BSE: 'BSE', TW: 'TSEM',
+    KR: 'KSE', JP: 'TSEJ', EU: 'SMART', CA: 'TSE', COMM: 'SMART'
+  };
+  var yt = s.yahoo_ticker || s.symbol;
+  // Open Yahoo Finance as the research link (works for all markets)
+  // Also provide IBKR Client Portal link
+  return 'https://finance.yahoo.com/quote/' + encodeURIComponent(yt);
+}
+
+function openIBKR(key, event) {
+  event.stopPropagation();
+  var s = DATA.stocks[key];
+  if (!s) return;
+  // IBKR Client Portal search - opens stock in IBKR web
+  var ibkrUrl = 'https://client.interactivebrokers.com/portal/#/trade;symbol=' + encodeURIComponent(s.yahoo_ticker || s.symbol);
+  var yahooUrl = 'https://finance.yahoo.com/quote/' + encodeURIComponent(s.yahoo_ticker || s.symbol);
+  // Try IBKR first, fallback note to user
+  window.open(ibkrUrl, '_blank');
+}
+
+function openYahoo(key, event) {
+  event.stopPropagation();
+  var s = DATA.stocks[key];
+  if (!s || !s.yahoo_ticker) return;
+  window.open('https://finance.yahoo.com/quote/' + encodeURIComponent(s.yahoo_ticker), '_blank');
 }
 
 load();
