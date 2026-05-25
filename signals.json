@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-05-18",
-    "total_signals": 76,
+    "last_updated": "2026-05-25",
+    "total_signals": 121,
     "version": "2.0",
     "analysts": [
       "Serenity (@aleabitoreddit)",
@@ -71,6 +71,76 @@
           },
           "conviction": "High",
           "price_at_signal": 56.65
+        },
+        {
+          "date": "2026-05-19",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "$6.6M US CHIPS Act Year 2 Award",
+          "thesis": "SIVE gets $6.6M US CHIPS Act Year 2 Program award via NEMC Rewards under Microelectronics Commons program. In collaboration with BAE Systems \u2014 Modernizing US Defense Infrastructure Using Sivers Technology. Incredibly bullish for a small-cap company to get CHIPS Act funding. Building simultaneous transmit/receive antenna arrays for EW and radar.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-19",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Short Squeeze Setup \u2014 Swedish HFs Underwater",
+          "thesis": "Short interest >17%, Swedish hedge funds very underwater shorting Sivers. Three major incoming catalysts: MSCI inflow in 2 weeks, NASDAQ listing, US CHIPS Act backstop. Core revenue ramp coming from AAPL, JBL, POET, Ayar, AEVA, MRVL, Lightmatter, AMD over next 1-2 years. Every short turns into a long eventually.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-19",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "CPO Laser Chokepoint \u2014 Full Ecosystem Map",
+          "thesis": "SIVE is the kingmaker for CPO \u2014 critical CW laser chokepoint across all hyperscaler supply chains. Publicly confirmed customers: Jabil (1.6T LRO, extreme demand, uncapped per JPM Fireside \u2014 revenue pull-forward from H2 2027 to late 2026, 11kW power advantage), POET (CPO external light sources), Ayar Labs (sole public laser supplier after Lumentum/Macom silently removed), O-Net/Enablence (AI datacenter ELS), Lightium AG (TFLN wafers). High confidence undisclosed customers: Apple (Fortune 100 customer, 50M unit/year RFQ matching Apple Watch volume, H1 2028 ramp), Aeva, Marvell Celestial, AMD (via GFS CPO program). Production scaling via Win Semi/GFS. CPO TAM $1B to $91B by 2028 per Goldman Sachs. 2 new M&A-focused board members nominating signal for downstream IP acquisitions following LITE playbook. Sivers also maps to Golden Dome/Space Force/DoD via YSS (acquired ALLSPACE). Nokia likely undisclosed customer.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-20",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "M&A Board Members + NASDAQ Listing Runway",
+          "thesis": "SIVE nominating 2 new board members with M&A backgrounds (Head of M&A at Ericsson/Deutsche Bank; CFO from HMS/Celerant). Strategy: start from laser source, speedrun TAM expansion down CPO/pluggable stack via IP acquisitions, use JBL + others for final assembly \u2014 capex light. NASDAQ listing will unlock US institutional capital for larger acquisitions. Following LITE playbook.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 53.4
+        },
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Jabil 1.6T LRO \u2014 Revenue Pull-Forward Confirmed",
+          "thesis": "SIVE mass production for 1.6T optical transceivers with Jabil earlier than expected per JPMorgan Fireside chat. Jabil EVP Matt Crowley confirmed: 'relatively dramatic moat' with SIVE laser architectures, extreme demand for 1.6T previously unknown in volume terms, quals across next 1-4 months, revenue realization could begin in 3-10 months from May 2026 (late 2026 midpoint vs prior H2 2027 estimates). Architecture is 11kW lower power than current 1.6T profiles \u2014 major hyperscaler differentiator. Jabil confirmed demand for 1.6T LRO with SIVE lasers is essentially uncapped.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "SIVE.ST",
@@ -257,6 +327,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-19",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "P5 Fab Schedule Compression \u2014 Speed War Mode",
+          "thesis": "Samsung P5 Fab 1 build schedule being cut by more than half \u2014 from H2 2028 to potentially 2027. Three-shift system running with overnight and Sunday operations. P6 groundbreaking in July. TrendForce projects commodity DRAM +63% and NAND +75% QoQ in 2Q. Memory has become a name-your-price commodity.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "005930.KS",
@@ -297,6 +381,20 @@
             "stop": null
           },
           "conviction": "Medium",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-19",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Yongin Super Fast Track Fab Expansion",
+          "thesis": "SK Hynix accelerating construction at Yongin semiconductor cluster \u2014 Phase 1 cleanroom opening targeted February 2027. Fab 2 construction scheduling already largely arranged. Competing with Samsung for same construction materials. Memory shortage prolonged on back of expanding AI infrastructure investment.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
           "price_at_signal": null
         }
       ],
@@ -655,6 +753,20 @@
           },
           "conviction": "High",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-19",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Track Record Reminder \u2014 Called at EUR40, Now EUR158",
+          "thesis": "Reminder post: Called SOI at EUR40 in March. Citibank and Kepler called it out saying it is very difficult to understand why Soitec has risen so much. Retail sold on those reports while institutions had orders in to buy the float. 2 months later SOI now at EUR140, targeting EUR250. SOI is a core European photonics player alongside SIVE and IQE \u2014 all hitting double-digit recoveries on May 20. Hard to see any dip not being bought out at these levels.",
+          "levels": {
+            "entry": null,
+            "target": 250.0,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 158.4
         }
       ],
       "yahoo_ticker": "SOI.PA",
@@ -709,6 +821,20 @@
           },
           "conviction": "High",
           "price_at_signal": 807.0
+        },
+        {
+          "date": "2026-05-20",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "NVDA GTC Taipei June 1 Catalyst",
+          "thesis": "NVDA June 1 Computex/GTC Taipei keynote should be heavily bullish Taiwan optical ecosystem. Shunsin, Foci, Nextronics, MSScorps, and Nvidia photonics ecosystem port are likely critical mentions or have indirect catalysts. FOCI also named as second-order beneficiary of AMD's $10B Taiwan supply chain investment.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 813.0
         }
       ],
       "yahoo_ticker": "3363.TW",
@@ -805,6 +931,20 @@
           },
           "conviction": "High",
           "price_at_signal": 190.5
+        },
+        {
+          "date": "2026-05-20",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "NVDA GTC Taipei Catalyst + CPO FAU Bottleneck",
+          "thesis": "Nextronics (~$246M MC) will be center of FAU component bottlenecks as CPO architecture scales. NVDA GTC Taipei June 1 keynote flagged as potential catalyst. Serenity's CPO architectural paradigm shift thesis \u2014 great buying opportunity for people who understand the nuance.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "8417.TW",
@@ -981,6 +1121,20 @@
           },
           "conviction": "High",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-20",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "European Photonics Core Player Recovery +18.75%",
+          "thesis": "IQE (LON) hit +18.75% to 38 GBX on May 20 alongside SIVE and SOI double-digit recoveries. These are all core players going forward in the European photonics supercycle. Hard to see any dip not being bought out at these levels.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 38.0
         }
       ],
       "yahoo_ticker": "IQE.L",
@@ -1215,6 +1369,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-22",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Next Leadership Wave \u2014 Post MTAR",
+          "thesis": "Missed MTAR move despite strong conviction on leadership. HFCL now seems to be the next leader having right characteristics per VVV checklist of riding the wave. Strongest conviction but will exit at SL without second doubt.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "HFCL.NS",
@@ -1373,6 +1541,20 @@
           },
           "conviction": "High",
           "price_at_signal": 37.92
+        },
+        {
+          "date": "2026-05-19",
+          "analyst": "Serenity",
+          "signal": "Bearish",
+          "setup": "4x NAV \u2014 Predatory ATM Structure",
+          "thesis": "BOT still trading at 4x NAV even after 21% drop. $2B effective ATM facility with ~$600M MC vs $146M in private assets. Owns ~$37M of Figure valued at $160B implying valuation while leading humanoid maker Unitree is IPOing at $6B. $146M private fund should not command multi-billion dollar retail wealth transfer. $2B equity financing facility after existing NAV disconnect looks predatory. Avoid.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "BOT",
@@ -1809,6 +1991,844 @@
         }
       ],
       "currency": "JPY"
+    },
+    "ELITE_MATERIAL": {
+      "symbol": "ELITE_MATERIAL",
+      "name": "Elite Material Co. Ltd.",
+      "market": "TW",
+      "sector": "CCL / Glass Fiber Materials",
+      "first_seen": "2026-05-19",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "2383.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "M7/M8 Shortage + M9 Ramp",
+          "thesis": "Taiwan's major CCL supplier Elite Material is facing a shortage of its highest-end M7 and M8 materials. Ahead of NVIDIA Rubin platform mass production ramp in 2H26, AI servers and high-speed switches upgrading from 112G to 224G PAM4 drives surge in demand for high-performance Low-Dk and Low-CTE materials. Elite plans to begin early shipments of next-generation M9-grade materials from 3Q 2026, making 2027 likely the first year of full-scale mass production.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "FULLTECH_FIBER": {
+      "symbol": "FULLTECH_FIBER",
+      "name": "Fulltech Fiber Glass Corp.",
+      "market": "TW",
+      "sector": "Glass Fiber / CCL Materials",
+      "first_seen": "2026-05-19",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "3615.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Spillover from Japan Glass Fiber Shortage",
+          "thesis": "High-end Low-CTE glass fiber market tightly supplied as Japanese companies like Nittobo dominate. FULLTECH FIBER entering the AI server and high-speed switch supply chain with Low-Dk and Low-CTE products. Creating significant spillover benefits for Taiwanese glass fiber manufacturers as Japanese supply cannot meet surging demand from 224G PAM4 upgrade cycle.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "BAOTEK_TW": {
+      "symbol": "BAOTEK_TW",
+      "name": "Baotek Industrial Materials",
+      "market": "TW",
+      "sector": "Glass Fiber / T-Glass",
+      "first_seen": "2026-05-19",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "3593.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "T-Glass Portfolio Expansion",
+          "thesis": "Baotek expanding its high-strength glass fiber (T-Glass) portfolio as demand surges from AI server upgrade cycle. Beneficiary of spillover from Japan Low-CTE glass fiber shortage. High-speed switch and AI server supply chain entry play.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "GRANDSYS_TW": {
+      "symbol": "GRANDSYS_TW",
+      "name": "Grandsys Corp.",
+      "market": "TW",
+      "sector": "Glass Fiber / Advanced Materials",
+      "first_seen": "2026-05-19",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "3457.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "General-Purpose Price Surge + Q-Glass Development",
+          "thesis": "Grandsys benefiting from price increases in general-purpose glass fiber products due to tight supply. Developing next-generation materials including Q-cloth and Q-glass for advanced AI server applications. Positioned as a beneficiary of the broader glass fiber shortage cascade.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "GOOGL": {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc.",
+      "market": "US",
+      "sector": "AI Cloud / Hyperscaler",
+      "first_seen": "2026-05-19",
+      "first_price": 389.82,
+      "current_price": null,
+      "yahoo_ticker": "GOOGL",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Zephyr",
+          "signal": "Bullish",
+          "setup": "GOOGL + BX $5B AI Cloud JV",
+          "thesis": "Google Cloud and Blackstone (BX) creating $5B new AI Cloud company using TPU infrastructure, aiming to bring 500MW of capacity online by 2027. Google Cloud will supply compute to everyone. Top Google customers processing over 1B tokens/day \u2014 if they shift to Gemini 3.5 Flash they could save $1B annually, showing strong revenue stickiness and growing AI workload volumes.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 389.82
+        }
+      ]
+    },
+    "AMD": {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices",
+      "market": "US",
+      "sector": "Semiconductors / AI GPUs",
+      "first_seen": "2026-05-19",
+      "first_price": 113.0,
+      "current_price": null,
+      "yahoo_ticker": "AMD",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "MI355X 40% Cheaper Than B200 on GLM5",
+          "thesis": "SemiAnalysis confirms AMD MI355X is now 40% cheaper than B200 on GLM5 architecture for Single Node FP8 serving 14 weeks after initial GLM5 launch. Speed is the moat. Next step is MI355X catching up to CUDA for FP4 and distributed inferencing. Per GPU performance goes up, cost per million tokens goes down.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "$10B Taiwan AI Investment Pledge",
+          "thesis": "AMD pledges over $10B for AI investments in Taiwan. Collaborating with ASX and SPIL for advanced packaging. ODM partners: Sanmina, Wiwynn (6669), Wistron (3231), Inventec (2356). Direct substrate/PCB beneficiaries: PTI, Unimicron, AIC, Nan Ya PCB, Kinsus \u2014 all building and shipping AMD's latest Helios AI Racks for its Agentic AI roadmap. Second-order beneficiaries: FOCI, MSScorps. Bullish on Taiwan supply chains all around from AMD news.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "JAINRESOUR": {
+      "symbol": "JAINRESOUR",
+      "name": "Jain Resource Recycling Ltd.",
+      "market": "NSE",
+      "sector": "Copper Recycling",
+      "first_seen": "2026-05-18",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "JAINRESOUR.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Q4 Concall \u2014 OCF Turnaround + Copper Volume Surge",
+          "thesis": "Concall Monitor transcript May 18: Copper volumes and prices up 26% in last few months. No fresh bank borrowings in last 4 months \u2014 all working capital met through internal accruals. Stock levels reduced Q3 to Q4. Working capital cycle target below 60 days (from 66 days) \u2014 positive OCF expected from Q2 onwards. Receivable days well-managed at 15-18 days. Management guided copper growth in strong double digits with potential to exceed 15%. Accounting change (NFRA requirements) explains negative OCF optics \u2014 actual cash flows healthy.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "TASC_2340": {
+      "symbol": "TASC_2340",
+      "name": "Taiwan-Asia Semiconductor Corp (TASC)",
+      "market": "TW",
+      "sector": "Sensor Components / Apple Supply Chain",
+      "first_seen": "2026-05-19",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "2340.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Apple Watch H2 2026 Redesign \u2014 Primary Sensor Supplier",
+          "thesis": "TASC (2340) is a $500M Apple supplier and likely primary source for new high-end Apple Watch 2H26 redesign. Market expects major redesign with significant upgrade to sensing functions (blood pressure) alongside full redesign. TASC has long been Apple's exclusive supplier of sensor components. Large-volume orders likely as early as July. Expected 20-30% boost to end-market Apple Watch shipments from 2025 base.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-20",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Blood Pressure + Next Cycle SIVE Laser Link",
+          "thesis": "H2 2026 high-end Apple Watch refresh uses TASC photodiodes for blood pressure sensing. After this cycle, Apple's next health monitoring capabilities expected to focus on noninvasive blood-glucose monitoring \u2014 the next cycle refresh likely uses SIVE for hyper-customized lasers (H2 2027 or 2028). TASC is the near-term play; SIVE is the next cycle play.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "YC_CHEM_112290": {
+      "symbol": "YC_CHEM_112290",
+      "name": "YC Chem Co. Ltd.",
+      "market": "KR",
+      "sector": "Glass Substrate Photoresists",
+      "first_seen": "2026-05-19",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "112290.KQ",
+      "currency": "KRW",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "First-to-Market Glass Substrate Photoresists",
+          "thesis": "YC Chem (KR 112290) has reportedly become the first in the industry to supply photoresists for glass substrates. Targeting EOY mass production \u2014 first to market is good for stock prices. Currently in discussions with more than three companies regarding supply of glass substrate materials. Multiple qualifications ongoing. NVDA may seek to secure high-end substrate capacity via long-term agreements to avoid repeat of CoWoS and HBM supply constraints.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "SAMYANG_NC_482630": {
+      "symbol": "SAMYANG_NC_482630",
+      "name": "Samyang NC Chem Co. Ltd.",
+      "market": "KR",
+      "sector": "Glass Substrate Photoresists",
+      "first_seen": "2026-05-19",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "482630.KQ",
+      "currency": "KRW",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Glass Substrate Photoresist Development",
+          "thesis": "Samyang NC Chem (482630) also developing photoresist materials for glass substrates. Currently sampling, mass production next year. Second major glass substrate photoresist name alongside YC Chem. AI GPU, ASIC, and CPO demand could trigger another supply shortage of high-end ABF substrates by 2027.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "MTAR": {
+      "symbol": "MTAR",
+      "name": "MTAR Technologies Ltd.",
+      "market": "NSE",
+      "sector": "Precision Engineering / Defence",
+      "first_seen": "2026-05-18",
+      "first_price": 3776.0,
+      "current_price": 6871.0,
+      "yahoo_ticker": "MTAR.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-18",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "VVV Trade Analysis \u2014 +14.1R Combined",
+          "thesis": "VVV trade analysis for MTAR: T1 April 7-23 Rs3776 to Rs5400 (+43%, +10.4R), T2 May 7-8 Rs6366 to Rs6566 (+3.1%, +3.0R), T3 May 13-18 Rs6614 to Rs6871 (+3.9%, +0.7R). Total +14.1R combined, +2.49% portfolio impact. Strong leadership characteristics. Now looking at HFCL as the next leader in the wave.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 6871.0
+        }
+      ]
+    },
+    "MEESHO": {
+      "symbol": "MEESHO",
+      "name": "Meesho Limited",
+      "market": "NSE",
+      "sector": "E-Commerce / Retail",
+      "first_seen": "2026-05-19",
+      "first_price": 192.93,
+      "current_price": null,
+      "yahoo_ticker": "MEESHO.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "IPO Base Right-Hand Side Formation",
+          "thesis": "MEESHO is one of the larger IPO bases of recent times building a solid right hand side formation. Solid 50% from the lows on strong volume and institutional footprints followed by orderly pullbacks and pauses along the way. Tracking actively with a pilot position. Classic VVV accumulation pattern.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 192.93
+        }
+      ]
+    },
+    "GROWW_NSE": {
+      "symbol": "GROWW_NSE",
+      "name": "Billionbrains Garage Ventures Ltd. (Groww)",
+      "market": "NSE",
+      "sector": "Fintech / Wealth Management",
+      "first_seen": "2026-05-19",
+      "first_price": 187.47,
+      "current_price": null,
+      "yahoo_ticker": "GROWW.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "Darvas Box Trader",
+          "signal": "Bullish",
+          "setup": "Darvas Box Mid-Term Setup",
+          "thesis": "Groww (Billionbrains Garage Ventures) looking good for mid term. Darvas Box pattern formation. Chart shows consolidation near Rs187-190 range with volume signals. No buy/sell reco \u2014 watchlist and pattern monitoring.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 187.47
+        }
+      ]
+    },
+    "SAIL": {
+      "symbol": "SAIL",
+      "name": "Steel Authority of India Ltd.",
+      "market": "NSE",
+      "sector": "Steel / PSU",
+      "first_seen": "2026-05-22",
+      "first_price": 199.82,
+      "current_price": null,
+      "yahoo_ticker": "SAIL.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Darvas Box Trader",
+          "signal": "Bullish",
+          "setup": "Darvas Box Breakout + Radar Alert",
+          "thesis": "Keep SAIL in radar. Darvas Box breakout setup on May 22. Chart shows breakout above Rs192 zone with strong volume spike. Price ~Rs199.82. Darvas flag for mid-term monitoring.",
+          "levels": {
+            "entry": 192.0,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 199.82
+        }
+      ]
+    },
+    "KWALITYPHA": {
+      "symbol": "KWALITYPHA",
+      "name": "Kwality Pharmaceuticals Ltd.",
+      "market": "BSE",
+      "sector": "Pharma / Mid-Cap",
+      "first_seen": "2026-05-21",
+      "first_price": 2076.15,
+      "current_price": null,
+      "yahoo_ticker": null,
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Darvas Box Trader",
+          "signal": "Bullish",
+          "setup": "Darvas Box Breakout \u2014 Pharma Sector",
+          "thesis": "Added Kwality Pharma today for mid to long term. Darvas Box breakout above long-term resistance ~Rs1800. Price ~Rs2076 on May 21. Chart shows strong breakout with volume. Disclosure: low volume stock \u2014 use limit orders only. Part of Darvas broader bullish view on all pharma stocks.",
+          "levels": {
+            "entry": 1800.0,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 2076.15
+        }
+      ]
+    },
+    "JNKINDIA": {
+      "symbol": "JNKINDIA",
+      "name": "JNK India Ltd.",
+      "market": "NSE",
+      "sector": "Process Equipment / Oil & Gas",
+      "first_seen": "2026-05-22",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "JNKINDIA.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "The Opportunist Investor",
+          "signal": "Bullish",
+          "setup": "Super Awesome Results \u2014 Profits Nearly Triple YoY",
+          "thesis": "JNK India super awesome results. Profits doubled QoQ, almost tripled YoY. More than 50% jump in revenue QoQ. Overall awesome. Long way to go.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "ABSMARINE": {
+      "symbol": "ABSMARINE",
+      "name": "ABS Marine Services Ltd.",
+      "market": "NSE",
+      "sector": "Marine / Shipping Services",
+      "first_seen": "2026-05-22",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "ABSMARINE.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "The Opportunist Investor",
+          "signal": "Bullish",
+          "setup": "EPS Blowout \u2014 32.5 vs 20-25 Expected",
+          "thesis": "ABS Marine super awesome results. Expected 20-25 EPS for FY26 but company delivered 32.5 EPS. At 10-15x PE minimum that takes the company to Rs350-450. Long way to go.",
+          "levels": {
+            "entry": null,
+            "target": 400.0,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "COMPEQ_2313": {
+      "symbol": "COMPEQ_2313",
+      "name": "Compeq Manufacturing Co. Ltd.",
+      "market": "TW",
+      "sector": "PCB / LEO Satellite Supply Chain",
+      "first_seen": "2026-05-21",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "2313.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Starlink + Amazon Kuiper PCB Orders",
+          "thesis": "Compeq (2313, $9.6B MC) has secured orders from leading operators including Starlink and Amazon Kuiper program. PCB suppliers entering LEO supply chain. Next wave: optical inter-satellite links (OISL). Next-generation HDI boards for high-frequency increasingly dependent on specialty materials \u2014 upstream bottleneck opportunity.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "OPTX": {
+      "symbol": "OPTX",
+      "name": "Syntec Optics Holdings Inc.",
+      "market": "US",
+      "sector": "Space Optics / Defence",
+      "first_seen": "2026-05-21",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "OPTX",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Amazon Space Optics + Anduril Eagle Eye",
+          "thesis": "OPTX ($360M MC) made 17,000 space optics for Amazon and its just the first gen order. Also doing Anduril Eagle Eye. Space optics is the nearer tailwind than Anduril defense. Analyst price target $20+. Space optics buildout narrative in full swing pre-SpaceX IPO.",
+          "levels": {
+            "entry": null,
+            "target": 20.0,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "ULVAC_6728": {
+      "symbol": "ULVAC_6728",
+      "name": "ULVAC Inc.",
+      "market": "JP",
+      "sector": "Rare Earth Magnet Equipment / Vacuum Systems",
+      "first_seen": "2026-05-22",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "6728.T",
+      "currency": "JPY",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Neodymium Magnet Chokepoint \u2014 Humanoid Supply Chain",
+          "thesis": "ULVAC (6728) is Japan's major chokepoint over neodymium magnets \u2014 70%+ market share in continuous furnace product lines for rare-earth magnet manufacturing (melting, sintering, aging). Critical for humanoid robotics supply chains. If Ulvac stops shipping to China it would disrupt Unitree and entire China humanoid mass production program. Rare earth angle: China's agreement to address US concerns over yttrium, scandium, neodymium, and indium supply. Ulvac as a geopolitical leverage point AND a long investment idea.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "RDDT": {
+      "symbol": "RDDT",
+      "name": "Reddit Inc.",
+      "market": "US",
+      "sector": "Social Media / AI Data",
+      "first_seen": "2026-05-20",
+      "first_price": 144.32,
+      "current_price": null,
+      "yahoo_ticker": "RDDT",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-20",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Profitable Growth Mispriced by Market",
+          "thesis": "RDDT is one of the most profitable high-growth companies right now. Post-earnings down 6.84% to $144.32 on May 20. Market only cares about AI capex names \u2014 if it's not burning $1T+ in AI capex, markets don't care. Serenity confirmed she owns RDDT. Extremely profitable growth company \u2014 mispricing opportunity for patient investors.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 144.32
+        }
+      ]
+    },
+    "RKLB": {
+      "symbol": "RKLB",
+      "name": "Rocket Lab USA Inc.",
+      "market": "US",
+      "sector": "Space / Defence",
+      "first_seen": "2026-05-22",
+      "first_price": 131.42,
+      "current_price": null,
+      "yahoo_ticker": "RKLB",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "$90M US Space Force Contract \u2014 GEO Satellites",
+          "thesis": "RKLB awarded $90M US Space Force contract to build GEO satellites hosting Space Domain Awareness payload. Not much revenue impact but implication/narrative goes brrr with US space buildup. Fun to see before the SpaceX IPO. Space sector narrative strongly in play.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 131.42
+        }
+      ]
+    },
+    "NOW": {
+      "symbol": "NOW",
+      "name": "ServiceNow Inc.",
+      "market": "US",
+      "sector": "Enterprise Software / AI",
+      "first_seen": "2026-05-19",
+      "first_price": 101.83,
+      "current_price": null,
+      "yahoo_ticker": "NOW",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-19",
+          "analyst": "External",
+          "signal": "Bullish",
+          "setup": "6 Politicians Buying \u2014 Congress Signal",
+          "thesis": "Via Trade With Congress: Six politicians buying ServiceNow in 2026. Ro Khanna bought SanDisk 8 months ago, that stock up ~3,000% since. ServiceNow maybe the next SanDisk. Price down 36% YTD to $101.83. Note: External analyst \u2014 not a primary tracked analyst.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": 101.83
+        }
+      ]
+    },
+    "WIWYNN_6669": {
+      "symbol": "WIWYNN_6669",
+      "name": "Wiwynn Corp.",
+      "market": "TW",
+      "sector": "AI Server ODM",
+      "first_seen": "2026-05-21",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "6669.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "AMD $10B Taiwan Investment \u2014 ODM Beneficiary",
+          "thesis": "Wiwynn (6669) named as one of AMD's strategic ODM partners building and shipping AMD's latest Helios AI Racks as part of AMD's $10B+ Taiwan AI investment pledge. Direct beneficiary of AMD's Agentic AI roadmap supply chain buildout.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "INVENTEC_2356": {
+      "symbol": "INVENTEC_2356",
+      "name": "Inventec Corp.",
+      "market": "TW",
+      "sector": "AI Server ODM",
+      "first_seen": "2026-05-21",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "2356.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "AMD $10B Taiwan Investment \u2014 ODM Beneficiary",
+          "thesis": "Inventec (2356) named as one of AMD's strategic ODM partners for AMD's Helios AI Rack supply chain as part of AMD's $10B+ Taiwan AI investment. Direct beneficiary of AMD's Agentic AI roadmap.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "PANJIT_2481": {
+      "symbol": "PANJIT_2481",
+      "name": "Pan Jit International Inc.",
+      "market": "TW",
+      "sector": "Power Semiconductors",
+      "first_seen": "2026-05-21",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "2481.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Neutral",
+          "setup": "Power Semis Watchlist \u2014 Early Research",
+          "thesis": "Pan Jit (2481, ~$1.6B MC) flagged as power semiconductor maker that might play an important role in AI infrastructure. Power semis very popular now. Not yet a firm conviction position.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "ERIS_TECH_3675": {
+      "symbol": "ERIS_TECH_3675",
+      "name": "Eris Technology Corp.",
+      "market": "TW",
+      "sector": "Power Semiconductors",
+      "first_seen": "2026-05-21",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "3675.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Neutral",
+          "setup": "Power Semis Watchlist \u2014 Early Research",
+          "thesis": "Eris Tech (3675, ~$532M MC) flagged as power semiconductor maker relevant to AI infrastructure buildout. Serenity doing more research on this low MC name with potentially high upside.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "APE_8261": {
+      "symbol": "APE_8261",
+      "name": "Advanced Power Electronics Corp.",
+      "market": "TW",
+      "sector": "Power Semiconductors",
+      "first_seen": "2026-05-21",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "8261.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Neutral",
+          "setup": "Power Semis Watchlist \u2014 Early Research",
+          "thesis": "Advanced Power Electronics (8261, ~$565M MC) flagged as power semiconductor maker potentially playing an important role in AI datacenter infrastructure. Part of Serenity's power semis watchlist.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "INERGY_6693": {
+      "symbol": "INERGY_6693",
+      "name": "Inergy Technology Inc.",
+      "market": "TW",
+      "sector": "Power Semiconductors",
+      "first_seen": "2026-05-21",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "6693.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Neutral",
+          "setup": "Power Semis Watchlist \u2014 Early Research",
+          "thesis": "Inergy Technology (6693, ~$202M MC) flagged as power semiconductor maker for AI infrastructure. Low MC with potentially high upside per Serenity.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "POTENS_7712": {
+      "symbol": "POTENS_7712",
+      "name": "Potens Semiconductor Inc.",
+      "market": "TW",
+      "sector": "Power Semiconductors",
+      "first_seen": "2026-05-21",
+      "first_price": null,
+      "current_price": null,
+      "yahoo_ticker": "7712.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-21",
+          "analyst": "Serenity",
+          "signal": "Neutral",
+          "setup": "Power Semis Watchlist \u2014 Early Research",
+          "thesis": "Potens (7712, ~$170M MC) flagged as small power semiconductor maker for AI infrastructure plays. Lowest MC in Serenity's power semis watchlist \u2014 highest upside potential if thesis plays out.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": null
+        }
+      ]
     }
   },
   "macro": [
