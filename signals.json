@@ -359,7 +359,7 @@
     "BGF_ECOMATERIALS": {
       "symbol": "BGF_ECOMATERIALS",
       "name": "BGF EcoMaterials / Fluorine Korea",
-      "market": "KR",
+      "market": "THEME",
       "sector": "Semiconductors / AHF Localization",
       "first_seen": "2026-05-15",
       "first_price": null,
@@ -380,7 +380,7 @@
         }
       ],
       "yahoo_ticker": null,
-      "currency": "KRW"
+      "currency": "INR"
     },
     "AJINOMOTO": {
       "symbol": "AJINOMOTO",
@@ -1321,8 +1321,9 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "LTELEVATOR.NS",
-      "currency": "INR"
+      "yahoo_ticker": null,
+      "currency": "INR",
+      "current_price": 185.0
     },
     "MITSUCHEM": {
       "symbol": "MITSUCHEM",
@@ -1347,8 +1348,9 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "MITSUCHEM.NS",
-      "currency": "INR"
+      "yahoo_ticker": null,
+      "currency": "INR",
+      "current_price": 122.0
     },
     "BOT": {
       "symbol": "BOT",
@@ -1466,7 +1468,7 @@
           "price_at_signal": 77.4
         }
       ],
-      "yahoo_ticker": null,
+      "yahoo_ticker": "SI=F",
       "current_price": 77.4,
       "currency": "USD"
     },
@@ -1493,13 +1495,13 @@
           "price_at_signal": 351
         }
       ],
-      "yahoo_ticker": "NRB.NS",
+      "yahoo_ticker": "NRBBEARING.NS",
       "currency": "INR"
     },
     "CHEM_EXPORTS": {
       "symbol": "CHEM_EXPORTS",
       "name": "Indian Chemical Export Companies (Thematic)",
-      "market": "NSE",
+      "market": "THEME",
       "sector": "Specialty Chemicals / Exports",
       "first_seen": "2026-05-21",
       "first_price": 100.0,
@@ -1519,7 +1521,7 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "CHEM_EXPORTS.NS",
+      "yahoo_ticker": null,
       "currency": "INR"
     },
     "AEROFLEX": {
@@ -1571,13 +1573,13 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "AEQUS.NS",
+      "yahoo_ticker": null,
       "currency": "INR"
     },
     "NIFTY_MIDSMALL": {
       "symbol": "NIFTY_MIDSMALL",
       "name": "India Mid & Smallcap Market \u2014 Early Bull Cycle",
-      "market": "NSE",
+      "market": "THEME",
       "sector": "Market Outlook / India Equities",
       "first_seen": "2026-05-17",
       "first_price": null,
@@ -1597,7 +1599,7 @@
           "price_at_signal": null
         }
       ],
-      "yahoo_ticker": "NIFTY_MIDSMALL.NS",
+      "yahoo_ticker": null,
       "currency": "INR"
     },
     "NVDA": {
@@ -1711,7 +1713,7 @@
       "sector": "Consumer Durables / AC Compressors",
       "first_seen": "2026-05-21",
       "first_price": 85.0,
-      "yahoo_ticker": "VOEPL.NS",
+      "yahoo_ticker": null,
       "signals": [
         {
           "date": "2026-05-18",
