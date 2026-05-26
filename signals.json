@@ -1,7 +1,7 @@
 {
   "meta": {
-    "last_updated": "2026-05-25",
-    "total_signals": 121,
+    "last_updated": "2026-05-26",
+    "total_signals": 158,
     "version": "2.0",
     "analysts": [
       "Serenity (@aleabitoreddit)",
@@ -141,6 +141,90 @@
           },
           "conviction": "High",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "CPO Laser Architecture Moat \u2014 DFB vs CW",
+          "thesis": "SIVE makes architecturally unique DFB CW lasers \u2014 not interchangeable with Sumitomo/Furukawa. All leading CPO players (Ayar, Celestial, Lightmatter, Lightelligence, POET) go through Sivers specifically for architectural reasons: high power, low thermal laser arrays. JBL 1.6T LRO cited SIVE lasers as creating one of the most dramatic moats. Ayar removed Lumentum and Macom from their website validating SIVE moat. LITE earnings confirmed CW laser bottleneck.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Goldman Sachs TAM \u2014 CPO $91B of $154B Total Optical TAM",
+          "thesis": "Per Goldman Sachs: aggregate dollar content per computing unit increases 29x from $315K in GB300 NVL72 to $9.4B in Rubin Ultra NVL576. Aggregate value TAM increases 9x from $15B (GB300, mainly 2026) to $154B (Rubin Ultra, mainly 2028). CPO contributes $91B (59%) of the $154B value TAM at 29% CPO penetration rate in scale out. Sivers sits in the middle as the highest-beta exposure to the laser chokepoint.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "NASDAQ Stockholm Index Inclusion \u2014 $15-20M Passive Inflow",
+          "thesis": "NASDAQ just added SIVE to its Stockholm index. Estimated ~$15-20M worth of passive inflow with strict ETF-only being around ~$0.5M. Institutional inflow visible on top of the MSCI index inclusion end of month. Two simultaneous passive inflow catalysts stacking.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Not Selling \u2014 Once-A-Generation Long",
+          "thesis": "Serenity: not selling a single share of SIVE. Once-a-generation long given how many hyperscaler suppliers they are already in. GS extreme TAM expansion projections for both pluggables and CPO in the next 2 years. JBL fireside transcript validates demand/timeline. CHIPS ACT funding validates technological importance. Management doing everything right: NASDAQ listing into M&A focus. Institutions have barely entered yet. Tens of millions of passive long-term inflow next month from NASDAQ, Blackrock, MSCI indexes.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "LITE Playbook \u2014 $1B to $10B+ Path via M&A + TAM Expansion",
+          "thesis": "SIVE is at the same starting point LITE was: selling laser dies then acquiring downstream optical engine components to expand TAM from $2B to $80B in 2 years. SIVE starting from CPO laser source, targeting M&A into Optical Engine/ELS value and Optical Transceiver IP. NASDAQ listing unlocks US institutional capital for acquisitions. 22% of workforce have PhDs. LITE expanded EML + pluggables; SIVE doing it for the CPO supercycle.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-24",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Chokepoint vs Bottleneck Nuance \u2014 Capacity Allocation Dynamics",
+          "thesis": "SIVE is both a chokepoint and a bottleneck. Chokepoint: leading CPO/optical hyperscaler players go through Sivers specifically. Bottleneck: when you have capacity allocated for years and players fight you for allocation of finished lasers, you become the bottleneck with all the pricing power \u2014 same as SanDisk controlling NAND output. Win Semi is the actual bottleneck for scaling laser production but SIVE controls the output supply. CW laser is currently bottlenecked as everyone is stuck producing EMLs. SIVE for 2024-2025 was in development contracts \u2014 use forward revenue modeling not TTM P/S.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "SIVE.ST",
@@ -209,6 +293,48 @@
           },
           "conviction": "High",
           "price_at_signal": 108.77
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Portfolio Still Unchanged \u2014 Let the Longs Grow",
+          "thesis": "Serenity: list of US stocks she likes from INTC to NBIS hasn't changed. You can always just let the ones you like grow. INTC now +203% YTD to $19.32. Part of her core US longs alongside MRVL.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 19.32
+        },
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "AP Memory (6531) Intel EMIB Qualification",
+          "thesis": "AP Memory (6531.T, $4.8B MC) got qualified \u2014 first supplier qualified for Intel's EMIB advanced packaging supply chain. Serenity flagged as interesting for anyone wanting to look.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Intel 18A CPU Competing with MacBook Neo",
+          "thesis": "Intel reportedly developing an 18A CPU to compete with the MacBook Neo. NVIDIA Vera CPU is 1.5x faster, 2x performance and 4x density vs x86 at Computex June 1. Intel needs this win to stay relevant in CPU market.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "INTC",
@@ -235,6 +361,20 @@
           },
           "conviction": "High",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-22",
+          "analyst": "Zephyr",
+          "signal": "Bullish",
+          "setup": "LPDDR5 Shortage Intensifying \u2014 Vera CPU DRAM Explosion",
+          "thesis": "DRAM in NVIDIA systems went from 500GB per Grace CPU (72 cores) to 1.5TB per Vera CPU (88 cores) in one generation \u2014 RAM per core 6.7GB to 17GB. AMD/Arm CPU TAM doubled to $120B by 2030. CY2027 SoCAMM TAM could exceed 80 billion Gb \u2014 already exceeds annual supply of 30B Gb from Big Three. 80B Gb of LPDDR5 would nearly equal the entire smartphone LPDDR5 TAM. Shortage will intensify further over time. Memory shortage lasting well past 2026.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 751.02
         }
       ],
       "yahoo_ticker": "MU",
@@ -254,6 +394,20 @@
           "signal": "Bullish",
           "setup": "NAND Supply Cliff",
           "thesis": "Samsung halting 2D NAND production at Hwaseong converting to advanced 1c DRAM. Kioxia phasing out 2D NAND with final orders through September. Supply cliff deepening. SNDK benefits from tightening NAND supply.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-24",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Capacity Allocation Creates Output Bottleneck + Pricing Power",
+          "thesis": "Serenity uses SNDK as analogy for SIVE: SNDK is not part of the NAND bottleneck because Kioxia makes all the NAND \u2014 but when SNDK has ultimate control of output supply, they become the bottleneck with all pricing power. Same dynamic applies to SIVE with CW laser output allocation. Volume ramps H1 2027.",
           "levels": {
             "entry": null,
             "target": null,
@@ -287,6 +441,20 @@
           },
           "conviction": "High",
           "price_at_signal": 51.1
+        },
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Korea Memory Export Data May 1-20 \u2014 Supercycle Confirmed",
+          "thesis": "Korea memory export data May 1-20: DRAM incl. modules $11,527mn +498% Y/Y +27% M/M, unit price $60,319/kg +432% Y/Y. DRAM excl. modules $7,488mn +431% Y/Y, unit price $82,820/kg +497% Y/Y. NAND $954mn +178% Y/Y. SSD $2,224mn +452% Y/Y. Memory supercycle data confirmation \u2014 all metrics parabolic.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 52.84
         }
       ],
       "yahoo_ticker": "DRAM",
@@ -389,6 +557,20 @@
           "signal": "Bullish",
           "setup": "Yongin Super Fast Track Fab Expansion",
           "thesis": "SK Hynix accelerating construction at Yongin semiconductor cluster \u2014 Phase 1 cleanroom opening targeted February 2027. Fab 2 construction scheduling already largely arranged. Competing with Samsung for same construction materials. Memory shortage prolonged on back of expanding AI infrastructure investment.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Kioxia Stake Now Worth $40B \u2014 Hidden Value",
+          "thesis": "SK Hynix holds 7%+ equity stake in Kioxia through Bain Capital consortium, plus convertible bonds equivalent to ~15% of Kioxia shares (convertible 2028). As Kioxia share price surged, SK Hynix's Kioxia stake value reached ~$40B. Significant hidden balance sheet value.",
           "levels": {
             "entry": null,
             "target": null,
@@ -619,6 +801,20 @@
           },
           "conviction": "High",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-25",
+          "analyst": "Zephyr",
+          "signal": "Bullish",
+          "setup": "CoWoS Capacity 210k WPM by End-2027 \u2014 On Track",
+          "thesis": "CoWoS capacity seen reaching 210k WPM by end-2027. Zephyr had forecast 220k WPM in Jan \u2014 close. 100% CoWoS capacity increase through the cycle. UBS Tech APAC view still aggressively bullish on AI memory and packaging cycle. TSMC is single-handedly preventing an AI bubble by constraining wafer supply.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "TSM",
@@ -767,6 +963,20 @@
           },
           "conviction": "High",
           "price_at_signal": 158.4
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "European Photonics Chokepoint \u2014 Hard to See Dips Not Bought",
+          "thesis": "SOI, IQE, LPK, ALRIB all core European quantum/optical/glass chokepoints going brrr \u2014 daily moves of 3-8%. SOI called at EUR40 in March, now EUR170. Institutional buy pattern confirmed when Citi/Kepler called it overvalued at EUR140 and retail sold. Hard to see any dip not being bought at these levels.",
+          "levels": {
+            "entry": null,
+            "target": 250.0,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 170.0
         }
       ],
       "yahoo_ticker": "SOI.PA",
@@ -1135,6 +1345,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": 38.0
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "European Photonics Core Player \u2014 Daily Moves",
+          "thesis": "IQE +5.68% among European quantum/optical/glass chokepoints daily move cluster. Core European photonics player alongside SIVE and SOI. Hard to see any dip not being bought at these levels.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "IQE.L",
@@ -1160,6 +1384,20 @@
             "stop": null
           },
           "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "CEO Bought Shares Off Market \u2014 Vote of Confidence",
+          "thesis": "LPKF CEO bought shares off the market \u2014 nice vote of confidence to retail. +3.21% in European chokepoint cluster move. Volume ramps after qualification. Part of Serenity's glass substrate / advanced packaging H2 2026 theme. CEO insider buying is one of the strongest bullish signals.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
           "price_at_signal": null
         }
       ],
@@ -1988,6 +2226,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-20",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Added to Position \u2014 MLCC Supercycle Confirmed",
+          "thesis": "Jukan recently added to Murata position. GB200 board needs ~6,500 MLCCs; Rubin with double TDP will need ~12,000 units per board. Samsung Electro-Mechanics notifying distributors of MLCC price hike (6-13% like Taiyo Yuden), Murata likely to follow. Silicon capacitors also experiencing supply tightness. Rubin rack ASP could reach ~$7.8M per Morgan Stanley, with PCBs (+233%), MLCCs (+182%), and ABF substrates (+82%) as biggest beneficiaries.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "currency": "JPY"
@@ -2165,6 +2417,20 @@
           },
           "conviction": "High",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Helios Rack Mass Production 2H26 \u2014 Microsoft Most Aggressive CSP",
+          "thesis": "AMD Helios rack-scale AI platform full-scale mass production begins 2H26. Major ODMs Wistron, Wiwynn, Inventec in production-ready mode \u2014 sequential shipments starting late Q2 to Q3, full-scale ramp Q4. Microsoft most aggressive CSP: designated AMD as second AI accelerator platform, MI450-based AI racks deploying before year-end, MI500 series planned 2027. Meta using AMD as supplementary compute. xAI adopted AMD Helios as core AI infrastructure. AMD at $467.53 +3.99%.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 467.53
         }
       ]
     },
@@ -2826,6 +3092,474 @@
             "stop": null
           },
           "conviction": "Low",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "MRVL": {
+      "symbol": "MRVL",
+      "name": "Marvell Technology Inc",
+      "market": "US",
+      "sector": "Semiconductors / Custom Silicon / CPO",
+      "first_seen": "2026-05-22",
+      "first_price": 194.69,
+      "yahoo_ticker": "MRVL",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Core US Long \u2014 +117.8% YTD",
+          "thesis": "MRVL up +117.80% YTD to $194.69. Part of Serenity's unchanged core US longs list. Celestial CPO program uses SIVE lasers \u2014 AMZN has purchase warrants tied to Celestial products.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 194.69
+        }
+      ]
+    },
+    "ALRIB": {
+      "symbol": "ALRIB",
+      "name": "ALRIB \u2014 European Optical/Quantum",
+      "market": "EU",
+      "sector": "Quantum / Optical",
+      "first_seen": "2026-05-23",
+      "first_price": null,
+      "yahoo_ticker": null,
+      "currency": "EUR",
+      "signals": [
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "European Quantum/Optical/Glass Chokepoint Move",
+          "thesis": "ALRIB +8.35% in European chokepoint cluster. Part of Serenity's European quantum/optical/glass names basket.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "FUTU": {
+      "symbol": "FUTU",
+      "name": "Futu Holdings Ltd",
+      "market": "US",
+      "sector": "Fintech / Chinese Brokerage",
+      "first_seen": "2026-05-23",
+      "first_price": null,
+      "yahoo_ticker": "FUTU",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bearish",
+          "setup": "Chinese Gov Going After Historical Revenues \u2014 No Fair Law",
+          "thesis": "FUTU and TIGR screwed \u2014 Chinese government going after historical revenues. No fair law in China especially with IP. Can't pull a GOOGL-like fine given local operations. Lesson: avoid Chinese exposure from BABA to PDD as much as possible. US equities have premiums for a reason.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "TIGR": {
+      "symbol": "TIGR",
+      "name": "UP Fintech (Tiger Brokers)",
+      "market": "US",
+      "sector": "Fintech / Chinese Brokerage",
+      "first_seen": "2026-05-23",
+      "first_price": null,
+      "yahoo_ticker": "TIGR",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-23",
+          "analyst": "Serenity",
+          "signal": "Bearish",
+          "setup": "Chinese Gov Regulatory Risk \u2014 Same as FUTU",
+          "thesis": "Same Chinese government regulatory risk as FUTU. Avoid Chinese brokerage exposure. Courts rigged if gov wants action.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "NVTS": {
+      "symbol": "NVTS",
+      "name": "Navitas Semiconductor",
+      "market": "US",
+      "sector": "Power Semiconductors / GaN",
+      "first_seen": "2026-05-24",
+      "first_price": null,
+      "yahoo_ticker": "NVTS",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-24",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "800 VDC Power Semi Theme \u2014 Already Doubled",
+          "thesis": "Serenity was in NVTS for a tiny bit, low concentration. It almost doubled. After doing more research, the 800 VDC architecture shift is a seismic shift in terms of what players become important. NVDA pushing shift to 800 VDC for datacenter \u2014 evolving from AC to 800 VDC by 2027. NVTS is one of the more priced-in names now but still a good reference point for the theme.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "POWL": {
+      "symbol": "POWL",
+      "name": "Powell Industries",
+      "market": "US",
+      "sector": "Power / AI Infrastructure / 800VDC",
+      "first_seen": "2026-05-24",
+      "first_price": null,
+      "yahoo_ticker": "POWL",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-24",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "800 VDC Power Infrastructure Watchlist",
+          "thesis": "Serenity looking into power semis / integrated voltage regulators / multiphase controllers / CDUs / cold plates / manifolds / pumps / valves / heat exchangers / rear-door systems / chillers theme. POWL flagged alongside NVT, VICR, POWI. Most are kinda priced in now but good starting point for finding unpriced players.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "SEMCO": {
+      "symbol": "SEMCO",
+      "name": "Samsung Electro-Mechanics",
+      "market": "KR",
+      "sector": "MLCC / ABF Substrates",
+      "first_seen": "2026-05-22",
+      "first_price": null,
+      "yahoo_ticker": "009150.KS",
+      "currency": "KRW",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "MLCC Price Hike Notification + ABF Capacity Constrained",
+          "thesis": "Samsung Electro-Mechanics notified distributors of MLCC price hike similar to Taiyo Yuden's 6-13% increase. Murata likely to follow. SEMCO tried to expand ABF substrate capacity but couldn't due to lack of greenfield space. Silicon capacitor supply tightness adds upside. SEMCO has highest exposure to silicon capacitor supply squeeze.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "YAGEO_2327": {
+      "symbol": "YAGEO_2327",
+      "name": "Yageo Corporation",
+      "market": "TW",
+      "sector": "MLCC / Passive Components",
+      "first_seen": "2026-05-22",
+      "first_price": 539.0,
+      "yahoo_ticker": "2327.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "MLCC Price Hike Cycle \u2014 Raw Material Pass-Through",
+          "thesis": "Yageo first mentioned on earnings call that it raised prices for some MLCC product lines in response to rising raw material cost pressures. Stock up +8.45% to 539 TWD. Part of the same MLCC shortage cycle as Murata/SEMCO.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 539.0
+        }
+      ]
+    },
+    "HOLY_STONE_3026": {
+      "symbol": "HOLY_STONE_3026",
+      "name": "Holy Stone Enterprise Co. Ltd.",
+      "market": "TW",
+      "sector": "MLCC / Passive Components",
+      "first_seen": "2026-05-22",
+      "first_price": 392.0,
+      "yahoo_ticker": "3026.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "MLCC Price Hike Cycle Beneficiary",
+          "thesis": "Holy Stone up +7.40% to 392 TWD as part of MLCC price hike cycle. Part of Taiwan MLCC/passive component beneficiary basket.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 392.0
+        }
+      ]
+    },
+    "PROSPERITY_6173": {
+      "symbol": "PROSPERITY_6173",
+      "name": "Prosperity Dielectrics Co. Ltd.",
+      "market": "TW",
+      "sector": "MLCC / Passive Components",
+      "first_seen": "2026-05-22",
+      "first_price": 171.5,
+      "yahoo_ticker": "6173.TWO",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "MLCC Price Hike Cycle Beneficiary",
+          "thesis": "Prosperity Dielectrics up +6.85% to 171.50 TWD as part of MLCC price hike cycle. Taiwan passive component beneficiary basket.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 171.5
+        }
+      ]
+    },
+    "ASML": {
+      "symbol": "ASML",
+      "name": "ASML Holding NV",
+      "market": "EU",
+      "sector": "Semiconductor Equipment / EUV",
+      "first_seen": "2026-05-22",
+      "first_price": null,
+      "yahoo_ticker": "ASML",
+      "currency": "EUR",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Zephyr",
+          "signal": "Bullish",
+          "setup": "True Bubble Prevention Guardian \u2014 EUV Scarcity Limits Capacity Overbuild",
+          "thesis": "ASML will be the limiter for DRAM capacity expansion from late 2027 \u2014 shifting from cleanroom capacity to EUV tools. Memory bois fighting each other AND with TSMC and Intel for EUV. ASML is the true guardian preventing AI bubble from bursting. Severe EUV equipment shortage prevents foundry discipline breakdown. Risk: when DRAM Big Three transition to 3D DRAM, DRAM will no longer need EUV and surplus EUV capacity could quickly shift to logic.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "SOCIONEXT": {
+      "symbol": "SOCIONEXT",
+      "name": "Socionext Inc.",
+      "market": "JP",
+      "sector": "Custom Logic / AI Chips",
+      "first_seen": "2026-05-22",
+      "first_price": null,
+      "yahoo_ticker": "6526.T",
+      "currency": "JPY",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Arm AGI CPU Participation Confirmed \u2014 +18%",
+          "thesis": "Jukan called on April 27 that Socionext could announce a hyperscaler customer. Today Socionext CEO acknowledged company is likely to participate in Arm's AGI CPU. Stock up 18%. Socionext recently announced chiplet and Flexlets capabilities for hyperscale datacenters, AI/agentic AI compute via Arm compute subsystems and Arm AGI CPU collaboration.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "DELL": {
+      "symbol": "DELL",
+      "name": "Dell Technologies Inc",
+      "market": "US",
+      "sector": "AI Servers / Enterprise IT",
+      "first_seen": "2026-05-22",
+      "first_price": 295.21,
+      "yahoo_ticker": "DELL",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "Agentic AI CPU Server Tailwind \u2014 +16.78%",
+          "thesis": "Dell up +16.78% to $295.21. CPU servers for Agentic AI share many components with general-purpose servers but come with higher ASP \u2014 major tailwind for Dell. Agentic AI CPU servers can require up to 4x more memory capacity vs general-purpose servers. Dell does not necessarily need to rely on Taiwanese ODMs for CPU server production.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 295.21
+        }
+      ]
+    },
+    "CRWV": {
+      "symbol": "CRWV",
+      "name": "CoreWeave Inc",
+      "market": "US",
+      "sector": "AI Infrastructure / Neocloud",
+      "first_seen": "2026-05-23",
+      "first_price": 105.51,
+      "yahoo_ticker": "CRWV",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-23",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "GF Securities Initiation \u2014 Buy $162 PT",
+          "thesis": "GF Overseas initiates CRWV with Buy and $162 target. Revenue forecast: 2026 $12.3B / 2027 $25.6B / 2028 $39.6B. EBITDA 2026 $7.6B / 2027 $14.2B / 2028 $18.8B. Target based on 10x 2028E EV/EBITDA. OpenAI + Anthropic + Meta + MSFT = 60% of revenue 2026. CoreWeave only neocloud with long-term agreements with both OpenAI and Anthropic. Global AI datacenter power capacity to reach 283GW by 2030, neocloud TAM $1.7T 2026-2030.",
+          "levels": {
+            "entry": null,
+            "target": 162.0,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": 105.51
+        }
+      ]
+    },
+    "FOREST_WATER_8473": {
+      "symbol": "FOREST_WATER_8473",
+      "name": "Forest Water Environmental Engineering Co. Ltd.",
+      "market": "TW",
+      "sector": "Water Reclamation / Semiconductor Supply Chain",
+      "first_seen": "2026-05-25",
+      "first_price": 39.8,
+      "yahoo_ticker": "8473.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-25",
+          "analyst": "Zephyr",
+          "signal": "Bullish",
+          "setup": "Water Reclamation Supplier to TSMC/Innolux/UMC \u2014 Under-Owned",
+          "thesis": "Forest Water Environmental Engineering (8473.TW, ~$7.2B TWD MC) involved in water reclamation and supply to TSMC, Innolux, and UMC. TSMC was consuming ~161 liters per 12-inch wafer in 2024. As TSMC scales to 210k+ CoWoS WPM, water demand explodes. Under-owned infrastructure play on semiconductor fab expansion.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": 39.8
+        }
+      ]
+    },
+    "NITTOBO": {
+      "symbol": "NITTOBO",
+      "name": "Nitto Boseki Co. Ltd. (Nittobo)",
+      "market": "JP",
+      "sector": "Glass Fiber / T-Glass / CCL Materials",
+      "first_seen": "2026-05-25",
+      "first_price": null,
+      "yahoo_ticker": "3202.T",
+      "currency": "JPY",
+      "signals": [
+        {
+          "date": "2026-05-25",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "T-Glass Shortage \u2014 Expanding Capacity Not Raising Prices",
+          "thesis": "Nittobo is the leading global supplier of high-end low-thermal-expansion (low-CTE) glass fiber (T-glass). AI server boom triggered explosion in demand \u2014 supply-demand gap widened sharply. Management opted NOT to raise prices, instead expanding capacity to defend market share. T-Glass is 10-15% short of demand. CCL prices up 30% since March. ABF substrate prices up 20%+ this year. Nittobo also in Low-Dk glass fiber capacity expansion.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "AP_MEMORY_6531": {
+      "symbol": "AP_MEMORY_6531",
+      "name": "AP Memory Technology Corp.",
+      "market": "TW",
+      "sector": "Silicon Capacitors / Advanced Packaging",
+      "first_seen": "2026-05-22",
+      "first_price": null,
+      "yahoo_ticker": "6531.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "First Intel EMIB Qualified Supplier + Silicon Capacitor Exposure",
+          "thesis": "AP Memory (6531, $4.8B MC) made it as first supplier qualified for Intel's EMIB advanced packaging. Also flagged by Zephyr as having highest exposure to silicon capacitor supply tightness alongside Murata and SEMCO \u2014 silicon capacitors expected to pop like MLCC players. Two independent bullish catalysts.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "WISTRON_3231": {
+      "symbol": "WISTRON_3231",
+      "name": "Wistron Corp.",
+      "market": "TW",
+      "sector": "AI Server ODM",
+      "first_seen": "2026-05-22",
+      "first_price": null,
+      "yahoo_ticker": "3231.TW",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-22",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "AMD Helios Rack \u2014 Substantial Front-End Board Orders",
+          "thesis": "Wistron secured substantial volume of AMD front-end board orders, supporting shipments of AMD Helios platform through newly built Zhubei Plant 2. Sequential shipments starting late Q2 to Q3, full ramp Q4.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
           "price_at_signal": null
         }
       ]
