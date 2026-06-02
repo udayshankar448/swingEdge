@@ -210,15 +210,18 @@ nav{background:var(--cream);border-bottom:1px solid var(--line);padding:0 28px;d
 .mkt-ct{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink)}
 
 /* analyst rows */
-.ar{display:flex;align-items:center;gap:7px;padding:5px 7px;border-radius:var(--r);cursor:pointer;transition:background .15s}
-.ar:hover,.ar.on{background:var(--sand)}
+.ar{display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:var(--r);cursor:pointer;transition:background .15s;border:1px solid transparent;margin-bottom:2px}
+.ar:hover{background:var(--sand);border-color:var(--line)}
+.ar.on{background:var(--blue3);border-color:var(--blue2)}
 .ar-nm{font-size:12px;font-weight:500;color:var(--ink2);flex:1}
 .ar-bw{flex:1;max-width:55px;height:3px;background:var(--sand3);border-radius:2px;overflow:hidden}
 .ar-bar{height:100%;background:var(--ink3);border-radius:2px}
 .ar-ct{font-family:var(--mono);font-size:11px;color:var(--ink4)}
 
 /* sector strength */
-.sec-row{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:var(--r)}
+.sec-row{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:var(--r);cursor:pointer;transition:background .15s;border:1px solid transparent;margin-bottom:2px}
+.sec-row:hover{background:var(--sand);border-color:var(--line)}
+.sec-row.on{background:var(--teal3);border-color:var(--teal2)}
 .sec-nm{font-size:11px;color:var(--ink2);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sec-bar-wrap{width:60px;flex-shrink:0;height:5px;background:var(--sand3);border-radius:3px;overflow:hidden}
 .sec-bar{height:100%;border-radius:3px;transition:width .4s ease}
@@ -394,6 +397,12 @@ nav{background:var(--cream);border-bottom:1px solid var(--line);padding:0 28px;d
 .fi{animation:fadeIn .28s ease both}
 @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 
+/* legend responsive */
+#legend-wrap{flex-wrap:wrap;gap:8px}
+/* signal item improvements */
+.sig-row{border-left:3px solid var(--sand3);transition:border-color .15s}
+.sig-row:hover{border-left-color:var(--green)}
+
 @media(max-width:880px){
   .main{flex-direction:column;padding:14px}
   .sidebar{width:100%}
@@ -428,7 +437,15 @@ nav{background:var(--cream);border-bottom:1px solid var(--line);padding:0 28px;d
   <div class="ntab on" onclick="showSec('signals',this)">Signals</div>
   <div class="ntab" onclick="showSec('macro',this)">Macro Themes</div>
   <div class="ntab" onclick="showSec('playbook',this)">Playbook</div>
-  <div class="nav-right"></div>
+  <div class="nav-right">
+    <div id="legend-wrap" style="display:flex;align-items:center;gap:14px;font-size:10px;color:var(--ink4);padding-right:8px">
+      <span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block"></span>Bullish</span>
+      <span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block"></span>Bearish</span>
+      <span style="display:flex;align-items:center;gap:4px"><span style="width:8px;height:8px;border-radius:50%;background:var(--amber);display:inline-block"></span>Neutral</span>
+      <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:var(--purple2);border:1px solid var(--purple);display:inline-block"></span>Multi-analyst</span>
+      <span style="display:flex;align-items:center;gap:4px"><span style="font-family:var(--mono);font-size:9px;background:var(--green2);color:var(--green);padding:1px 4px;border-radius:4px">85</span>Score/100</span>
+    </div>
+  </div>
 </nav>
 
 <div class="filter-bar" id="fbar">
@@ -466,6 +483,11 @@ nav{background:var(--cream);border-bottom:1px solid var(--line);padding:0 28px;d
   <span>Analyst filter:</span>
   <span class="abn" id="abn-nm"></span>
   <button class="abx" onclick="filterByAnalyst(analystFilter)">×</button>
+</div>
+<div id="sban" style="display:none;background:var(--teal3);border-bottom:1px solid var(--teal2);padding:7px 28px;align-items:center;gap:8px;font-size:12px;color:var(--teal)">
+  <span>Sector filter:</span>
+  <span style="font-weight:600" id="sbn-nm"></span>
+  <button style="margin-left:auto;background:none;border:none;color:var(--teal);cursor:pointer;font-size:16px;opacity:.6" onclick="filterBySector(sectorFilter)">×</button>
 </div>
 
 <!-- SIGNALS TAB -->
@@ -582,7 +604,7 @@ nav{background:var(--cream);border-bottom:1px solid var(--line);padding:0 28px;d
 
 <script>
 /* ─── STATE ─────────────────────────────────────────────────── */
-var D=null, filt={m:'ALL',s:'ALL',p:'ALL'}, sort='score', sch='', analystFilter=null, liveP={}, aiHist=[], mCharts={};
+var D=null, filt={m:'ALL',s:'ALL',p:'ALL'}, sort='score', sch='', analystFilter=null, sectorFilter=null, liveP={}, aiHist=[], mCharts={};
 
 /* ─── MAPS ──────────────────────────────────────────────────── */
 var MLBL={NSE:'🇮🇳 NSE',BSE:'🇮🇳 BSE',US:'🇺🇸 US',COMM:'🥇 Comm',TW:'🇹🇼 TW',KR:'🇰🇷 KR',JP:'🇯🇵 JP',EU:'🇪🇺 EU',CA:'🇨🇦 CA',THEME:'💡 Theme',CN:'🇨🇳 CN'};
@@ -610,6 +632,20 @@ function showSec(id,el){
 function setF(k,v){filt[k]=v;document.querySelectorAll('.fbtn').forEach(function(b){var oc=b.getAttribute('onclick')||'';if(oc==="setF('"+k+"','"+v+"')") b.classList.add('on');else if(oc.indexOf("setF('"+k+"'")===0) b.classList.remove('on');});render();}
 function setSt(v){sort=v;document.querySelectorAll('.fbtn').forEach(function(b){var oc=b.getAttribute('onclick')||'';if(oc==="setSt('"+v+"')") b.classList.add('on');else if(oc.indexOf('setSt')===0) b.classList.remove('on');});render();}
 function setSch(v){sch=v.toLowerCase();render();}
+function filterBySector(sec){
+  sectorFilter=(sectorFilter===sec)?null:sec;
+  document.querySelectorAll('.sec-row').forEach(function(r){r.classList.toggle('on',r.dataset.sec===sectorFilter);});
+  var sban=document.getElementById('sban');
+  if(sectorFilter){
+    sban.style.display='flex';
+    document.getElementById('sbn-nm').textContent=sectorFilter;
+    // switch to signals tab
+    var sigTab=document.querySelector('.ntab');if(sigTab){sigTab.click();}
+  } else {
+    sban.style.display='none';
+  }
+  render();
+}
 function filterByAnalyst(name){
   analystFilter=(analystFilter===name)?null:name;
   var ban=document.getElementById('aban');
@@ -725,6 +761,7 @@ function render(){
     if(filt.s!=='ALL'&&lat(s).signal!==filt.s) return false;
     if(!inPeriod(s)) return false;
     if(analystFilter&&!s.signals.some(function(sg){return sg.analyst===analystFilter;})) return false;
+    if(sectorFilter&&s.sector.split('/')[0].trim()!==sectorFilter) return false;
     if(sch){var ok=s.symbol.toLowerCase().indexOf(sch)>=0||s.name.toLowerCase().indexOf(sch)>=0||s.signals.some(function(sg){return sg.analyst.toLowerCase().indexOf(sch)>=0||sg.thesis.toLowerCase().indexOf(sch)>=0||(sg.setup||'').toLowerCase().indexOf(sch)>=0;});if(!ok) return false;}
     return true;
   });
@@ -756,8 +793,9 @@ function render(){
   var maxSec=secs[0]?secs[0].total:1;
   document.getElementById('sec-strength').innerHTML=secs.map(function(s){
     var bCls=s.bullPct>=70?'sb-g':s.bullPct>=50?'sb-a':'sb-r';
-    return '<div class="sec-row">'+
-      '<span class="sec-nm" title="'+s.sec+'">'+s.sec+'</span>'+
+    var isOn=sectorFilter===s.sec;
+    return '<div class="sec-row'+(isOn?' on':'')+'" data-sec="'+s.sec+'" onclick="filterBySector(''+s.sec.replace(/'/g,"\'")+'')" title="Click to filter by '+s.sec+'">'+
+      '<span class="sec-nm">'+s.sec+'</span>'+
       '<div class="sec-bar-wrap"><div class="sec-bar" style="width:'+(s.total/maxSec*100)+'%;background:'+(s.bullPct>=70?'var(--green)':s.bullPct>=50?'var(--amber)':'var(--red)')+'"></div></div>'+
       '<span class="sec-bull '+bCls+'">'+s.bullPct+'%</span>'+
       '<span class="sec-ct">'+s.total+'</span>'+
@@ -848,16 +886,50 @@ function openModal(key){
   // Price history from signals
   var priceHist=sigs.filter(function(sg){return sg.price_at_signal;}).map(function(sg){return{x:sg.date.slice(5),y:sg.price_at_signal};}).sort(function(a,b){return a.x>b.x?1:-1;});
 
-  // Live chart — Yahoo Finance widget via public embed
-  var yticker=s.yahoo_ticker||'';
+  // Universal TradingView symbol mapping
+  function getTV(s){
+    var yt=s.yahoo_ticker||'';
+    var mkt=s.market;
+    // Market -> TradingView exchange prefix
+    var exMap={NSE:'NSE',BSE:'BSE',KR:'KRX',CN:'SSE',CA:'TSX',COMM:'COMEX'};
+    if(mkt==='US') return yt; // US stocks: no prefix needed
+    if(mkt==='TW'){
+      // Taiwan: use TWSE or TPEX depending on ticker suffix
+      var base=yt.replace('.TW','').replace('.TWO','');
+      return (yt.indexOf('.TWO')>-1?'TPEX:':'TWSE:')+base;
+    }
+    if(mkt==='JP'){var base=yt.replace('.T','');return 'TSE:'+base;}
+    if(mkt==='EU'){
+      if(yt.indexOf('.ST')>-1) return 'OMX:'+yt.replace('.ST','');
+      if(yt.indexOf('.PA')>-1) return 'EURONEXT:'+yt.replace('.PA','');
+      if(yt.indexOf('.L')>-1) return 'LSE:'+yt.replace('.L','');
+      if(yt.indexOf('.DE')>-1) return 'XETR:'+yt.replace('.DE','');
+      return yt.replace(/\..*$/,'');
+    }
+    if(mkt==='KR'){var base=yt.replace('.KS','').replace('.KQ','');return 'KRX:'+base;}
+    if(mkt==='NSE'||mkt==='BSE'){var base=yt.replace('.NS','').replace('.BO','');return 'NSE:'+base;}
+    if(mkt==='CA'){var base=yt.replace('.TO','').replace('-A','.A');return 'TSX:'+base;}
+    if(mkt==='CN'){var base=yt.replace('.SS','').replace('.SZ','');return 'SSE:'+base;}
+    if(mkt==='COMM'){
+      if(yt==='SI=F') return 'COMEX:SI1!';
+      if(yt==='GC=F') return 'COMEX:GC1!';
+      return yt;
+    }
+    return yt.replace(/\..*$/,'');
+  }
+
+  var tvSym=getTV(s);
   var liveChartHtml='';
-  if(yticker){
-    // Use TradingView lightweight embed or Yahoo widget
-    var tvSym=yticker.replace('.NS','').replace('.T','').replace('.TW','').replace('.KS','').replace('.L','');
-    var tvExch=s.market==='NSE'?'NSE':s.market==='TW'?'TWSE':s.market==='KR'?'KRX':s.market==='JP'?'TSE':s.market==='EU'?'XETR':'';
-    var tvFull=tvExch?tvExch+':'+tvSym:tvSym;
-    liveChartHtml='<div class="live-chart-box"><div class="lcb-head"><span class="lcb-ttl">Price Chart (Live)</span><span class="lcb-src">TradingView · '+yticker+'</span></div>'+
-      '<iframe class="lcb-frame" height="220" src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=en#%7B%22symbol%22%3A%22'+encodeURIComponent(tvFull)+'%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A220%2C%22dateRange%22%3A%221M%22%2C%22colorTheme%22%3A%22light%22%2C%22trendLineColor%22%3A%22rgba(26%2C107%2C67%2C1)%22%2C%22underLineColor%22%3A%22rgba(26%2C107%2C67%2C0.1)%22%2C%22isTransparent%22%3Atrue%2C%22autosize%22%3Atrue%2C%22largeChartUrl%22%3A%22%22%7D" allowtransparency="true" frameborder="0"></iframe></div>';
+  if(tvSym){
+    var tvParams=encodeURIComponent(JSON.stringify({
+      symbol:tvSym,width:'100%',height:220,dateRange:'3M',
+      colorTheme:'light',trendLineColor:'rgba(26,107,67,1)',
+      underLineColor:'rgba(26,107,67,0.08)',isTransparent:true,autosize:true
+    }));
+    liveChartHtml='<div class="live-chart-box"><div class="lcb-head"><span class="lcb-ttl">Price Chart (Live)</span><span class="lcb-src">TradingView · '+tvSym+'</span></div>'+
+      '<iframe class="lcb-frame" height="230" src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=en#'+tvParams+'" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>';
+  } else {
+    liveChartHtml='<div class="live-chart-box"><div class="lcb-head"><span class="lcb-ttl">Price Chart</span><span class="lcb-src" style="color:var(--amber)">No ticker configured</span></div><div style="height:60px;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--ink4)">Add yahoo_ticker to signals.json to enable chart</div></div>';
   }
 
   // Key facts
