@@ -1,7 +1,7 @@
 {
   "meta": {
     "last_updated": "2026-05-26",
-    "total_signals": 158,
+    "total_signals": 191,
     "version": "2.0",
     "analysts": [
       "Serenity (@aleabitoreddit)",
@@ -9,7 +9,9 @@
       "Zephyr (@zephyr_z9)",
       "VVV Stock Analyst (@VVVStockAnalyst)",
       "The Opportunist Investor (@sudheep8531)",
-      "Darvas Box Trader (@darvasboxtrader)"
+      "Darvas Box Trader (@darvasboxtrader)",
+      "Paradis Labs (@ParadisLabs)",
+      "CK Capital (@CKCapitalxx)"
     ],
     "themes": [
       "CPO Photonics Supercycle ($91B TAM 2028)",
@@ -225,6 +227,48 @@
           },
           "conviction": "High",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Physical AI / Robotics Supply Chain \u2014 Same CW Lasers, New TAM",
+          "thesis": "SIVE mapped as upstream CW DFB laser into physical AI/robotics: Sivers -> Aeva (4D FMCW) -> LG Innotek -> Boston Dynamics. Same CW lasers used for hyperscaler AI DCs feed robotics; near-term ramp via NVDA self-driving through Aeva, humanoids ~2028.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-25",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "OMX Stockholm Inclusion + US-Sweden MOU \u2014 ~$60M Passive Inflow",
+          "thesis": "Largest beneficiary of weekend events: OMX Stockholm Benchmark index inclusion (effective Jun 1) brings Vanguard/Blackrock passive inflow (~$60M+), together with MSCI; US-Sweden joint tech-collaboration MOU; CHIPS Act recipient. +16.06% to 84.60 SEK. Extremely bullish.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-25",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Valuation vs CPO Peers \u2014 Upstream Laser at Fraction of Market Cap",
+          "thesis": "Valuation framing: Ayar/Celestial/Lightmatter/Lightelligence ~$4-15B+; laser peers AAOI $15B, Furukawa $26B, MTSI $29B, Sumitomo $59B, COHR $73B, LITE $74B. SIVE ~$2.3-2.6B MC yet likely upstream laser for all of them. JBL fireside: sole-source laser for 1.6T LRO, mass prod 3-10 months; Ayar raised $500M with SIVE as primary laser. Most compelling CPO exposure despite volatility.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "SIVE.ST",
@@ -335,6 +379,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Jukan",
+          "signal": "Neutral",
+          "setup": "Northland Downgrade on Valuation (Jukan Skeptical \u2014 Logged as Counterpoint)",
+          "thesis": "Northland downgrading INTC on valuation while modeling datacenter spending decline in CY27 as hyperscalers become cash-strapped. Jukan openly dismisses this thesis given capex evidence. Logged as a bearish counterpoint, NOT Jukan's view.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Low",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "INTC",
@@ -375,6 +433,34 @@
           },
           "conviction": "High",
           "price_at_signal": 751.02
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Zephyr",
+          "signal": "Bullish",
+          "setup": "$1 Trillion Market Cap Milestone",
+          "thesis": "Micron officially hit $1T market cap for the first time, vs ~$70B 12 months ago; $884.35 +71%. Will go up a lot more as long as capex destruction does not happen.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 884.35
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "UBS PT Raised to $1,625 \u2014 LTAs Lock In Memory Profits",
+          "thesis": "UBS lifts MU PT from $535 to $1,625 (~15x NTM P/E on C2029E EPS $117). EPS >$100 through C2029, $400B+ FCF C27-29. LTA supply-chain work suggests up to 30% of industry DDR volume soon locked in near current pricing. LTAs also create FOMO forcing non-signers to sign or scramble at higher non-LTA prices \u2014 both outcomes maximize memory profits.",
+          "levels": {
+            "entry": null,
+            "target": 1625.0,
+            "stop": null
+          },
+          "conviction": "High",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "MU",
@@ -761,6 +847,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": 201.49
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Paradis Labs",
+          "signal": "Bullish",
+          "setup": "Bloomberg-Confirmed ByteDance AI Chip Deal \u2014 Smartphones to AI Infra Pivot",
+          "thesis": "Bloomberg confirms QCOM-ByteDance AI chip deal: ByteDance expected to buy millions of Qualcomm chips for AI agent software. Cements QCOM's pivot from smartphones to AI infrastructure. Framed as a working contrarian trade by Paradis Labs.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "QCOM",
@@ -1045,6 +1145,34 @@
           },
           "conviction": "High",
           "price_at_signal": 813.0
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "TSMC COUPE FAU \u2014 1.6T/3.2T Mass Production Schedule Now in Focus",
+          "thesis": "UDN article: FOCI (3363) a beneficiary of TSM COUPE + AI optical markets. FAU co-developed with TSMC for 3+ years, specs promoted to 1.6T and 3.2T, mass-production schedule now the market focus. Should get attention after Computex/NVDA conference.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Neutral",
+          "setup": "CPO Design-Out Risk \u2014 Potential TSMC Vertical Integration",
+          "thesis": "Foci (with Himax) faces the highest risk of being designed out of top-tier CPO over time and potentially vertically integrated by TSMC's optics arm Visera (6789). However, 2-3 year FAU/passive opportunity remains large.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "3363.TW",
@@ -1359,6 +1487,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Western Epiwafer Chokepoint \u2014 More Upside After 3x+",
+          "thesis": "Serenity had higher hopes than 3x+ on IQE but sees more ahead; 45.75 GBX (+788% YTD). Controls Western epiwafer supply chains for photonics \u2014 one of the keys of the AI Kingdom alongside AXTI, SOI, and SIVE.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
         }
       ],
       "yahoo_ticker": "IQE.L",
@@ -1392,6 +1534,20 @@
           "signal": "Bullish",
           "setup": "CEO Bought Shares Off Market \u2014 Vote of Confidence",
           "thesis": "LPKF CEO bought shares off the market \u2014 nice vote of confidence to retail. +3.21% in European chokepoint cluster move. Volume ramps after qualification. Part of Serenity's glass substrate / advanced packaging H2 2026 theme. CEO insider buying is one of the strongest bullish signals.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Glass Substrate / Advanced Packaging \u2014 Theme #4 of H2 2026",
+          "thesis": "Theme #4 of Serenity's H2-2026 list: glass substrate / advanced packaging. LPK named explicitly. Memory pushed down after re-rating, but niche HBM4 opportunity remains. CEO bought shares off market in May.",
           "levels": {
             "entry": null,
             "target": null,
@@ -1581,6 +1737,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-25",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Power Infra Pivot \u2014 Near PDH",
+          "thesis": "Cited alongside Adani Power and BSE; +0.60% (close 411). One of the power-infra names forming strong pivots after the April leg with early relative strength.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 411.0
         }
       ],
       "yahoo_ticker": "BHEL.NS",
@@ -1620,6 +1790,20 @@
             "stop": null
           },
           "conviction": "High",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-25",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Next Leader After MTAR \u2014 Pilot Pivot Entry",
+          "thesis": "VVV names HFCL the next leader after missing MTAR, citing the right riding-the-wave checklist traits. Held a small pilot, sizing kept smaller due to no traditional entry. Optical-fiber / telecom-infra AI proxy.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
           "price_at_signal": null
         }
       ],
@@ -2070,6 +2254,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Paradis Labs",
+          "signal": "Bullish",
+          "setup": "Record $41M Hyperscaler Order \u2014 +17% to $111 \u2014 $10B MC Path",
+          "thesis": "Paradis estimates $10B MC by ~Q1 2027: new 240 systems/yr capacity, 30% consumables ~$850M+ rev, 12-15x P/S. Record $41M order from lead hyperscaler; CEO cites demand across photonics wafer-level burn-in and SiC/GaN production burn-in converting to bookings by year-end. +17.28% to $111.44.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 111.44
         }
       ],
       "currency": "USD"
@@ -3223,6 +3421,34 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "800 VDC Power Semis \u2014 Theme #2 for H2 2026",
+          "thesis": "800 VDC power semis rank #2 in Serenity's H2-2026 themes. Tiny low-concentration NVTS position nearly doubled; research suggests a seismic shift in which players matter for next-gen datacenter power delivery.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Position Doubled to $33.14 (+295% YTD)",
+          "thesis": "NVTS at $33.14 (+295.53% YTD). Saw a compelling 800 VDC long from crowdsourced recs; doing more research on the broader 800V datacenter power architecture shift.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 33.14
         }
       ]
     },
@@ -3327,6 +3553,20 @@
           },
           "conviction": "Medium",
           "price_at_signal": 392.0
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "Jukan",
+          "signal": "Bullish",
+          "setup": "MLCC Shortage Deepening \u2014 20+ Week Lead Times, Strongest in 20 Years",
+          "thesis": "Holy Stone expects global MLCC supply to tighten further on AI power-spec upgrades; lead times 20+ weeks, strongest demand in 20 years. Lines fully utilized; Phase 2 capacity expansion (3Q26/1Q27), targeting +20-30% capacity by end-2026 and +30-40% in 2027. Entered 4 major US CSPs + Dell. NVDA roadmap drives sustained high-spec demand through Vera Rubin Ultra.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
         }
       ]
     },
@@ -3561,6 +3801,419 @@
           },
           "conviction": "Medium",
           "price_at_signal": null
+        }
+      ]
+    },
+    "AEVA": {
+      "symbol": "AEVA",
+      "name": "Aeva Technologies Inc",
+      "market": "US",
+      "sector": "FMCW LiDAR / Photonics",
+      "first_seen": "2026-05-26",
+      "first_price": null,
+      "yahoo_ticker": "AEVA",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "FMCW LiDAR Mid-Stream \u2014 SIVE Laser Customer into Boston Dynamics",
+          "thesis": "Aeva is the 4D FMCW LiDAR mid-stream layer: Sivers (CW DFB lasers) -> Aeva -> LG Innotek -> Boston Dynamics (Atlas). LG Innotek investing up to $50M in Aeva; Aeva believed to be Sivers' high-confidence LiDAR laser customer ramping Q4 2026. Ayar raised $500M for volume ramp with SIVE as primary laser. Robotics + autonomous exposure now, humanoids ~2028.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "ADANIPOWER": {
+      "symbol": "ADANIPOWER",
+      "name": "Adani Power Ltd",
+      "market": "NSE",
+      "sector": "Power Generation / Utilities",
+      "first_seen": "2026-05-25",
+      "first_price": 232.63,
+      "current_price": 232.63,
+      "yahoo_ticker": "ADANIPOWER.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-25",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Clean Pivot Entry Above PDH \u2014 Standout Adani Name",
+          "thesis": "VVV standout name in the Adani group second-leg theme. Executed above previous-day high as low-risk anticipatory entry; +6.07% (close 232.63). Part of 3 solid positions each >10% with ~1%+ total PF risk.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 232.63
+        }
+      ]
+    },
+    "BSE_EXCHANGE": {
+      "symbol": "BSE_EXCHANGE",
+      "name": "BSE Ltd",
+      "market": "NSE",
+      "sector": "Financial Exchange / Capital Markets",
+      "first_seen": "2026-05-25",
+      "first_price": 4278.0,
+      "current_price": 4278.0,
+      "yahoo_ticker": "BSE.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-25",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Near Pivot \u2014 Liquid Large-Cap Leg 2",
+          "thesis": "Cited as still near its pivot in VVV's liquid large-cap pivot batch; +2.01% (close 4278). Held alongside Adani Power and BHEL; patience is the key.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 4278.0
+        }
+      ]
+    },
+    "ADANIGREEN": {
+      "symbol": "ADANIGREEN",
+      "name": "Adani Green Energy Ltd",
+      "market": "NSE",
+      "sector": "Renewable Energy / Power",
+      "first_seen": "2026-05-25",
+      "first_price": 1417.5,
+      "current_price": 1417.5,
+      "yahoo_ticker": "ADANIGREEN.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-25",
+          "analyst": "VVV Stock Analyst",
+          "signal": "Bullish",
+          "setup": "Adani Theme Second Leg \u2014 Supporting Strength",
+          "thesis": "Part of the Adani group second-leg theme; +4.05% (close 1417.50). Confirms group-wide relative strength; Adani Power was the lead position.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 1417.5
+        }
+      ]
+    },
+    "AVANTEL": {
+      "symbol": "AVANTEL",
+      "name": "Avantel Ltd",
+      "market": "NSE",
+      "sector": "Defence Electronics / Satcom",
+      "first_seen": "2026-05-25",
+      "first_price": 171.48,
+      "current_price": 171.48,
+      "yahoo_ticker": "AVANTEL.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-25",
+          "analyst": "Darvas Box Trader",
+          "signal": "Bullish",
+          "setup": "Darvas Box Breakout \u2014 Defence Electronics",
+          "thesis": "Darvas flags Avantel showing strength with 'a lot to come', breaking above ~166 multi-month box on rising volume; +5.68% (close 171.48), RSI ~67.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 171.48
+        }
+      ]
+    },
+    "VINDHYATEL": {
+      "symbol": "VINDHYATEL",
+      "name": "Vindhya Telelinks Ltd",
+      "market": "NSE",
+      "sector": "Optical Fiber / Telecom Cables",
+      "first_seen": "2026-05-25",
+      "first_price": 1773.9,
+      "current_price": 1773.9,
+      "yahoo_ticker": "VINDHYATEL.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-25",
+          "analyst": "Darvas Box Trader",
+          "signal": "Bullish",
+          "setup": "Trendline Breakout \u2014 Optical Fiber Cables",
+          "thesis": "Darvas chart shows Vindhya Telelinks breaking out strongly along a rising trendline; +11.69% (close 1773.90, H1795). Telecom/optical-fiber cables (Birla group).",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 1773.9
+        }
+      ]
+    },
+    "MSSCORPS_6830": {
+      "symbol": "MSSCORPS_6830",
+      "name": "MSScorps Co Ltd (6830)",
+      "market": "TW",
+      "sector": "Semiconductor Testing / CPO Failure Analysis",
+      "first_seen": "2026-05-26",
+      "first_price": null,
+      "yahoo_ticker": "6830.TWO",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "TSMC COUPE Optical Beneficiary + Substantive Monopoly in Yield Control",
+          "thesis": "Named in UDN article on TSM COUPE + AI optical markets. Serenity flags MSScorps as a 'substantive monopoly' \u2014 deep patent moat in yield control for testing and CPO, cutting into silicon-photonics and CPO light-loss detection. Should get attention after Computex/NVDA conference.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "NGK_5333": {
+      "symbol": "NGK_5333",
+      "name": "NGK Insulators Ltd (5333)",
+      "market": "JP",
+      "sector": "Ceramics / TFLN Wafers",
+      "first_seen": "2026-05-26",
+      "first_price": null,
+      "yahoo_ticker": "5333.T",
+      "currency": "JPY",
+      "signals": [
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Substantive Monopoly \u2014 TFLN Wafer Core Technology",
+          "thesis": "NGK (5333) firmly holds the core technology for thin-film lithium niobate (TFLN) wafers \u2014 a critical photonics/CPO modulator material. Listed by Serenity among key substantive monopoly targets alongside SOI, MSScorps, and AXTI.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "HIMX": {
+      "symbol": "HIMX",
+      "name": "Himax Technologies Inc",
+      "market": "US",
+      "sector": "Display Drivers / CPO FAU",
+      "first_seen": "2026-05-26",
+      "first_price": null,
+      "yahoo_ticker": "HIMX",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Neutral",
+          "setup": "CPO Design-Out Risk vs Near-Term FAU Opportunity (2-3 Years)",
+          "thesis": "Serenity believes Himax (and Foci) face the highest risk of being designed out of top-tier CPO over time and could be vertically integrated by TSMC's optics arm Visera (6789). But over the next 2-3 years, leveraging CPO-related FAU and passive devices, they still have a large money-making window.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "PIOTECH_688072": {
+      "symbol": "PIOTECH_688072",
+      "name": "Piotech Inc (688072)",
+      "market": "CN",
+      "sector": "Semiconductor Deposition / Hybrid Bonding Equipment",
+      "first_seen": "2026-05-25",
+      "first_price": 693.5,
+      "current_price": 693.5,
+      "yahoo_ticker": "688072.SS",
+      "currency": "CNY",
+      "signals": [
+        {
+          "date": "2026-05-25",
+          "analyst": "Zephyr",
+          "signal": "Bullish",
+          "setup": "Hybrid Bonding Equipment \u2014 +32% in 5 Days",
+          "thesis": "Zephyr flags Piotech as super bullish for hybrid bonding, CMP and backside-grinding equipment suppliers; +32.04% over 5 days to CNY 693.50. Impressive PPDC roadmap \u2014 2026 a big density jump.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 693.5
+        }
+      ]
+    },
+    "SAKAI_CHEM_4078": {
+      "symbol": "SAKAI_CHEM_4078",
+      "name": "Sakai Chemical Industry Co Ltd (4078)",
+      "market": "JP",
+      "sector": "MLCC Dielectric Materials",
+      "first_seen": "2026-05-25",
+      "first_price": 4080.0,
+      "current_price": 4080.0,
+      "yahoo_ticker": "4078.T",
+      "currency": "JPY",
+      "signals": [
+        {
+          "date": "2026-05-25",
+          "analyst": "Zephyr",
+          "signal": "Bullish",
+          "setup": "MLCC Raw Materials \u2014 One Layer Deeper (+17.75%)",
+          "thesis": "Sakai Chemical supplies dielectric powder (barium carbonate, barium titanate) for MLCCs; +17.75% to JPY 4,080. Rising subcomponent cost is a key MLCC price driver \u2014 dig one layer deeper than the MLCC makers themselves.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 4080.0
+        }
+      ]
+    },
+    "HSCL": {
+      "symbol": "HSCL",
+      "name": "Himadri Speciality Chemical Ltd",
+      "market": "NSE",
+      "sector": "Specialty Chemicals",
+      "first_seen": "2026-05-26",
+      "first_price": 615.5,
+      "current_price": 615.5,
+      "yahoo_ticker": "HSCL.NS",
+      "currency": "INR",
+      "signals": [
+        {
+          "date": "2026-05-26",
+          "analyst": "Darvas Box Trader",
+          "signal": "Bullish",
+          "setup": "Darvas Box Breakout \u2014 Clear Chart",
+          "thesis": "Darvas added HSCL on a clean breakout above ~530 box resistance; +3.75% (close 615.50), monthly RSI ~62. 'Clear chart' technical setup with strong volume. No buy/sell reco.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 615.5
+        }
+      ]
+    },
+    "WIN_SEMI_3105": {
+      "symbol": "WIN_SEMI_3105",
+      "name": "Win Semiconductors Corp (3105)",
+      "market": "TW",
+      "sector": "Compound Semi Foundry / GaAs",
+      "first_seen": "2026-05-26",
+      "first_price": null,
+      "yahoo_ticker": "3105.TWO",
+      "currency": "TWD",
+      "signals": [
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Hidden Laser-Scaling Bottleneck \u2014 Top 5 Taiwan CPO Long",
+          "thesis": "Win Semi almost never appears in photonics analyst reports but Serenity expects it to show up as an important bottleneck for scaling lasers next year. One of her 5 favorite Taiwan CPO-exposure longs at current prices.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "EWY": {
+      "symbol": "EWY",
+      "name": "iShares MSCI South Korea ETF",
+      "market": "US",
+      "sector": "ETF / South Korea Equity",
+      "first_seen": "2026-05-26",
+      "first_price": null,
+      "yahoo_ticker": "EWY",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-05-26",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "Korea Memory Rerating \u2014 EWY Calls +300%",
+          "thesis": "Serenity's EWY calls up 300%+ (4x). IV held up and South Korean market rerated; underlying memory longs SK Hynix (+206% YTD) and Samsung keep printing. NOTE: this is an ETF providing Korea market exposure.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": null
+        }
+      ]
+    },
+    "CPSH": {
+      "symbol": "CPSH",
+      "name": "CPS Technologies Corp",
+      "market": "US",
+      "sector": "AlSiC Composites / Defense Materials",
+      "first_seen": "2026-01-29",
+      "first_price": 5.71,
+      "current_price": 11.12,
+      "yahoo_ticker": "CPSH",
+      "currency": "USD",
+      "signals": [
+        {
+          "date": "2026-01-29",
+          "analyst": "Serenity",
+          "signal": "Bullish",
+          "setup": "US AlSiC Pure-Play Chokepoint \u2014 Defense + AI Thermal Angle",
+          "thesis": "Serenity initiated CPSH as US AlSiC pure-play chokepoint, ~25% of near-term semi-grade AlSiC market. Customers: US Navy/Army/DoE/Space Force/NASA, LMT, RTX, Northrop, General Dynamics. Healthy balance sheet, $15.5M order. Thesis: as NVDA Rubin scales to 2300-2500W in 2027-2028, AlSiC post-processing may become an AI thermal-warpage chokepoint like InP for telecom.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 5.71
+        },
+        {
+          "date": "2026-05-26",
+          "analyst": "CK Capital",
+          "signal": "Bullish",
+          "setup": "SpaceX IPO ETF Hidden Bid + Defense AlSiC \u2014 +85% to $11.12",
+          "thesis": "CK Capital: CPSH +85.33% to $11.12 (MC ~$201M). SpaceX >$2T IPO will flood NASA/space-themed ETFs whose passive flows automatically buy CPSH \u2014 a hidden mechanical bid. Record 2025 revenue, strong backlog, insider buying. $15.5M semiconductor contract.",
+          "levels": {
+            "entry": null,
+            "target": null,
+            "stop": null
+          },
+          "conviction": "Medium",
+          "price_at_signal": 11.12
         }
       ]
     }
@@ -4620,6 +5273,837 @@
           "impact": "Negative",
           "reason": "Google internalizing compute at scale reduces reliance on NVDA GPUs for internal AI workloads"
         }
+      ]
+    },
+    {
+      "id": "M018",
+      "title": "Four Critical Themes for H2 2026",
+      "subtitle": "Serenity's ranking: (1) CPO, (2) 800 VDC power semis, (3) Physical AI/robotics, (4) Glass substrate/advanced packaging",
+      "date": "2026-05-26",
+      "analyst": "Serenity",
+      "category": "Emerging Mega Theme",
+      "urgency": "High",
+      "horizon": "2026-H2 to 2028",
+      "summary": "Serenity's four critical H2-2026 longs: (1) CPO \u2014 SV is privately funding optical startups; (2) 800 VDC power semis (NVTS nearly doubled); (3) Physical AI/robotics (VPG tripled; components mainly China/Japan); (4) Glass substrate/advanced packaging (LPK), with niche HBM4 opportunity.",
+      "impact": {
+        "global": "Optical/CPO supply chain, power semis, robotics components and advanced-packaging names are structural winners.",
+        "us": "NVTS, AXTI, MU, SNDK are the listed US exposures.",
+        "india": "Minimal direct; read-through to optical-fiber and power-infra proxies."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "CPO / Photonics"
+        },
+        {
+          "type": "sector",
+          "label": "Power Semiconductors"
+        },
+        {
+          "type": "sector",
+          "label": "Physical AI / Robotics"
+        },
+        {
+          "type": "sector",
+          "label": "Advanced Packaging"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "SIVE",
+          "market": "EU",
+          "impact": "Positive",
+          "reason": "CPO laser chokepoint \u2014 #1 theme"
+        },
+        {
+          "symbol": "NVTS",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "800 VDC power semis \u2014 theme #2"
+        },
+        {
+          "symbol": "LPK",
+          "market": "EU",
+          "impact": "Positive",
+          "reason": "Glass substrate / advanced packaging \u2014 theme #4"
+        },
+        {
+          "symbol": "MU",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "Niche HBM4 memory opportunity"
+        }
+      ]
+    },
+    {
+      "id": "M019",
+      "title": "AI Capex to $3-4T Annually by 2030",
+      "subtitle": "Serenity on Jensen Huang projection: own the chokepoints AXTI/SOI/SIVE/IQE",
+      "date": "2026-05-26",
+      "analyst": "Serenity",
+      "category": "Macro Demand Driver",
+      "urgency": "High",
+      "horizon": "2026-2030",
+      "summary": "Serenity believes investors are not bullish enough on AI capex. Jensen Huang projects $3-4T per year by 2030. Chokepoint owners are the keys of the AI Kingdom: AXTI (materials), SOI (silicon photonics), SIVE (CPO lasers), IQE (Western epiwafer). Hyperscale capex: FY26E ~$760B, FY27E ~$904B, FY28E ~$1030B vs Huang FY30E ~$4000B.",
+      "impact": {
+        "global": "Trillions in hyperscale capex concentrate value into upstream materials, silicon-photonics, laser and epiwafer chokepoints.",
+        "us": "AXTI, NBIS, MU, SNDK the listed US exposures.",
+        "india": "Minimal direct."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "AI Capex / Hyperscaler"
+        },
+        {
+          "type": "sector",
+          "label": "Photonics / CPO"
+        },
+        {
+          "type": "sector",
+          "label": "Memory"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "AXTI",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "InP materials \u2014 AI kingdom key"
+        },
+        {
+          "symbol": "SOI",
+          "market": "EU",
+          "impact": "Positive",
+          "reason": "Silicon photonics substrate"
+        },
+        {
+          "symbol": "SIVE",
+          "market": "EU",
+          "impact": "Positive",
+          "reason": "Laser chokepoint for CPO"
+        },
+        {
+          "symbol": "IQE",
+          "market": "EU",
+          "impact": "Positive",
+          "reason": "Western epiwafer supply chains"
+        },
+        {
+          "symbol": "NBIS",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "Neocloud capex sink"
+        },
+        {
+          "symbol": "MU",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "Memory downstream of capex"
+        }
+      ]
+    },
+    {
+      "id": "M020",
+      "title": "India Early Bull Market \u2014 Liquid Large-Cap Leaders Emerging",
+      "subtitle": "VVV: second leg of uptrend; clean pivot setups in liquid large-caps; ~1.5% PF risk added",
+      "date": "2026-05-25",
+      "analyst": "VVV Stock Analyst",
+      "category": "India Market Outlook",
+      "urgency": "Medium",
+      "horizon": "2026",
+      "summary": "VVV sees the second leg of the uptrend after April's rally; still an early bull market with strong legs ahead. Multiple clean pivots in liquid large-caps (not tiny names), enabling ~1.5% PF risk with 3 positions each >10%. Leaders push hardest in initial days of fresh rally. Focus on a few leaders.",
+      "impact": {
+        "global": "Risk-on read-through for EM/India flows.",
+        "us": "Indirect \u2014 broad risk appetite.",
+        "india": "Bullish for liquid large-cap leaders out of strong bases."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "india",
+          "label": "India Market Outlook"
+        },
+        {
+          "type": "sector",
+          "label": "Leadership / Momentum"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "HFCL",
+          "market": "NSE",
+          "impact": "Positive",
+          "reason": "Next leader after MTAR"
+        },
+        {
+          "symbol": "ADANIPOWER",
+          "market": "NSE",
+          "impact": "Positive",
+          "reason": "Standout pivot above PDH; +6.07%"
+        },
+        {
+          "symbol": "BHEL",
+          "market": "NSE",
+          "impact": "Positive",
+          "reason": "Power-infra near pivot"
+        },
+        {
+          "symbol": "BSE_EXCHANGE",
+          "market": "NSE",
+          "impact": "Positive",
+          "reason": "Liquid large-cap near pivot; +2.01%"
+        }
+      ]
+    },
+    {
+      "id": "M021",
+      "title": "Adani Group Second Leg + Power Infrastructure Pivots",
+      "subtitle": "VVV: Adani stocks starting second leg as a theme; power-infra forming strong pivots",
+      "date": "2026-05-25",
+      "analyst": "VVV Stock Analyst",
+      "category": "India Market Outlook",
+      "urgency": "Medium",
+      "horizon": "2026",
+      "summary": "VVV flags Adani stocks starting their second leg together as a theme. Adani Power the standout clean pivot (+6.07%); BHEL and BSE still near pivots. Power-infrastructure names forming strong pivots after a strong April leg.",
+      "impact": {
+        "global": "Limited direct.",
+        "us": "Minimal.",
+        "india": "Bullish for the Adani complex and Indian power/capital-goods infra as a coordinated thematic move."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "india",
+          "label": "India Market Outlook"
+        },
+        {
+          "type": "sector",
+          "label": "Power / Infrastructure"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "ADANIPOWER",
+          "market": "NSE",
+          "impact": "Positive",
+          "reason": "Standout; pivot above PDH; +6.07%"
+        },
+        {
+          "symbol": "ADANIGREEN",
+          "market": "NSE",
+          "impact": "Positive",
+          "reason": "Confirms group second-leg strength; +4.05%"
+        },
+        {
+          "symbol": "BHEL",
+          "market": "NSE",
+          "impact": "Positive",
+          "reason": "Power-infra near pivot"
+        },
+        {
+          "symbol": "BSE_EXCHANGE",
+          "market": "NSE",
+          "impact": "Positive",
+          "reason": "Liquid large-cap near pivot"
+        }
+      ]
+    },
+    {
+      "id": "M022",
+      "title": "TSMC COUPE Drives Taiwan Optical Supply Chain",
+      "subtitle": "FOCI (3363) FAU promoted to 1.6T/3.2T; MSScorps (6830) also named beneficiary",
+      "date": "2026-05-26",
+      "analyst": "Serenity",
+      "category": "Supercycle",
+      "urgency": "Medium",
+      "horizon": "2026-2028",
+      "summary": "UDN article on TSM COUPE + AI optical markets names FOCI (3363) and MSScorps (6830) as beneficiaries. FOCI's FAU co-developed with TSMC 3+ years, specs promoted to 1.6T/3.2T, mass-production schedule now in focus.",
+      "impact": {
+        "global": "COUPE-on-substrate optical integration pulls demand into FAU and test/connector suppliers.",
+        "us": "TSM benefits from the COUPE ramp.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "CPO / Photonics"
+        },
+        {
+          "type": "sector",
+          "label": "Taiwan Optical Supply Chain"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "FOCI_3363",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "FAU with TSMC 3+ yrs; 1.6T/3.2T mass-prod focus"
+        },
+        {
+          "symbol": "MSSCORPS_6830",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "Named COUPE/AI optical beneficiary"
+        },
+        {
+          "symbol": "TSM",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "COUPE-on-substrate is the integration standard"
+        }
+      ]
+    },
+    {
+      "id": "M023",
+      "title": "Substantive Monopoly Targets \u2014 Photonics Material Chokepoints",
+      "subtitle": "Serenity: MSScorps (yield-control), SOI (substrates), NGK (TFLN wafers), AXTI (InP)",
+      "date": "2026-05-26",
+      "analyst": "Serenity",
+      "category": "Structural Shift",
+      "urgency": "High",
+      "horizon": "2026-2028",
+      "summary": "Serenity's substantive monopoly watchlist: MSScorps has deep patent moat in yield control for testing/CPO; SOI dominates silicon-on-insulator substrates; NGK (5333) core tech for TFLN wafers; AXTI controls InP substrates. Shunsin is hard to disrupt (Foxconn-backed). SIVE already designed into top CPO architectures.",
+      "impact": {
+        "global": "Narrow material/test chokepoints gain pricing power as CPO/photonics scales.",
+        "us": "AXTI the key US-listed exposure.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Photonics Materials"
+        },
+        {
+          "type": "sector",
+          "label": "Semiconductor Test"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "MSSCORPS_6830",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "Yield-control patent moat for CPO testing"
+        },
+        {
+          "symbol": "SOI",
+          "market": "EU",
+          "impact": "Positive",
+          "reason": "Dominates SOI substrate market"
+        },
+        {
+          "symbol": "NGK_5333",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "Core TFLN wafer technology"
+        },
+        {
+          "symbol": "AXTI",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "Controls InP substrates"
+        },
+        {
+          "symbol": "SIVE",
+          "market": "EU",
+          "impact": "Positive",
+          "reason": "Designed into top-tier CPO architectures"
+        }
+      ]
+    },
+    {
+      "id": "M024",
+      "title": "Huawei Hi-ONE NPO \u2014 Full Optical Scale-Up",
+      "subtitle": "Zephyr: Huawei adopting NPO this year; Hi-ONE 8 Tb/s/module cuts SerDes reach 100cm to 5cm",
+      "date": "2026-05-25",
+      "analyst": "Zephyr",
+      "category": "Emerging Mega Theme",
+      "urgency": "Medium",
+      "horizon": "2026-2027",
+      "summary": "Huawei will adopt NPO and full optical scale-up this year (no DSPs). Hi-ONE (High-density Optical-interconnect-Node Engine) delivers 8 Tb/s per module, cuts SerDes reach from ~100cm to ~5cm and extends reach to 100m for gigawatt-scale DCs using a linear analog approach instead of heavy DSPs.",
+      "impact": {
+        "global": "Validates optical I/O as the scale-up path; bullish for laser/optical-engine supply chain; pressures DSP-centric pluggable economics.",
+        "us": "Read-through to CPO/laser names.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "CPO / Optical I/O"
+        },
+        {
+          "type": "bearish",
+          "label": "DSP Pluggables"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "SIVE",
+          "market": "EU",
+          "impact": "Positive",
+          "reason": "CW laser chokepoint for optical scale-up"
+        },
+        {
+          "symbol": "AXTI",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "Photonics materials demand"
+        }
+      ]
+    },
+    {
+      "id": "M025",
+      "title": "AI-Server Passive Component Supercycle",
+      "subtitle": "Jukan: MLCC lead times extending to 3-4mo+; 2026 MLCC demand +11% YoY; 330k to 600k+ passives per rack",
+      "date": "2026-05-26",
+      "analyst": "Jukan",
+      "category": "Supercycle",
+      "urgency": "High",
+      "horizon": "2026-2027",
+      "summary": "AI-server demand is rapidly extending lead times for high-spec MLCCs and electrolytic caps (1.5-2mo to 3-4mo+, some far longer), with shortages intensifying 2H26-2027. 2026 MLCC demand +11% YoY, overall caps potentially +30%. NVDA VR300 needs ~330k passives/rack; Google TPU v8 ~600k+. AI servers consume far more passives than autos.",
+      "impact": {
+        "global": "Structural shortage favors Japanese/Korean/Taiwanese passive makers and MLCC raw-material suppliers; pricing/mix tailwinds through 2027.",
+        "us": "Indirect \u2014 component cost inflation for AI server builders.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Passive Components / MLCC"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "MURATA",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "Leading MLCC supplier"
+        },
+        {
+          "symbol": "SEMCO",
+          "market": "KR",
+          "impact": "Positive",
+          "reason": "MLCC + package substrates"
+        },
+        {
+          "symbol": "YAGEO_2327",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "Passive components"
+        },
+        {
+          "symbol": "HOLY_STONE_3026",
+          "market": "TW",
+          "impact": "Positive",
+          "reason": "MLCC capacity expansion \u2014 20+ week lead times"
+        },
+        {
+          "symbol": "SAKAI_CHEM_4078",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "MLCC dielectric raw materials"
+        }
+      ]
+    },
+    {
+      "id": "M026",
+      "title": "Hybrid Bonding / Advanced Packaging Equipment Supercycle",
+      "subtitle": "Zephyr: super bullish for hybrid bonding, CMP and backside-grinding equipment; Piotech +32% in 5 days",
+      "date": "2026-05-25",
+      "analyst": "Zephyr",
+      "category": "Emerging Mega Theme",
+      "urgency": "Medium",
+      "horizon": "2026-2028",
+      "summary": "Zephyr: the advanced-packaging density roadmap is super bullish for hybrid-bonding equipment, CMP suppliers (pads, slurry, equipment) and backside-grinding equipment. Piotech (688072) +32.04% over 5 days; impressive PPDC roadmap with a big 2026 density jump.",
+      "impact": {
+        "global": "Equipment intensity rises with hybrid bonding / 3D stacking; bullish packaging-equipment and consumables.",
+        "us": "Read-through to packaging/CMP equipment names.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Advanced Packaging Equipment"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "PIOTECH_688072",
+          "market": "CN",
+          "impact": "Positive",
+          "reason": "Hybrid bonding / deposition equipment; +32% in 5 days"
+        }
+      ]
+    },
+    {
+      "id": "M027",
+      "title": "Embedded Substrates Turn Strategic for AI Chips",
+      "subtitle": "Jukan: NVDA/AMD/Intel interest in embedded substrates; Ibiden, SEMCO, Unimicron scaling investment",
+      "date": "2026-05-26",
+      "analyst": "Jukan",
+      "category": "Structural Shift",
+      "urgency": "Medium",
+      "horizon": "2026-2028",
+      "summary": "Embedded substrates (and EIPD modules) draw AI-chip interest from NVDA/AMD/Intel \u2014 embedding MLCCs/passives in-substrate shortens signal paths, cuts parasitic inductance and improves power delivery for AI/HPC. Inquiries from NVDA/AMD/Intel/ASIC customers surging. Suppliers scaling: Ibiden, Samsung Electro-Mechanics, Unimicron, Kinsus, Nan Ya PCB.",
+      "impact": {
+        "global": "Packaging turns strategic; bullish substrate makers with materials/drilling/flatness control.",
+        "us": "Indirect via NVDA/AMD/Intel adoption.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Substrates / Advanced Packaging"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "IBIDEN",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "Preferred partner for demanding AI customers"
+        },
+        {
+          "symbol": "SEMCO",
+          "market": "KR",
+          "impact": "Positive",
+          "reason": "MLCCs + package substrates; Vietnam expansion"
+        },
+        {
+          "symbol": "SHINKO",
+          "market": "JP",
+          "impact": "Positive",
+          "reason": "Substrate supplier"
+        }
+      ]
+    },
+    {
+      "id": "M028",
+      "title": "800V HVDC Lead-Frame & Power-Semi Rush",
+      "subtitle": "Jukan: AI DC shift to 800V HVDC lifts Taiwan lead-frame makers; servers overtake autos as demand driver in 2026",
+      "date": "2026-05-25",
+      "analyst": "Jukan",
+      "category": "Macro Demand Driver",
+      "urgency": "High",
+      "horizon": "2026-2027",
+      "summary": "800V HVDC power architectures in AI DCs drive surging power-semi demand. Taiwan lead-frame makers SDI Corp and Jih Lin Technology expect double-digit 2026 revenue growth from Infineon/STMicro orders. 2026 is the inflection where servers overtake autos as the key lead-frame demand driver.",
+      "impact": {
+        "global": "Structural shift in lead-frame/power-semi demand toward AI servers; double-digit growth for exposed Taiwan suppliers.",
+        "us": "NVTS and IDM power-semi names benefit.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Power Semiconductors / 800V HVDC"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "NVTS",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "800V HVDC power semis"
+        }
+      ]
+    },
+    {
+      "id": "M029",
+      "title": "Huawei Advanced-Node Breakthrough Claim",
+      "subtitle": "People's Daily: Huawei claims pathway to shorten gap with TSMC without cutting-edge equipment",
+      "date": "2026-05-25",
+      "analyst": "Jukan",
+      "category": "Geopolitical Risk",
+      "urgency": "Medium",
+      "horizon": "2026-2027",
+      "summary": "Per People's Daily: Huawei claims a new pathway to shorten its gap with TSMC, potentially making advanced semis without cutting-edge equipment; fall Kirin chip to see significant performance improvement. Jukan flags this as a risk to the Western leading-edge moat narrative.",
+      "impact": {
+        "global": "If credible, pressures the Western leading-edge moat narrative.",
+        "us": "Read-through to equipment (ASML) competitive dynamics.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bearish",
+          "label": "Western Leading-Edge Moat"
+        },
+        {
+          "type": "sector",
+          "label": "Geopolitical / China Semis"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "ASML",
+          "market": "EU",
+          "impact": "Negative",
+          "reason": "Narrative risk if China advances without EUV"
+        },
+        {
+          "symbol": "TSM",
+          "market": "TW",
+          "impact": "Negative",
+          "reason": "Competitive-gap narrative risk"
+        }
+      ]
+    },
+    {
+      "id": "M033",
+      "title": "Memory Supercycle Milestone \u2014 Micron $1T Market Cap",
+      "subtitle": "Zephyr/Serenity: MU first $1T MC (from $70B 12 months ago); EWY calls +300%; SK Hynix +206% YTD",
+      "date": "2026-05-26",
+      "analyst": "Zephyr",
+      "category": "Supercycle",
+      "urgency": "High",
+      "horizon": "2026-2027",
+      "summary": "Micron hit $1T market cap for the first time ($884.35, +71%), up from ~$70B a year ago. Serenity's EWY calls +300%+ (4x) as the Korea market rerated; underlying SK Hynix (+206% YTD) and Samsung memory longs keep printing. UBS lifts MU PT to $1,625.",
+      "impact": {
+        "global": "Memory supercycle broadening; Korea memory complex and US memory leaders rerating.",
+        "us": "MU, SNDK direct; EWY for Korea exposure.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Memory / DRAM / HBM"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "MU",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "First $1T memory cap; UBS PT $1,625"
+        },
+        {
+          "symbol": "SKHYNIX",
+          "market": "KR",
+          "impact": "Positive",
+          "reason": "+206% YTD; HBM leadership"
+        },
+        {
+          "symbol": "SAMSUNG",
+          "market": "KR",
+          "impact": "Positive",
+          "reason": "Memory longs printing"
+        },
+        {
+          "symbol": "EWY",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "Korea ETF; calls +300%"
+        }
+      ]
+    },
+    {
+      "id": "M034",
+      "title": "Qualcomm Smartphones-to-AI-Infrastructure Pivot",
+      "subtitle": "Bloomberg-confirmed QCOM-ByteDance AI chip deal \u2014 millions of chips for AI agent software",
+      "date": "2026-05-26",
+      "analyst": "Paradis Labs",
+      "category": "Macro Demand Driver",
+      "urgency": "Medium",
+      "horizon": "2026-2027",
+      "summary": "Bloomberg confirms Qualcomm-ByteDance AI chip deal cementing QCOM's pivot from smartphones to AI infrastructure. ByteDance expected to buy millions of Qualcomm chips for AI agent software. Validates agentic-AI inference demand for non-NVDA silicon.",
+      "impact": {
+        "global": "Validates QCOM AI-infra diversification.",
+        "us": "QCOM direct beneficiary.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Semiconductors / AI Inference"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "QCOM",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "ByteDance AI-agent chip deal; smartphones to AI infra"
+        }
+      ]
+    },
+    {
+      "id": "M036",
+      "title": "AlSiC Defense/Space Chokepoint + SpaceX IPO ETF Bid",
+      "subtitle": "Serenity/CK Capital: CPSH ~25% of near-term US AlSiC; SpaceX >$2T IPO floods space ETFs auto-buying CPSH",
+      "date": "2026-05-26",
+      "analyst": "CK Capital",
+      "category": "Catalyst Cluster",
+      "urgency": "Medium",
+      "horizon": "2026-2028",
+      "summary": "CPS Technologies (CPSH) is the primary US/Western AlSiC hedge (~25% of near-term semi-grade AlSiC) vs East-Asia supply. CK Capital catalyst: SpaceX >$2T IPO floods NASA/space-themed ETFs whose passive flows mechanically buy CPSH. Serenity added angle: as NVDA Rubin scales to 2300-2500W in 2027-2028, AlSiC post-processing could become an AI thermal-warpage chokepoint like InP for telecom.",
+      "impact": {
+        "global": "Niche AlSiC material chokepoint gains defense + potential AI-thermal demand.",
+        "us": "CPSH the listed pure-play; defense primes LMT, RTX are customers.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "AlSiC / Defense Materials"
+        },
+        {
+          "type": "sector",
+          "label": "Space"
+        },
+        {
+          "type": "sector",
+          "label": "Thermal Management"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "CPSH",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "US AlSiC pure-play; ETF flow + defense + AI-thermal optionality"
+        }
+      ]
+    },
+    {
+      "id": "M037",
+      "title": "Memory LTA Mechanics \u2014 Lock-In, Visibility, FOMO",
+      "subtitle": "Jukan/UBS: up to 30% of industry DDR volume locking into LTAs; UBS lifts MU PT $535 to $1,625",
+      "date": "2026-05-26",
+      "analyst": "Jukan",
+      "category": "Structural Shift",
+      "urgency": "High",
+      "horizon": "2026-2029",
+      "summary": "UBS supply-chain work suggests up to 30% of industry-wide DDR volume will soon be locked into Long-Term Agreements at pricing near current levels. LTAs lock volume, leaving less open supply \u2014 non-signers must sign or scramble at higher non-LTA prices; both outcomes maximize memory profits. UBS lifts MU PT to $1,625 (~15x NTM P/E on C2029E EPS $117).",
+      "impact": {
+        "global": "LTAs structurally tighten open memory supply and de-risk earnings \u2014 supports re-rate toward broader semi multiple.",
+        "us": "MU primary beneficiary; SNDK read-through.",
+        "india": "Minimal."
+      },
+      "tags": [
+        {
+          "type": "bullish",
+          "label": "Bullish"
+        },
+        {
+          "type": "sector",
+          "label": "Memory / DRAM"
+        }
+      ],
+      "beneficiaries": [
+        {
+          "symbol": "MU",
+          "market": "US",
+          "impact": "Positive",
+          "reason": "UBS PT $1,625; LTA lock-in + visibility"
+        },
+        {
+          "symbol": "SKHYNIX",
+          "market": "KR",
+          "impact": "Positive",
+          "reason": "Memory LTA dynamics"
+        },
+        {
+          "symbol": "SAMSUNG",
+          "market": "KR",
+          "impact": "Positive",
+          "reason": "Memory LTA dynamics"
+        }
+      ]
+    }
+  ],
+  "playbook": [
+    {
+      "id": "PB001",
+      "source": "VVV Stock Analyst",
+      "date": "2026-05-26",
+      "title": "Stop Random Stock Picking \u2014 Trading Checklist",
+      "rules": [
+        "Only buy stocks related to the future/futuristic themes.",
+        "If a breakout sustains for two days, odds of the uptrend continuing are high.",
+        "If it fails within two days, exit \u2014 the breakout will fail.",
+        "Don't buy companies with market cap below 3000 Crores.",
+        "Aim for at least 15-20% returns; don't settle for less.",
+        "Prefer breakouts in AI-related names (direct or indirect).",
+        "Don't hold through results \u2014 exit 1-2 days before.",
+        "Maintain one account in the US market.",
+        "If monthly RSI is around 70, the move can be considered strong.",
+        "Focus on 3 sectors: Pharma, AI, Chemicals."
+      ]
+    },
+    {
+      "id": "PB002",
+      "source": "VVV Stock Analyst",
+      "date": "2026-05-26",
+      "title": "Mcap & Float Filter",
+      "rules": [
+        "Avoid stocks with less than 1000 Cr market cap.",
+        "Avoid stocks with less than 1000 Cr free-float market cap.",
+        "Both can be very easily manipulated \u2014 stay in larger-mcap, liquid names."
+      ]
+    },
+    {
+      "id": "PB003",
+      "source": "Darvas Box Trader",
+      "date": "2026-05-26",
+      "title": "India AI Theme = Noise (Partial)",
+      "rules": [
+        "In India the AI theme will work as noise only \u2014 take max benefit of it.",
+        "Nothing is going to change in quarterly earnings immediately."
       ]
     }
   ]
