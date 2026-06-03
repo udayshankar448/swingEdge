@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SwingEdge Intelligence</title>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 :root{
   --sand:    #f4f1ec;
@@ -210,9 +209,10 @@ nav{background:var(--cream);border-bottom:1px solid var(--line);padding:0 28px;d
 .mkt-ct{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink)}
 
 /* analyst rows */
-.ar{display:flex;align-items:center;gap:7px;padding:7px 9px;border-radius:var(--r);cursor:pointer;transition:background .15s;border:1px solid transparent;margin-bottom:2px}
-.ar:hover{background:var(--sand);border-color:var(--line)}
-.ar.on{background:var(--blue3);border-color:var(--blue2)}
+.ar{display:flex;align-items:center;gap:7px;padding:8px 10px;border-radius:var(--r);cursor:pointer;transition:all .15s;border:1px solid var(--line);margin-bottom:4px;background:var(--cream)}
+.ar:hover{background:var(--sand2);border-color:var(--line2);transform:translateX(2px)}
+.ar.on{background:var(--blue3);border-color:var(--blue2);transform:translateX(2px)}
+.ar:last-child{margin-bottom:0}
 .ar-nm{font-size:12px;font-weight:500;color:var(--ink2);flex:1}
 .ar-bw{flex:1;max-width:55px;height:3px;background:var(--sand3);border-radius:2px;overflow:hidden}
 .ar-bar{height:100%;background:var(--ink3);border-radius:2px}
@@ -678,8 +678,23 @@ function digest(thesis){if(!thesis) return '';var s=thesis.replace(/\([^)]{0,60}
 /* ─── SCORING ───────────────────────────────────────────────── */
 function score(s){
   var l=lat(s); if(!l) return {v:0,r:[]};
-  if(l.signal!=='Bullish') return {v:0,r:[]};
-  if(s.status==='Bearish'||s.status==='bearish') return {v:0,r:[]};
+  // Bearish stocks get an inverted risk score
+  var isBear=l.signal==='Bearish'||(s.status==='Bearish'||s.status==='bearish');
+  if(l.signal==='Neutral'&&!isBear){
+    // Neutral: base score on signal depth + macro backing only
+    var v=20;
+    if(s.signals.length>=3) v+=10;
+    if(D&&D.macro&&D.macro.some(function(m){return(m.beneficiaries||[]).some(function(b){return b.symbol===s.symbol||b.symbol===Object.keys(D.stocks||{}).find(function(k){return D.stocks[k]===s;});});})) v+=15;
+    return {v:Math.min(v,40),r:[]};
+  }
+  if(isBear){
+    // Bearish: score = risk level (how strongly bearish)
+    var v2=20,r2=['bear'];
+    var hi=s.signals.filter(function(sg){return sg.conviction==='High';}).length;
+    if(hi>=1) v2+=20;
+    if(s.signals.length>=2) v2+=10;
+    return {v:Math.min(v2,50),r:r2};
+  }
   var v=0,r=[], als=analysts(s);
   if(als.length>=3){v+=35;r.push('c');}else if(als.length===2){v+=20;r.push('c');}
   var hi=s.signals.filter(function(sg){return sg.conviction==='High';}).length;
@@ -874,32 +889,58 @@ function buildCard(s,key,i){
 function getTV(s){
   var yt=s.yahoo_ticker||'';
   var mkt=s.market;
-  // Market -> TradingView exchange prefix
-  var exMap={NSE:'NSE',BSE:'BSE',KR:'KRX',CN:'SSE',CA:'TSX',COMM:'COMEX'};
-  if(mkt==='US') return yt; // US stocks: no prefix needed
+  if(!yt) return '';
+  // US-listed stocks (including ADRs) — use plain ticker
+  var usAdrs=['TSM','ASML','SMTOY','EWY','AEVA','CPSH','HIMX','NBIS'];
+  if(mkt==='US'||usAdrs.indexOf(yt)>-1) return yt;
+  // Taiwan TWSE vs TPEx (OTC)
   if(mkt==='TW'){
-    // Taiwan: use TWSE or TPEX depending on ticker suffix
     var base=yt.replace('.TW','').replace('.TWO','');
     return (yt.indexOf('.TWO')>-1?'TPEX:':'TWSE:')+base;
   }
-  if(mkt==='JP'){var base=yt.replace('.T','');return 'TSE:'+base;}
+  // Japan — Tokyo Stock Exchange
+  if(mkt==='JP'){
+    return 'TSE:'+yt.replace('.T','');
+  }
+  // Europe — map by suffix
   if(mkt==='EU'){
+    if(yt==='SIVE.ST') return 'NASDAQ:SIVE'; // SIVE now on NASDAQ
     if(yt.indexOf('.ST')>-1) return 'OMX:'+yt.replace('.ST','');
     if(yt.indexOf('.PA')>-1) return 'EURONEXT:'+yt.replace('.PA','');
     if(yt.indexOf('.L')>-1) return 'LSE:'+yt.replace('.L','');
     if(yt.indexOf('.DE')>-1) return 'XETR:'+yt.replace('.DE','');
+    if(!yt.indexOf('.')) return yt; // plain ticker like ASML
     return yt.replace(/\..*$/,'');
   }
-  if(mkt==='KR'){var base=yt.replace('.KS','').replace('.KQ','');return 'KRX:'+base;}
-  if(mkt==='NSE'||mkt==='BSE'){var base=yt.replace('.NS','').replace('.BO','');return 'NSE:'+base;}
-  if(mkt==='CA'){var base=yt.replace('.TO','').replace('-A','.A');return 'TSX:'+base;}
-  if(mkt==='CN'){var base=yt.replace('.SS','').replace('.SZ','');return 'SSE:'+base;}
+  // Korea — KOSPI (.KS) = KRX, KOSDAQ (.KQ) = KOSDAQ
+  if(mkt==='KR'){
+    var base=yt.replace('.KS','').replace('.KQ','');
+    return (yt.indexOf('.KQ')>-1?'KOSDAQ:':'KRX:')+base;
+  }
+  // India NSE / BSE
+  if(mkt==='NSE') return 'NSE:'+yt.replace('.NS','');
+  if(mkt==='BSE') return 'BSE:'+yt.replace('.BO','');
+  // Canada TSX
+  if(mkt==='CA'){
+    var base=yt.replace('.TO','');
+    // HPS-A.TO -> TSX:HPS.A
+    base=base.replace(/-([A-Z])$/,'.$1');
+    return 'TSX:'+base;
+  }
+  // China — SSE (Shanghai) or SZSE (Shenzhen)
+  if(mkt==='CN'){
+    if(yt.indexOf('.SS')>-1) return 'SSE:'+yt.replace('.SS','');
+    if(yt.indexOf('.SZ')>-1) return 'SZSE:'+yt.replace('.SZ','');
+    return 'SSE:'+yt;
+  }
+  // Commodities
   if(mkt==='COMM'){
     if(yt==='SI=F') return 'COMEX:SI1!';
     if(yt==='GC=F') return 'COMEX:GC1!';
+    if(yt==='CL=F') return 'NYMEX:CL1!';
     return yt;
   }
-  return yt.replace(/\..*$/,'');
+  return '';
 }
 
 
@@ -914,19 +955,7 @@ function openModal(key){
   document.getElementById('m-name').textContent=s.name+' · '+(s.sector||'');
   var mb=document.getElementById('m-mkt');mb.className='mb '+(MCLS[s.market]||'mb-theme');mb.textContent=MLBL[s.market]||s.market;
 
-  // Spider chart data
-  var spData={
-    Consensus:Math.min(als.length/3*100,100),
-    'High Conviction':s.signals.filter(function(sg){return sg.conviction==='High';}).length/Math.max(s.signals.length,1)*100,
-    Recency:Math.max(0,100-dAgo(sigs[0].date)*6),
-    Momentum:mv!==null?Math.min(Math.max(mv+50,0),100):50,
-    'Macro Backed':(D&&D.macro&&D.macro.some(function(m){return(m.beneficiaries||[]).some(function(b){return b.symbol===key;});}))?100:0,
-    'Signal Depth':Math.min(s.signals.length/5*100,100),
-    'Sector Heat':60
-  };
-
-  // Price history from signals
-  var priceHist=sigs.filter(function(sg){return sg.price_at_signal;}).map(function(sg){return{x:sg.date.slice(5),y:sg.price_at_signal};}).sort(function(a,b){return a.x>b.x?1:-1;});
+  // (spider chart and price history removed — using Claude Insights instead)
 
 
   var tvSym=getTV(s);
@@ -984,13 +1013,16 @@ function openModal(key){
       '<div class="ptc"><div class="ptl">Move Since Added</div><div class="ptv" style="color:'+(mv===null?'var(--ink4)':mv>=0?'var(--green)':'var(--red)')+'">'+( mv!==null?fmtP(mv):'—')+'</div><div class="ptn">'+(mv!==null?(mv>=0?'Thesis playing out':'Under water'):'No current price')+'</div></div>'+
     '</div></div>'+
     liveChartHtml+
-    '<div class="ms"><div class="ms-ttl">Conviction Radar</div>'+
-    '<div class="charts-row">'+
-      '<div class="chart-box"><div class="chart-ttl">Score Breakdown</div><div class="chart-cw"><canvas id="sc-'+key+'" height="200"></canvas></div></div>'+
-      (priceHist.length>=2?'<div class="chart-box"><div class="chart-ttl">Price at Signal</div><div class="chart-cw"><canvas id="ph-'+key+'" height="200"></canvas></div></div>':'<div class="chart-box"><div class="chart-ttl">Key Facts</div>'+kfHtml+'</div>')+
+    '<div class="ms"><div class="ms-ttl">Key Facts</div>'+kfHtml+'</div>'+
+    '<div class="ms" id="ai-insight-'+key+'"><div class="ms-ttl">Claude Insights</div>'+
+    '<div style="background:var(--sand);border-radius:var(--r);padding:14px;font-size:12px;color:var(--ink3);line-height:1.7;border:1px solid var(--line)">'+
+    '<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">'+
+    '<span style="font-size:14px">✦</span>'+
+    '<span style="font-size:11px;font-weight:600;color:var(--ink2)">AI Analysis for '+s.symbol+'</span>'+
+    '<span style="margin-left:auto;font-size:9px;font-weight:600;padding:2px 8px;border-radius:10px;background:'+(sc.v>=70?'var(--green2)':sc.v>=45?'var(--amber2)':'var(--red2)')+';color:'+(sc.v>=70?'var(--green)':sc.v>=45?'var(--amber)':'var(--red)')+'">Score: '+sc.v+'/100</span>'+
     '</div>'+
-    (priceHist.length>=2?'<div style="margin-top:10px">'+kfHtml+'</div>':'')+
-    '</div>'+
+    '<div id="insight-body-'+key+'"><div style="display:flex;align-items:center;gap:6px;color:var(--ink4);font-size:11px"><span class="ldot"></span>Generating insights…</div></div>'+
+    '</div></div>'+
     (als.length>1?'<div class="ms"><div class="ms-ttl">Multi-Analyst Consensus</div><div class="cc-chips">'+als.map(function(a){return '<span class="ccc">'+a+'</span>';}).join('')+'</div><div style="font-size:11px;color:var(--purple);margin-top:5px">◆ Multiple analysts tracking — highest conviction tier</div></div>':'')+
     '<div class="ms"><div class="ms-ttl">Signal History ('+sigs.length+')</div><div class="tl">'+tlHtml+'</div></div>';
 
@@ -998,38 +1030,70 @@ function openModal(key){
   document.body.style.overflow='hidden';
 
   // Draw charts
-  setTimeout(function(){drawCharts(key,spData,priceHist);},80);
+  setTimeout(function(){drawCharts(key,s,sc);},80);
 
   // Fetch live price for modal
   if(s.yahoo_ticker){fetchPrice(s).then(function(price){if(!price) return;var el=document.getElementById('modal-lp-'+key);if(el) el.innerHTML='<div class="ptl"><span class="ldot"></span>Live Price</div><div class="ptv">'+cSym(s)+price.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2})+'</div><div class="ptn">Yahoo Finance</div>';});}
 }
 
-function drawCharts(key,spData,priceHist){
-  if(mCharts['sc_'+key]) mCharts['sc_'+key].destroy();
-  if(mCharts['ph_'+key]) mCharts['ph_'+key].destroy();
-
-  // Spider/Radar chart
-  var sc=document.getElementById('sc-'+key);
-  if(sc){
-    mCharts['sc_'+key]=new Chart(sc,{type:'radar',data:{
-      labels:Object.keys(spData),
-      datasets:[{data:Object.values(spData),backgroundColor:'rgba(26,107,67,.07)',borderColor:'rgba(26,107,67,.5)',borderWidth:2,pointBackgroundColor:'rgba(26,107,67,.7)',pointRadius:3,pointHoverRadius:5}]
-    },options:{responsive:true,maintainAspectRatio:true,scales:{r:{min:0,max:100,ticks:{display:false,stepSize:25},grid:{color:'rgba(0,0,0,.06)'},pointLabels:{font:{size:9,family:'DM Sans'},color:'#6e6b60'},angleLines:{color:'rgba(0,0,0,.05)'}}},plugins:{legend:{display:false}}}});
+function generateInsight(key,s,sc){
+  var apiKey=localStorage.getItem('se_k');
+  var el=document.getElementById('insight-body-'+key);
+  if(!el) return;
+  if(!apiKey){el.innerHTML='<span style="color:var(--ink4);font-size:11px">Add API key in AI Analyst panel to enable insights</span>';return;}
+  var als=analysts(s);
+  var mv=(s.current_price&&s.first_price)?pct(s.first_price,s.current_price):null;
+  var sigs=s.signals.slice().sort(function(a,b){return new Date(b.date)-new Date(a.date);});
+  var sigSummary=sigs.slice(0,4).map(function(sg){return sg.analyst+': '+sg.setup+' — '+sg.thesis.slice(0,120);}).join(' | ');
+  var macroContext='';
+  if(D&&D.macro){
+    var relM=D.macro.filter(function(m){return(m.beneficiaries||[]).some(function(b){return b.symbol===key||b.symbol===s.symbol;});});
+    macroContext=relM.slice(0,3).map(function(m){return m.title;}).join(', ');
   }
+  var prompt='You are a concise stock analyst. For stock '+s.symbol+' ('+s.name+', '+s.market+' market, sector: '+s.sector+'), provide a 3-part analysis in exactly this format:
 
-  // Price history chart
-  if(priceHist.length>=2){
-    var ph=document.getElementById('ph-'+key);
-    if(ph){
-      var isUp=priceHist[priceHist.length-1].y>=priceHist[0].y;
-      var col=isUp?'rgb(26,107,67)':'rgb(184,53,53)';
-      var colBg=isUp?'rgba(26,107,67,.07)':'rgba(184,53,53,.07)';
-      mCharts['ph_'+key]=new Chart(ph,{type:'line',data:{
-        labels:priceHist.map(function(p){return p.x;}),
-        datasets:[{data:priceHist.map(function(p){return p.y;}),borderColor:col,backgroundColor:colBg,borderWidth:2,pointRadius:4,pointBackgroundColor:col,fill:true,tension:.3}]
-      },options:{responsive:true,maintainAspectRatio:true,scales:{x:{grid:{display:false},ticks:{font:{size:9},color:'#a09d92'}},y:{grid:{color:'rgba(0,0,0,.04)'},ticks:{font:{size:9},color:'#a09d92'}}},plugins:{legend:{display:false}}}});
-    }
-  }
+**WHY IT'S INTERESTING**
+2-3 sentences on the core opportunity. Plain English, no jargon.
+
+**OPPORTUNITY**
+2-3 bullets on what could drive upside.
+
+**RISKS**
+2-3 bullets on what could go wrong.
+
+Context:
+- Signals: '+sigSummary+'
+- Score: '+sc.v+'/100, Analysts: '+als.join(', ')+'
+- Move since added: '+(mv!==null?mv.toFixed(1)+'%':'unknown')+'
+- Macro themes: '+(macroContext||'none')+'
+
+Be direct, under 180 words total. No disclaimers.';
+
+  var ep='https://api.anthropic.com/v1/messages';
+  var pl=JSON.stringify({model:'claude-sonnet-4-5',max_tokens:400,messages:[{role:'user',content:prompt}]});
+  var hd={'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'};
+  fetch(ep,{method:'POST',headers:hd,body:pl})
+    .catch(function(){return fetch('https://corsproxy.io/?'+encodeURIComponent(ep),{method:'POST',headers:hd,body:pl});})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.content&&d.content[0]&&d.content[0].text){
+        var txt=d.content[0].text;
+        // Format the response
+        txt=txt.replace(/\*\*([^*]+)\*\*/g,'<strong style="color:var(--ink2);display:block;margin-top:8px;margin-bottom:4px">$1</strong>');
+        txt=txt.replace(/^- /gm,'<span style="color:var(--ink4);margin-right:4px">•</span>');
+        txt=txt.replace(/
+/g,'<br>');
+        el.innerHTML='<div style="font-size:12px;color:var(--ink3);line-height:1.7">'+txt+'</div>';
+      } else if(d.error){
+        el.innerHTML='<span style="color:var(--red);font-size:11px">'+( d.error.type==='authentication_error'?'Invalid API key — add a valid key in AI Analyst panel':'Error: '+d.error.message)+'</span>';
+      }
+    })
+    .catch(function(){el.innerHTML='<span style="color:var(--ink4);font-size:11px">Network error generating insights</span>';});
+}
+
+function drawCharts(key,s,sc){
+  // Trigger Claude insight generation
+  setTimeout(function(){generateInsight(key,s,sc);},200);
 }
 
 function closeModal(){document.getElementById('modal-ov').classList.add('hidden');document.body.style.overflow='';}
