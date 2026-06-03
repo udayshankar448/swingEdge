@@ -632,14 +632,22 @@ function showSec(id,el){
 function setF(k,v){filt[k]=v;document.querySelectorAll('.fbtn').forEach(function(b){var oc=b.getAttribute('onclick')||'';if(oc==="setF('"+k+"','"+v+"')") b.classList.add('on');else if(oc.indexOf("setF('"+k+"'")===0) b.classList.remove('on');});render();}
 function setSt(v){sort=v;document.querySelectorAll('.fbtn').forEach(function(b){var oc=b.getAttribute('onclick')||'';if(oc==="setSt('"+v+"')") b.classList.add('on');else if(oc.indexOf('setSt')===0) b.classList.remove('on');});render();}
 function setSch(v){sch=v.toLowerCase();render();}
+function clickSec(el){
+  var si=parseInt(el.dataset.si);
+  var sec=window._secNames&&window._secNames[si]?window._secNames[si]:el.title;
+  filterBySector(sec);
+}
 function filterBySector(sec){
   sectorFilter=(sectorFilter===sec)?null:sec;
-  document.querySelectorAll('.sec-row').forEach(function(r){r.classList.toggle('on',r.dataset.sec===sectorFilter);});
+  document.querySelectorAll('.sec-row').forEach(function(r){
+    var si=parseInt(r.dataset.si);
+    var rsec=window._secNames&&window._secNames[si]?window._secNames[si]:'';
+    r.classList.toggle('on',rsec===sectorFilter);
+  });
   var sban=document.getElementById('sban');
   if(sectorFilter){
     sban.style.display='flex';
     document.getElementById('sbn-nm').textContent=sectorFilter;
-    // switch to signals tab
     var sigTab=document.querySelector('.ntab');if(sigTab){sigTab.click();}
   } else {
     sban.style.display='none';
@@ -791,16 +799,18 @@ function render(){
   // Sector strength
   var secs=buildSectorStrength(allS);
   var maxSec=secs[0]?secs[0].total:1;
-  document.getElementById('sec-strength').innerHTML=secs.map(function(s){
+  document.getElementById('sec-strength').innerHTML=secs.map(function(s,si){
     var bCls=s.bullPct>=70?'sb-g':s.bullPct>=50?'sb-a':'sb-r';
     var isOn=sectorFilter===s.sec;
-    return '<div class="sec-row'+(isOn?' on':'')+'" data-sec="'+s.sec+'" onclick="filterBySector(''+s.sec.replace(/'/g,"\'")+'')" title="Click to filter by '+s.sec+'">'+
+    var safeTitle=s.sec.replace(/"/g,'&quot;');
+    return '<div class="sec-row'+(isOn?' on':'')+'" data-si="'+si+'" onclick="clickSec(this)" title="'+safeTitle+'">'+
       '<span class="sec-nm">'+s.sec+'</span>'+
       '<div class="sec-bar-wrap"><div class="sec-bar" style="width:'+(s.total/maxSec*100)+'%;background:'+(s.bullPct>=70?'var(--green)':s.bullPct>=50?'var(--amber)':'var(--red)')+'"></div></div>'+
       '<span class="sec-bull '+bCls+'">'+s.bullPct+'%</span>'+
       '<span class="sec-ct">'+s.total+'</span>'+
     '</div>';
   }).join('');
+  window._secNames=secs.map(function(s){return s.sec;});
 
   // Consensus
   var cons=allE.filter(function(e){return analysts(e.s).length>=2;}).sort(function(a,b){return b.s.signals.length-a.s.signals.length;});
@@ -861,6 +871,38 @@ function buildCard(s,key,i){
 }
 
 /* ─── MODAL ─────────────────────────────────────────────────── */
+function getTV(s){
+  var yt=s.yahoo_ticker||'';
+  var mkt=s.market;
+  // Market -> TradingView exchange prefix
+  var exMap={NSE:'NSE',BSE:'BSE',KR:'KRX',CN:'SSE',CA:'TSX',COMM:'COMEX'};
+  if(mkt==='US') return yt; // US stocks: no prefix needed
+  if(mkt==='TW'){
+    // Taiwan: use TWSE or TPEX depending on ticker suffix
+    var base=yt.replace('.TW','').replace('.TWO','');
+    return (yt.indexOf('.TWO')>-1?'TPEX:':'TWSE:')+base;
+  }
+  if(mkt==='JP'){var base=yt.replace('.T','');return 'TSE:'+base;}
+  if(mkt==='EU'){
+    if(yt.indexOf('.ST')>-1) return 'OMX:'+yt.replace('.ST','');
+    if(yt.indexOf('.PA')>-1) return 'EURONEXT:'+yt.replace('.PA','');
+    if(yt.indexOf('.L')>-1) return 'LSE:'+yt.replace('.L','');
+    if(yt.indexOf('.DE')>-1) return 'XETR:'+yt.replace('.DE','');
+    return yt.replace(/\..*$/,'');
+  }
+  if(mkt==='KR'){var base=yt.replace('.KS','').replace('.KQ','');return 'KRX:'+base;}
+  if(mkt==='NSE'||mkt==='BSE'){var base=yt.replace('.NS','').replace('.BO','');return 'NSE:'+base;}
+  if(mkt==='CA'){var base=yt.replace('.TO','').replace('-A','.A');return 'TSX:'+base;}
+  if(mkt==='CN'){var base=yt.replace('.SS','').replace('.SZ','');return 'SSE:'+base;}
+  if(mkt==='COMM'){
+    if(yt==='SI=F') return 'COMEX:SI1!';
+    if(yt==='GC=F') return 'COMEX:GC1!';
+    return yt;
+  }
+  return yt.replace(/\..*$/,'');
+}
+
+
 function openModal(key){
   if(!D) return;
   var s=D.stocks[key]; if(!s) return;
@@ -886,46 +928,13 @@ function openModal(key){
   // Price history from signals
   var priceHist=sigs.filter(function(sg){return sg.price_at_signal;}).map(function(sg){return{x:sg.date.slice(5),y:sg.price_at_signal};}).sort(function(a,b){return a.x>b.x?1:-1;});
 
-  // Universal TradingView symbol mapping
-  function getTV(s){
-    var yt=s.yahoo_ticker||'';
-    var mkt=s.market;
-    // Market -> TradingView exchange prefix
-    var exMap={NSE:'NSE',BSE:'BSE',KR:'KRX',CN:'SSE',CA:'TSX',COMM:'COMEX'};
-    if(mkt==='US') return yt; // US stocks: no prefix needed
-    if(mkt==='TW'){
-      // Taiwan: use TWSE or TPEX depending on ticker suffix
-      var base=yt.replace('.TW','').replace('.TWO','');
-      return (yt.indexOf('.TWO')>-1?'TPEX:':'TWSE:')+base;
-    }
-    if(mkt==='JP'){var base=yt.replace('.T','');return 'TSE:'+base;}
-    if(mkt==='EU'){
-      if(yt.indexOf('.ST')>-1) return 'OMX:'+yt.replace('.ST','');
-      if(yt.indexOf('.PA')>-1) return 'EURONEXT:'+yt.replace('.PA','');
-      if(yt.indexOf('.L')>-1) return 'LSE:'+yt.replace('.L','');
-      if(yt.indexOf('.DE')>-1) return 'XETR:'+yt.replace('.DE','');
-      return yt.replace(/\..*$/,'');
-    }
-    if(mkt==='KR'){var base=yt.replace('.KS','').replace('.KQ','');return 'KRX:'+base;}
-    if(mkt==='NSE'||mkt==='BSE'){var base=yt.replace('.NS','').replace('.BO','');return 'NSE:'+base;}
-    if(mkt==='CA'){var base=yt.replace('.TO','').replace('-A','.A');return 'TSX:'+base;}
-    if(mkt==='CN'){var base=yt.replace('.SS','').replace('.SZ','');return 'SSE:'+base;}
-    if(mkt==='COMM'){
-      if(yt==='SI=F') return 'COMEX:SI1!';
-      if(yt==='GC=F') return 'COMEX:GC1!';
-      return yt;
-    }
-    return yt.replace(/\..*$/,'');
-  }
 
   var tvSym=getTV(s);
+
   var liveChartHtml='';
   if(tvSym){
-    var tvParams=encodeURIComponent(JSON.stringify({
-      symbol:tvSym,width:'100%',height:220,dateRange:'3M',
-      colorTheme:'light',trendLineColor:'rgba(26,107,67,1)',
-      underLineColor:'rgba(26,107,67,0.08)',isTransparent:true,autosize:true
-    }));
+    var tvObj={symbol:tvSym,width:'100%',height:220,dateRange:'3M',colorTheme:'light',trendLineColor:'rgba(26,107,67,1)',underLineColor:'rgba(26,107,67,0.08)',isTransparent:true,autosize:true};
+    var tvParams=encodeURIComponent(JSON.stringify(tvObj));
     liveChartHtml='<div class="live-chart-box"><div class="lcb-head"><span class="lcb-ttl">Price Chart (Live)</span><span class="lcb-src">TradingView · '+tvSym+'</span></div>'+
       '<iframe class="lcb-frame" height="230" src="https://s.tradingview.com/embed-widget/mini-symbol-overview/?locale=en#'+tvParams+'" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>';
   } else {
