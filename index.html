@@ -1050,24 +1050,25 @@ function generateInsight(key,s,sc){
     var relM=D.macro.filter(function(m){return(m.beneficiaries||[]).some(function(b){return b.symbol===key||b.symbol===s.symbol;});});
     macroContext=relM.slice(0,3).map(function(m){return m.title;}).join(', ');
   }
-  var prompt='You are a concise stock analyst. For stock '+s.symbol+' ('+s.name+', '+s.market+' market, sector: '+s.sector+'), provide a 3-part analysis in exactly this format:
-
-**WHY IT'S INTERESTING**
-2-3 sentences on the core opportunity. Plain English, no jargon.
-
-**OPPORTUNITY**
-2-3 bullets on what could drive upside.
-
-**RISKS**
-2-3 bullets on what could go wrong.
-
-Context:
-- Signals: '+sigSummary+'
-- Score: '+sc.v+'/100, Analysts: '+als.join(', ')+'
-- Move since added: '+(mv!==null?mv.toFixed(1)+'%':'unknown')+'
-- Macro themes: '+(macroContext||'none')+'
-
-Be direct, under 180 words total. No disclaimers.';
+  var promptParts=[
+    'You are a concise stock analyst. Analyze this stock and provide a 3-part response.',
+    '',
+    'Stock: '+s.symbol+' ('+s.name+')',
+    'Market: '+s.market+', Sector: '+s.sector,
+    'Conviction Score: '+sc.v+'/100',
+    'Analysts tracking: '+als.join(', '),
+    'Move since added: '+(mv!==null?mv.toFixed(1)+'%':'unknown'),
+    'Macro themes: '+(macroContext||'none'),
+    'Recent signals: '+sigSummary,
+    '',
+    'Provide exactly 3 sections with these headers:',
+    'WHY IT IS INTERESTING - 2-3 sentences on the core opportunity in plain English.',
+    'OPPORTUNITY - 2-3 bullet points on what could drive upside.',
+    'RISKS - 2-3 bullet points on what could go wrong.',
+    '',
+    'Be direct and concise. Under 180 words total. No disclaimers.'
+  ];
+  var prompt=promptParts.join('\n')
 
   var ep='https://api.anthropic.com/v1/messages';
   var pl=JSON.stringify({model:'claude-sonnet-4-5',max_tokens:400,messages:[{role:'user',content:prompt}]});
