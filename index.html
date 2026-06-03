@@ -1188,11 +1188,9 @@ function generateInsight(key,s,sc){
   ];
   var prompt=parts.join('\n');
   var ep='https://api.anthropic.com/v1/messages';
-  var pl=JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:400,messages:[{role:'user',content:prompt}]});
+  var pl=JSON.stringify({model:'claude-haiku-4-5',max_tokens:400,messages:[{role:'user',content:prompt}]});
   var hd={'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'};
-  function doFetch2(url){return fetch(url,{method:'POST',headers:hd,body:pl});}
-  doFetch2(ep)
-    .catch(function(){return doFetch2('https://corsproxy.io/?'+encodeURIComponent(ep));})
+  fetch(ep,{method:'POST',headers:hd,body:pl})
     .then(function(r){return r.json();})
     .then(function(d){
       if(d.content&&d.content[0]&&d.content[0].text){
@@ -1208,11 +1206,16 @@ function generateInsight(key,s,sc){
           .replace(/\n/g,'<br>');
         el.innerHTML='<div style="font-size:12px;color:var(--ink3);line-height:1.7">'+html+'</div>';
       } else if(d.error){
-        var msg=d.error.type==='authentication_error'?'Invalid API key':'Error: '+d.error.message;
-        el.innerHTML='<span style="color:var(--red);font-size:11px">'+msg+'</span>';
+        var errMsg=d.error.type==='authentication_error'?'API key rejected by Anthropic. Check console.anthropic.com':'Error: '+d.error.message;
+        el.innerHTML='<span style="color:var(--red);font-size:11px">'+errMsg+'</span>';
+      } else {
+        el.innerHTML='<span style="color:var(--ink4);font-size:11px">No response from API</span>';
       }
     })
-    .catch(function(){el.innerHTML='<span style="color:var(--ink4);font-size:11px">Network error</span>';});
+    .catch(function(e){
+      var msg=e.message.indexOf('fetch')>-1?'CORS blocked on GitHub Pages. Open file locally for AI features.':'Network error: '+e.message;
+      el.innerHTML='<span style="color:var(--ink4);font-size:11px">'+msg+'</span>';
+    });
 }
 
 /* MACRO */
@@ -1335,37 +1338,60 @@ function sendAI(){
   var sys='You are a private AI analyst for SwingEdge. Be concise and clear.\n\n'+buildCtx()+'\n\nQuestion: '+q;
   var ep='https://api.anthropic.com/v1/messages';
   // Try claude-haiku-4-5 first (cheaper, same API), fallback to sonnet
-  var pl=JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:800,messages:[{role:'user',content:sys}]});
+  var pl=JSON.stringify({model:'claude-haiku-4-5',max_tokens:800,messages:[{role:'user',content:sys}]});
   var hd={'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'};
-  function doFetch(url){return fetch(url,{method:'POST',headers:hd,body:pl});}
-  doFetch(ep)
-    .catch(function(){return doFetch('https://corsproxy.io/?'+encodeURIComponent(ep));})
-    .catch(function(){return doFetch('https://api.allorigins.win/post?url='+encodeURIComponent(ep));})
-    .then(function(r){return r.json();})
+  fetch(ep,{method:'POST',headers:hd,body:pl})
+    .then(function(r){
+      if(!r.ok&&r.status===0){
+        // CORS blocked - direct call failed
+        throw new Error('CORS_BLOCKED');
+      }
+      return r.json();
+    })
     .then(function(d){
       rmTyping();
-      // Debug: log the full response
-      console.log('API response:', JSON.stringify(d).slice(0,200));
+      console.log('API response type:', d.type, 'error:', d.error&&d.error.type);
       var text=d.content&&d.content[0]&&d.content[0].text;
-      if(text){addMsg('bot',text);}
-      else if(d.error){
+      if(text){
+        addMsg('bot',text);
+      } else if(d.error){
         var errType=d.error.type||'';
-        var msg='';
         if(errType==='authentication_error'){
-          msg='Auth error. Key used: ...'+key.slice(-8)+' ('+key.length+' chars). Make sure you copied the full sk-ant-... key from console.anthropic.com';
+          addMsg('bot','Key rejected by Anthropic. Please:
+1. Go to console.anthropic.com
+2. Delete old keys
+3. Create a brand new key
+4. Paste it here
+
+Key being used ends in: ...'+key.slice(-6));
           localStorage.removeItem('se_k');
-          document.getElementById('aki-st').textContent='invalid';
+          document.getElementById('aki-st').textContent='rejected';
           document.getElementById('aki-st').style.color='var(--red)';
+        } else if(errType==='permission_error'){
+          addMsg('bot','Permission denied. Check that your Anthropic account has available credits at console.anthropic.com/billing');
         } else {
-          msg='API error ('+errType+'): '+d.error.message;
+          addMsg('bot','API error: '+d.error.message);
         }
-        addMsg('bot',msg);
       } else {
-        addMsg('bot','Unexpected response. Check browser console (F12) for details.');
+        addMsg('bot','No response content. Raw: '+JSON.stringify(d).slice(0,100));
       }
       document.getElementById('ai-go').disabled=false;
     })
-    .catch(function(e){rmTyping();addMsg('bot','Network error: '+e.message);document.getElementById('ai-go').disabled=false;});
+    .catch(function(e){
+      rmTyping();
+      if(e.message==='CORS_BLOCKED'||e.message.indexOf('Failed to fetch')>-1||e.message.indexOf('NetworkError')>-1){
+        addMsg('bot','CORS blocked: Your browser is preventing direct API calls from GitHub Pages.
+
+Fix: Open SwingEdge locally instead:
+1. Download index.html and signals.json
+2. Open index.html directly in Chrome (file://)
+
+Or use the AI Analyst from localhost.');
+      } else {
+        addMsg('bot','Network error: '+e.message);
+      }
+      document.getElementById('ai-go').disabled=false;
+    });
 }
 
 /* INIT */
