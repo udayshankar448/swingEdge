@@ -968,7 +968,7 @@ function render(){
   document.getElementById('sec-strength').innerHTML=secs.map(function(s){
     var bCls=s.bullPct>=70?'sb-g':s.bullPct>=50?'sb-a':'sb-r';
     var isOn=sectorFilter===s.sec;
-    var safeTitle=s.sec.replace(/"/g,'&quot;');
+    var safeTitle=s.sec;
     return '<div class="sec-row'+(isOn?' on':'')+'" data-sec="'+safeTitle+'" onclick="filterBySector(\''+s.sec.replace(/\\/g,'\\\\').replace(/'/g,"\\'")+'\')">'+
       '<span class="sec-nm">'+s.sec+'</span>'+
       '<div class="sec-bar-wrap"><div class="sec-bar" style="width:'+(s.total/maxSec*100)+'%;background:'+(s.bullPct>=70?'var(--green)':s.bullPct>=50?'var(--amber)':'var(--red)')+'"></div></div>'+
@@ -1362,14 +1362,7 @@ function sendAI(){
       } else if(d.error){
         var errType=d.error.type||'';
         if(errType==='authentication_error'){
-          addMsg('bot','Key rejected by Anthropic. Please:
-1. Go to console.anthropic.com
-2. Delete old keys
-3. Create a brand new key
-4. Paste it here
-
-Key being used ends in: ...'+key.slice(-6));
-          localStorage.removeItem('se_k');
+          addMsg('bot','Auth failed. Delete this key in console.anthropic.com, create a new one and paste it above.');
           document.getElementById('aki-st').textContent='rejected';
           document.getElementById('aki-st').style.color='var(--red)';
         } else if(errType==='permission_error'){
@@ -1385,13 +1378,7 @@ Key being used ends in: ...'+key.slice(-6));
     .catch(function(e){
       rmTyping();
       if(e.message==='CORS_BLOCKED'||e.message.indexOf('Failed to fetch')>-1||e.message.indexOf('NetworkError')>-1){
-        addMsg('bot','CORS blocked: Your browser is preventing direct API calls from GitHub Pages.
-
-Fix: Open SwingEdge locally instead:
-1. Download index.html and signals.json
-2. Open index.html directly in Chrome (file://)
-
-Or use the AI Analyst from localhost.');
+        addMsg('bot','CORS blocked. Add your Cloudflare Worker URL in the Proxy URL field above.');
       } else {
         addMsg('bot','Network error: '+e.message);
       }
