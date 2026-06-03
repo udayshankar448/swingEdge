@@ -1188,10 +1188,11 @@ function generateInsight(key,s,sc){
   ];
   var prompt=parts.join('\n');
   var ep='https://api.anthropic.com/v1/messages';
-  var pl=JSON.stringify({model:'claude-sonnet-4-5',max_tokens:400,messages:[{role:'user',content:prompt}]});
+  var pl=JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:400,messages:[{role:'user',content:prompt}]});
   var hd={'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'};
-  fetch(ep,{method:'POST',headers:hd,body:pl})
-    .catch(function(){return fetch('https://corsproxy.io/?'+encodeURIComponent(ep),{method:'POST',headers:hd,body:pl});})
+  function doFetch2(url){return fetch(url,{method:'POST',headers:hd,body:pl});}
+  doFetch2(ep)
+    .catch(function(){return doFetch2('https://corsproxy.io/?'+encodeURIComponent(ep));})
     .then(function(r){return r.json();})
     .then(function(d){
       if(d.content&&d.content[0]&&d.content[0].text){
@@ -1261,15 +1262,37 @@ function renderPlaybook(){
 function openAI(){document.getElementById('ai-ov').classList.remove('hidden');loadKey();}
 function closeAI(){document.getElementById('ai-ov').classList.add('hidden');}
 function saveKey(v){
-  v=v.trim();
+  // Strip ALL whitespace including invisible chars
+  v=v.replace(/[\s\u200B\u200C\u200D\uFEFF]/g,'');
   var st=document.getElementById('aki-st'),inp=document.getElementById('aki');
-  if(v&&v.length>20){localStorage.setItem('se_k',v);st.textContent='saved';st.style.color='var(--green)';inp.style.borderColor='var(--green)';}
-  else if(v){st.textContent='too short?';st.style.color='var(--amber)';}
-  else{localStorage.removeItem('se_k');st.textContent='not set';st.style.color='var(--ink4)';inp.style.borderColor='';}
+  if(v&&v.startsWith('sk-ant-')&&v.length>40){
+    localStorage.setItem('se_k',v);
+    st.textContent='saved ('+v.length+' chars)';
+    st.style.color='var(--green)';
+    inp.style.borderColor='var(--green)';
+    inp.value=v; // show cleaned value
+  } else if(v&&!v.startsWith('sk-ant-')){
+    st.textContent='wrong format - needs sk-ant-...';
+    st.style.color='var(--red)';
+  } else if(v){
+    st.textContent='too short ('+v.length+')';
+    st.style.color='var(--amber)';
+  } else {
+    localStorage.removeItem('se_k');
+    st.textContent='not set';
+    st.style.color='var(--ink4)';
+    inp.style.borderColor='';
+  }
 }
 function loadKey(){
   var k=localStorage.getItem('se_k')||'';
-  if(k){document.getElementById('aki').value=k;document.getElementById('aki-st').textContent='saved';document.getElementById('aki-st').style.color='var(--green)';document.getElementById('aki').style.borderColor='var(--green)';}
+  k=k.replace(/[\s\u200B\u200C\u200D\uFEFF]/g,'');
+  if(k){
+    document.getElementById('aki').value=k;
+    document.getElementById('aki-st').textContent='saved ('+k.length+' chars)';
+    document.getElementById('aki-st').style.color='var(--green)';
+    document.getElementById('aki').style.borderColor='var(--green)';
+  }
   return k;
 }
 function buildCtx(){
@@ -1311,19 +1334,34 @@ function sendAI(){
   addTyping();
   var sys='You are a private AI analyst for SwingEdge. Be concise and clear.\n\n'+buildCtx()+'\n\nQuestion: '+q;
   var ep='https://api.anthropic.com/v1/messages';
-  var pl=JSON.stringify({model:'claude-sonnet-4-5',max_tokens:800,messages:[{role:'user',content:sys}]});
+  // Try claude-haiku-4-5 first (cheaper, same API), fallback to sonnet
+  var pl=JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:800,messages:[{role:'user',content:sys}]});
   var hd={'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'};
-  fetch(ep,{method:'POST',headers:hd,body:pl})
-    .catch(function(){return fetch('https://corsproxy.io/?'+encodeURIComponent(ep),{method:'POST',headers:hd,body:pl});})
+  function doFetch(url){return fetch(url,{method:'POST',headers:hd,body:pl});}
+  doFetch(ep)
+    .catch(function(){return doFetch('https://corsproxy.io/?'+encodeURIComponent(ep));})
+    .catch(function(){return doFetch('https://api.allorigins.win/post?url='+encodeURIComponent(ep));})
     .then(function(r){return r.json();})
     .then(function(d){
       rmTyping();
+      // Debug: log the full response
+      console.log('API response:', JSON.stringify(d).slice(0,200));
       var text=d.content&&d.content[0]&&d.content[0].text;
       if(text){addMsg('bot',text);}
       else if(d.error){
-        var msg=d.error.type==='authentication_error'?'Invalid API key. Get a new one at console.anthropic.com':'Error: '+d.error.message;
-        if(d.error.type==='authentication_error'){localStorage.removeItem('se_k');document.getElementById('aki-st').textContent='invalid';document.getElementById('aki-st').style.color='var(--red)';}
+        var errType=d.error.type||'';
+        var msg='';
+        if(errType==='authentication_error'){
+          msg='Auth error. Key used: ...'+key.slice(-8)+' ('+key.length+' chars). Make sure you copied the full sk-ant-... key from console.anthropic.com';
+          localStorage.removeItem('se_k');
+          document.getElementById('aki-st').textContent='invalid';
+          document.getElementById('aki-st').style.color='var(--red)';
+        } else {
+          msg='API error ('+errType+'): '+d.error.message;
+        }
         addMsg('bot',msg);
+      } else {
+        addMsg('bot','Unexpected response. Check browser console (F12) for details.');
       }
       document.getElementById('ai-go').disabled=false;
     })
