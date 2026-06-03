@@ -586,6 +586,12 @@ nav{background:var(--cream);border-bottom:1px solid var(--line);padding:0 28px;d
       <input id="aki" type="password" class="aki-inp" placeholder="sk-ant-…" oninput="saveKey(this.value)">
       <span class="aki-st" id="aki-st">not set</span>
     </div>
+    <div style="padding:6px 13px;background:var(--sand2);border-bottom:1px solid var(--line);display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+      <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--ink4);white-space:nowrap">Proxy URL</span>
+      <input id="proxy-inp" type="text" style="flex:1;min-width:160px;border:1px solid var(--line2);border-radius:5px;padding:3px 7px;font-family:var(--mono);font-size:9px;background:var(--cream);color:var(--ink);outline:none" placeholder="https://your-worker.workers.dev" oninput="saveProxy(this.value)">
+      <button onclick="testKey()" style="font-size:10px;padding:3px 10px;border:1px solid var(--line2);border-radius:10px;background:var(--cream);cursor:pointer;font-family:var(--sans);white-space:nowrap">Test</button>
+      <span id="test-result" style="font-size:10px;color:var(--ink4);width:100%">Set proxy URL then test</span>
+    </div>
     <div class="ai-msgs" id="ai-msgs">
       <div class="amsg bot fi">
         <div class="amsg-b">Hi — I know all 122 stocks, 33 macro themes, and analyst signals. Ask me what to watch, which sector is hottest, or anything about your watchlist.</div>
@@ -1187,7 +1193,7 @@ function generateInsight(key,s,sc){
     'Under each header write 2-3 short lines. Plain English only. Under 150 words total.'
   ];
   var prompt=parts.join('\n');
-  var ep='https://api.anthropic.com/v1/messages';
+  var ep=getEndpoint();
   var pl=JSON.stringify({model:'claude-haiku-4-5',max_tokens:400,messages:[{role:'user',content:prompt}]});
   var hd={'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'};
   fetch(ep,{method:'POST',headers:hd,body:pl})
@@ -1336,8 +1342,7 @@ function sendAI(){
   document.getElementById('ai-go').disabled=true;
   addTyping();
   var sys='You are a private AI analyst for SwingEdge. Be concise and clear.\n\n'+buildCtx()+'\n\nQuestion: '+q;
-  var ep='https://api.anthropic.com/v1/messages';
-  // Try claude-haiku-4-5 first (cheaper, same API), fallback to sonnet
+  var ep=getEndpoint();
   var pl=JSON.stringify({model:'claude-haiku-4-5',max_tokens:800,messages:[{role:'user',content:sys}]});
   var hd={'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'};
   fetch(ep,{method:'POST',headers:hd,body:pl})
@@ -1394,10 +1399,62 @@ Or use the AI Analyst from localhost.');
     });
 }
 
+/* PROXY + TEST KEY */
+function saveProxy(v){
+  v=v.trim().replace(/\/+$/,'');
+  if(v) localStorage.setItem('se_proxy',v);
+  else localStorage.removeItem('se_proxy');
+}
+function loadProxy(){
+  var p=localStorage.getItem('se_proxy')||'';
+  if(p) document.getElementById('proxy-inp').value=p;
+  return p;
+}
+function getEndpoint(){
+  var proxy=localStorage.getItem('se_proxy')||'';
+  return proxy||'https://api.anthropic.com/v1/messages';
+}
+function testKey(){
+  var key=loadKey();
+  var el=document.getElementById('test-result');
+  if(!key){el.textContent='No key saved';el.style.color='var(--red)';return;}
+  var ep=getEndpoint();
+  el.textContent='Testing via '+ep.replace('https://','').split('/')[0]+'...';
+  el.style.color='var(--ink4)';
+  fetch(ep,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-allow-browser':'true'},
+    body:JSON.stringify({model:'claude-haiku-4-5',max_tokens:10,messages:[{role:'user',content:'Hi'}]})
+  })
+  .then(function(r){return r.json().then(function(d){return{status:r.status,data:d};});})
+  .then(function(res){
+    var d=res.data;
+    if(d.content&&d.content[0]){
+      el.textContent='Key works! ('+d.content[0].text.slice(0,20)+')';
+      el.style.color='var(--green)';
+    } else if(d.error){
+      el.textContent=d.error.type+': '+d.error.message.slice(0,60);
+      el.style.color='var(--red)';
+    } else {
+      el.textContent='HTTP '+res.status+' — '+JSON.stringify(d).slice(0,60);
+      el.style.color='var(--amber)';
+    }
+  })
+  .catch(function(e){
+    if(ep.indexOf('anthropic.com')>-1){
+      el.textContent='CORS blocked. Set Cloudflare Worker proxy URL above.';
+    } else {
+      el.textContent='Error: '+e.message;
+    }
+    el.style.color='var(--amber)';
+  });
+}
+
 /* INIT */
 load();
 setInterval(load,300000);
 loadKey();
+loadProxy();
 </script>
 </body>
 </html>
