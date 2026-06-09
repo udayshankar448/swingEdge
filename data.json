@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "08 Jun 2026 16:33 IST",
-    "date": "2026-06-08",
+    "generated": "09 Jun 2026 18:42 IST",
+    "date": "2026-06-09",
     "stocks_scanned": 200,
     "stocks_qualified": 0,
     "errors": 0,
@@ -18,7 +18,7 @@
     "usdinr": 90.42,
     "brent_crude": 91.4,
     "nifty_vs_200sma": 4.8,
-    "last_updated": "2026-06-08",
+    "last_updated": "2026-06-09",
     "macro_score": 55,
     "regime": "SELECTIVE",
     "signal": "YELLOW",
